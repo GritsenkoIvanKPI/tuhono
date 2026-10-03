@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuhano — маркетинг, контент и брендинг для роста продаж</title>
+<meta name="description" content="Tuhano — агентство полного цикла: брендинг, контент, AI-продакшн, реклама и digital-инфраструктура. 10 000+ проектов на 28 рынках с 2022 года.">
+<meta name="theme-color" content="#050806">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-40 -87 685 685'%3E%3Ccircle cx='219' cy='219' r='219' fill='%23264A36'/%3E%3Ccircle cx='386' cy='292' r='219' fill='%2385C29C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    corePlugins: { container: false },
+    theme: { extend: { colors: { pine: '#264A36', mint: '#85C29C', moss: '#5E9F79', ink: '#050806' } } }
+  };
+</script>
+<style>
+/* ---------- Tokens ---------- */
+:root {
+  --root-scale: 1rem;
+  --container-width: 100%;
+  --container-pd: 1rem;
+  --h-height: 4.5rem;
+
+  --ff-1: "Onest", "Helvetica Neue", Arial, sans-serif;
+  --ff-2: "Inter Tight", "Onest", sans-serif;
+
+  --caption-l: clamp(4.125rem, -4.8224rem + 18.6404vw, 14.5rem);
+  --caption-m: clamp(3.5rem, -1.1316rem + 9.6491vw, 8.75rem);
+  --caption-s: clamp(2rem, -0.7368rem + 5.7018vw, 5rem);
+  --h1: clamp(2.75rem, 0.3421rem + 6.5789vw, 7rem);
+  --h2: clamp(2.25rem, 1.2961rem + 3.2895vw, 4.5rem);
+  --h3: clamp(2rem, 0.7368rem + 2.6316vw, 3.25rem);
+  --h4: clamp(1.5rem, 0.8684rem + 1.3158vw, 2rem);
+  --h5: clamp(1.25rem, 0.8289rem + 0.8772vw, 1.5rem);
+  --h6: clamp(1.125rem, 0.8092rem + 0.6579vw, 1.25rem);
+  --text: clamp(1.125rem, 0.7039rem + 0.8772vw, 1.375rem);
+  --text-sm: clamp(1rem, 0.7895rem + 0.4386vw, 1.25rem);
+  --text-xs: clamp(0.875rem, 0.7697rem + 0.2193vw, 1rem);
+  --btn-xl: clamp(2rem, 0.9474rem + 2.193vw, 3.25rem);
+  --btn-l: clamp(1rem, 0.1579rem + 1.7544vw, 2rem);
+  --btn-m: clamp(0.875rem, 0.6645rem + 0.4386vw, 1.125rem);
+  --btn-s: 0.875rem;
+
+  --sp-xxl: clamp(6.25rem, 3.2895rem + 8.7719vw, 12.5rem);
+  --sp-xl: clamp(3.75rem, -1.5132rem + 10.9649vw, 10rem);
+  --sp-lg: clamp(2.5rem, -0.6579rem + 6.5789vw, 6.25rem);
+  --sp-md: clamp(2rem, -0.5263rem + 5.2632vw, 5rem);
+  --sp-sm: clamp(1.5rem, -0.3947rem + 3.9474vw, 3.75rem);
+  --sp-xs: clamp(1.25rem, -0.7237rem + 3.0702vw, 2.5rem);
+  --sp-xxs: 1.25rem;
+  --sp-xxxs: 1rem;
+  --sp-block: clamp(5rem, -4.375rem + 12.5vw, 8.75rem);
+
+  --clr-white: #FFFFFF;
+  --clr-black: #050806;
+  --clr-light-black: #0C120E;
+  --clr-grey: #2B3630;
+  --clr-pine: #264A36;
+  --clr-moss: #5E9F79;
+  --clr-green: #85C29C;
+  --clr-title: var(--clr-white);
+  --clr-text: rgba(255, 255, 255, 0.75);
+  --clr-text-2: rgba(255, 255, 255, 0.5);
+  --clr-border: rgba(255, 255, 255, 0.2);
+  --clr-border-soft: rgba(255, 255, 255, 0.1);
+  --bg-dark: var(--clr-black);
+  --bg-dark-1: var(--clr-light-black);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-1: 0.3s ease;
+
+  --shadow-elevated: 0 1px 0 rgba(133, 194, 156, 0.10) inset, 0 40px 80px -48px rgba(38, 74, 54, 0.55);
+  --shadow-floating: 0 1px 0 rgba(255, 255, 255, 0.14) inset, 0 10px 24px -10px rgba(3, 12, 7, 0.85), 0 28px 60px -24px rgba(38, 74, 54, 0.6);
+}
+@media (min-width: 1200px) {
+  :root {
+    --container-width: 92.917vw;
+    --container-pd: calc((100vw - var(--container-width)) / 2);
+  }
+}
+@media (min-width: 1381px) and (max-width: 1680px) {
+  :root { --root-scale: 0.875rem; }
+}
+
+/* ---------- Base ---------- */
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  font: inherit;
+  font-size: 100%;
+  line-height: inherit;
+  vertical-align: baseline;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+}
+:is(*, *:before, *:after) { box-sizing: inherit; }
+html {
+  height: auto;
+  box-sizing: border-box;
+  font-size: var(--root-scale);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+body {
+  font-family: var(--ff-1);
+  font-size: var(--text);
+  line-height: 1.3em;
+  font-weight: 400;
+  color: var(--clr-text);
+  background: var(--bg-dark);
+  overflow-x: hidden;
+}
+::selection { color: #000; background: var(--clr-green); }
+body *::-webkit-scrollbar { width: 0.25rem; height: 0.25rem; }
+body *::-webkit-scrollbar-thumb { background: #c2c2c2; }
+body *::-webkit-scrollbar-track { background: transparent; border-radius: 0.25rem; }
+ul, ol { list-style: none; }
+a { color: inherit; text-decoration: none; }
+strong { font-weight: 600; color: var(--clr-white); }
+:focus-visible { outline: 2px solid var(--clr-green); outline-offset: 4px; border-radius: 0.25rem; }
+
+.container {
+  --bs-gutter-x: 2rem;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: calc(var(--bs-gutter-x) * 0.5);
+}
+@media (min-width: 1200px) {
+  .container { --bs-gutter-x: 0rem; width: var(--container-width); }
+}
+.svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.icon { display: block; flex-shrink: 0; width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+.btn--lg .icon, .more-link .icon { stroke-width: 2px; }
+.icon--fill { fill: currentColor; stroke: none; }
+
+/* atmosphere: layered radial glows + grain */
+.page-bg {
+  position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background:
+    radial-gradient(62rem 38rem at 92% -8%, rgba(38, 74, 54, 0.55), transparent 62%),
+    radial-gradient(46rem 34rem at -12% 38%, rgba(94, 159, 121, 0.10), transparent 64%),
+    radial-gradient(70rem 40rem at 50% 118%, rgba(38, 74, 54, 0.38), transparent 60%),
+    var(--bg-dark);
+}
+.grain {
+  position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Type ---------- */
+.display { font-family: var(--ff-2); font-weight: 300; text-transform: uppercase; letter-spacing: -0.03em; color: var(--clr-title); }
+.h1 { font-size: var(--h1); line-height: 1; }
+.h2 { font-size: var(--h2); line-height: 1.02; }
+.h3 { font-size: var(--h3); line-height: 1.05; }
+.lead { font-family: var(--ff-2); font-weight: 300; letter-spacing: -0.02em; font-size: var(--h3); line-height: 1.16; color: var(--clr-title); }
+.lead--muted { color: var(--clr-text-2); }
+.prose { font-size: var(--text-sm); line-height: 1.7; }
+.eyebrow { font-size: var(--text-xs); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--clr-green); }
+.section { padding-block: var(--sp-block); position: relative; }
+.rule { border-top: 0.125rem solid var(--clr-border-soft); }
+
+/* ---------- Reveal ---------- */
+.reveal { opacity: 0; transform: translateY(1.75rem); transition: opacity 1s var(--ease-out), transform 1s var(--ease-out); }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal--d1 { transition-delay: 0.08s; }
+.reveal--d2 { transition-delay: 0.16s; }
+.reveal--d3 { transition-delay: 0.24s; }
+
+/* ---------- Blur text (React Bits port) ---------- */
+.blur-word { display: inline-block; opacity: 0; filter: blur(10px); transform: translateY(-50px); will-change: transform, filter, opacity; }
+.is-in > .blur-word { animation: blur-in 0.7s linear both; }
+@keyframes blur-in {
+  0% { opacity: 0; filter: blur(10px); transform: translateY(-50px); }
+  50% { opacity: 0.5; filter: blur(5px); transform: translateY(5px); }
+  100% { opacity: 1; filter: blur(0); transform: none; }
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: stretch; flex-shrink: 0;
+  font-size: var(--btn-m); font-weight: 600; line-height: 1; text-transform: uppercase; letter-spacing: 0.02em;
+  color: #020202; cursor: pointer; background: none;
+  transition: transform 0.35s var(--ease-spring);
+}
+.btn__label {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: flex; align-items: center; height: 3.5em; padding-inline: 1.7em;
+  border-radius: 999px; background: var(--clr-white); white-space: nowrap;
+}
+.btn__label::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: var(--clr-green); opacity: 0; transition: opacity var(--transition-1);
+}
+.btn__icon {
+  display: grid; place-items: center; width: 3.5em; height: 3.5em; border-radius: 50%;
+  background: var(--clr-white); font-size: 1em;
+  transition: transform 0.55s var(--ease-spring);
+}
+.btn__icon .icon { width: 1.4em; height: 1.4em; }
+.btn:hover .btn__label::before, .btn:focus-visible .btn__label::before { opacity: 1; }
+.btn:hover .btn__icon, .btn:focus-visible .btn__icon { transform: rotate(135deg); }
+.btn:active { transform: scale(0.96); }
+.btn:focus-visible { border-radius: 999px; }
+.btn--sm { font-size: var(--btn-s); }
+.btn--sm .btn__label, .btn--sm .btn__icon { height: 3.1em; }
+.btn--sm .btn__icon { width: 3.1em; }
+.btn--lg { font-size: var(--btn-l); }
+.btn--lg .btn__label, .btn--lg .btn__icon { height: 3em; }
+.btn--lg .btn__icon { width: 3em; }
+.btn--lg .btn__label { font-weight: 500; }
+.btn--grey { color: var(--clr-white); }
+.btn--grey .btn__label, .btn--grey .btn__icon { background: var(--clr-grey); }
+.btn--grey .btn__label::before { background: var(--clr-pine); }
+.btn--dark { color: var(--clr-white); }
+.btn--dark .btn__label, .btn--dark .btn__icon { background: #020202; }
+.btn--dark .btn__label::before { background: var(--clr-pine); }
+
+/* ---------- Header ---------- */
+.site-header { position: fixed; inset: 0 0 auto 0; z-index: 50; padding-top: 0.75rem; }
+.header__bar {
+  position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+  height: var(--h-height);
+}
+.header__bar::before {
+  content: ""; position: absolute; inset: 0.35rem -1.1rem; z-index: -1; border-radius: 999px;
+  background: rgba(12, 18, 14, 0.72); border: 1px solid rgba(255, 255, 255, 0.16);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3);
+  box-shadow: var(--shadow-floating);
+  opacity: 0; transform: scale(0.985); transition: opacity 0.4s ease, transform 0.6s var(--ease-out);
+}
+.site-header.is-stuck .header__bar::before { opacity: 1; transform: none; }
+.logo { display: inline-flex; align-items: center; gap: 0.7rem; color: var(--clr-white); transition: opacity var(--transition-1); }
+.logo:hover { opacity: 0.8; }
+.logo:active { opacity: 0.6; }
+.logo__mark { width: 2.5rem; height: 2.1rem; flex-shrink: 0; }
+.logo__word { font-family: var(--ff-2); font-weight: 400; font-size: 1.5rem; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1; }
+.nav { display: none; }
+.nav__list { display: flex; align-items: center; gap: clamp(1.25rem, 2.4vw, 2.75rem); }
+.nav__link {
+  position: relative; display: inline-block; padding-block: 0.5rem;
+  font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; color: var(--clr-white);
+}
+.nav__link::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0.2rem; height: 1px; background: var(--clr-green);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.45s var(--ease-out);
+}
+.nav__link:hover::after, .nav__link:focus-visible::after { transform: scaleX(1); }
+.nav__link:active { opacity: 0.6; }
+.header__cta { display: none; }
+.burger {
+  position: relative; width: 3rem; height: 3rem; border-radius: 50%; background: var(--clr-white); color: #020202; cursor: pointer;
+  transition: transform 0.35s var(--ease-spring);
+}
+.burger:hover { transform: scale(1.06); }
+.burger:active { transform: scale(0.92); }
+.burger span {
+  position: absolute; left: 0.95rem; right: 0.95rem; top: 50%; height: 1.5px; background: currentColor;
+  transition: transform 0.45s var(--ease-out);
+}
+.burger span:first-child { transform: translateY(-0.25rem); }
+.burger span:last-child { transform: translateY(0.25rem); }
+.site-header.is-open .burger span:first-child { transform: rotate(45deg); }
+.site-header.is-open .burger span:last-child { transform: rotate(-45deg); }
+.mobile-nav {
+  position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column; justify-content: space-between;
+  padding: 7rem 1.25rem 2rem; background: var(--clr-black);
+  opacity: 0; transform: translateY(-1rem); pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.6s var(--ease-out);
+}
+.mobile-nav.is-open { opacity: 1; transform: none; pointer-events: auto; }
+.mobile-nav__link {
+  display: block; padding-block: 0.55rem; font-family: var(--ff-2); font-weight: 300; font-size: 2.1rem; line-height: 1.1;
+  letter-spacing: -0.03em; text-transform: uppercase; color: var(--clr-white); transition: opacity var(--transition-1);
+}
+.mobile-nav__link:hover, .mobile-nav__link:focus-visible { opacity: 0.6; }
+.mobile-nav__link:active { opacity: 0.4; }
+@media (min-width: 1100px) {
+  .nav { display: block; }
+  .header__cta { display: inline-flex; }
+  .burger, .mobile-nav { display: none; }
+}
+
+/* ---------- Hero ---------- */
+.hero { position: relative; min-height: 100svh; display: flex; padding-top: calc(var(--h-height) + 1.25rem); padding-bottom: var(--sp-sm); }
+.hero__waves {
+  position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 30%, #000 78%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 30%, #000 78%, transparent 100%);
+  transition: opacity 2.4s ease;
+}
+.hero__waves.is-ready { opacity: 0.9; }
+.hero__inner { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: space-between; gap: var(--sp-lg); }
+.hero__title { font-size: clamp(3.3rem, 16.5vw, 9rem); line-height: 0.96; }
+.hero__line { display: block; overflow: hidden; padding-bottom: 0.06em; }
+.hero__line > span { display: inline-block; transform: translateY(108%); animation: line-in 1.2s var(--ease-out) forwards; }
+.hero__line:nth-child(2) > span { animation-delay: 0.12s; }
+@keyframes line-in { to { transform: none; } }
+@keyframes fade-up { from { opacity: 0; transform: translateY(1.5rem); } to { opacity: 1; transform: none; } }
+.hero__reel, .hero__foot { opacity: 0; animation: fade-up 1.1s var(--ease-out) 0.5s forwards; }
+.hero__reel {
+  position: relative; display: block; width: min(15rem, 46vw); aspect-ratio: 16 / 9; overflow: hidden;
+  box-shadow: var(--shadow-elevated);
+}
+.hero__reel img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease-out); }
+.hero__reel:hover img, .hero__reel:focus-visible img { transform: scale(1.07); }
+.hero__reel:active img { transform: scale(1.02); }
+.hero__foot { display: grid; gap: var(--sp-sm); align-items: end; }
+.trust { display: flex; align-items: center; gap: 1.1rem; }
+.trust__avatars { display: flex; flex-shrink: 0; }
+.trust__avatars img {
+  width: 3.9rem; height: 3.9rem; border-radius: 50%; object-fit: cover; border: 0.2rem solid var(--clr-black);
+  box-shadow: 0 8px 18px -10px rgba(38, 74, 54, 0.9);
+}
+.trust__avatars img + img { margin-left: -1.1rem; }
+.trust__top { display: block; font-size: var(--text-xs); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--clr-green); }
+.trust__text { display: block; margin-top: 0.3rem; font-size: var(--text-xs); color: var(--clr-text); }
+.hero__copy p { max-width: 32rem; font-size: var(--text-sm); line-height: 1.5; color: var(--clr-text); }
+.hero__copy .btn { margin-top: 1.75rem; }
+@media (min-width: 992px) {
+  .hero__title { font-size: min(10.2vw, 14.5rem); }
+  .hero__line { white-space: nowrap; }
+  .hero__reel { position: absolute; top: 0.9rem; right: 0; width: 15.6rem; }
+}
+@media (min-width: 1200px) {
+  .hero__foot { grid-template-columns: 54% 1fr; }
+}
+
+/* ---------- CTA strip ---------- */
+.strip { padding-block: var(--sp-lg); }
+.strip__row {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.25rem clamp(1rem, 2.6vw, 2.5rem);
+  font-family: var(--ff-2); font-weight: 300; font-size: var(--btn-xl); letter-spacing: -0.03em; line-height: 1.1;
+  color: var(--clr-text-2); text-align: center;
+}
+
+/* ---------- Services ---------- */
+.services__head { margin-bottom: var(--sp-sm); }
+.svc { border-top: 0.125rem solid var(--clr-border-soft); }
+.svc:last-child { border-bottom: 0.125rem solid var(--clr-border-soft); }
+.svc__btn {
+  width: 100%; display: flex; align-items: center; gap: clamp(1rem, 3vw, 3rem);
+  padding: clamp(1.4rem, 2.2vw, 2.2rem) clamp(0rem, 1.2vw, 1.25rem);
+  background: none; color: var(--clr-white); text-align: left; cursor: pointer;
+}
+.svc__arrow { flex-shrink: 0; font-size: 1.9rem; transition: transform 0.55s var(--ease-spring); }
+.svc__name { flex: 1; font-family: var(--ff-2); font-weight: 300; font-size: var(--h3); letter-spacing: -0.03em; line-height: 1.1; transition: transform 0.55s var(--ease-out); }
+.svc__num { font-family: var(--ff-2); font-weight: 300; font-size: var(--h6); line-height: 1; }
+.svc__ticks {
+  position: relative; display: none; width: 6.4rem; height: 0.6rem;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.28) 0 1px, transparent 1px 0.71rem);
+}
+.svc__ticks::after { content: ""; position: absolute; top: -0.15rem; bottom: -0.15rem; width: 1px; background: var(--clr-white); left: 0; }
+.svc:nth-child(2) .svc__ticks::after { left: 1.42rem; }
+.svc:nth-child(3) .svc__ticks::after { left: 2.84rem; }
+.svc:nth-child(4) .svc__ticks::after { left: 3.55rem; }
+.svc:nth-child(5) .svc__ticks::after { left: 4.26rem; }
+.svc:nth-child(6) .svc__ticks::after { left: 5.68rem; }
+.svc__btn:hover .svc__name, .svc__btn:focus-visible .svc__name { transform: translateX(0.75rem); }
+.svc__btn:hover .svc__arrow, .svc__btn:focus-visible .svc__arrow { transform: rotate(-45deg); }
+.svc__btn:active .svc__name { transform: translateX(0.3rem); }
+.svc__btn[aria-expanded="true"] .svc__arrow { transform: rotate(-90deg); color: var(--clr-green); }
+.svc__btn[aria-expanded="true"] .svc__name { color: var(--clr-green); }
+.svc__panel { padding: 0 clamp(0rem, 1.2vw, 1.25rem) var(--sp-sm); animation: fade-up 0.7s var(--ease-out); }
+.svc__grid { display: grid; gap: 1.75rem 2.5rem; }
+.svc__item h4 { font-size: var(--text-sm); font-weight: 500; color: var(--clr-white); padding-top: 1rem; border-top: 1px solid var(--clr-border); }
+.svc__item p { margin-top: 0.5rem; font-size: var(--text-xs); line-height: 1.7; color: var(--clr-text-2); }
+@media (min-width: 640px) { .svc__grid { grid-template-columns: repeat(2, 1fr); } .svc__ticks { display: block; } }
+@media (min-width: 992px) {
+  .svc__panel { padding-left: calc(clamp(0rem, 1.2vw, 1.25rem) + 1.75rem + clamp(1rem, 3vw, 3rem)); }
+  .svc__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------- Cases ---------- */
+.cases__title { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem clamp(0.75rem, 1.6vw, 1.75rem); font-size: var(--h1); line-height: 1; margin-bottom: var(--sp-md); }
+.title-thumb { display: inline-block; width: 1.75em; height: 1.1em; overflow: hidden; flex-shrink: 0; }
+.title-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.cases__grid { display: grid; gap: var(--sp-md) clamp(1.5rem, 2.8vw, 3rem); align-items: stretch; }
+.case__media { position: relative; overflow: hidden; background: var(--bg-dark-1); aspect-ratio: 4 / 5; }
+.case__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.8s var(--ease-out); }
+.case:hover .case__media img { transform: scale(1.035); }
+.case__chip {
+  position: absolute; top: 1.5rem; left: 1.5rem; padding: 0.6em 1em; border-radius: 999px;
+  background: rgba(5, 8, 6, 0.5); border: 1px solid rgba(255, 255, 255, 0.18);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  font-size: 0.72rem; font-weight: 600; line-height: 1; text-transform: uppercase; letter-spacing: 0.05em; color: var(--clr-white);
+}
+.case__index { position: absolute; top: 1.85rem; right: 1.6rem; font-family: var(--ff-2); font-weight: 300; font-size: 1rem; line-height: 1; color: rgba(255, 255, 255, 0.7); }
+.case__caption { position: absolute; left: 1.75rem; right: 1.75rem; bottom: 1.75rem; }
+.case__name { font-family: var(--ff-2); font-weight: 300; font-size: clamp(1.7rem, 2.5vw, 2.75rem); letter-spacing: -0.03em; text-transform: uppercase; line-height: 1.02; color: var(--clr-white); }
+.case__ctx { margin-top: 0.75rem; font-size: 0.93rem; color: rgba(255, 255, 255, 0.75); }
+.case__stats { display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; gap: 0 1.5rem; padding-top: 1.75rem; }
+.case__stat { display: flex; flex-direction: column; gap: 0.6rem; }
+.case__stat + .case__stat { padding-left: 1.5rem; border-left: 1px solid var(--clr-border-soft); }
+.case__stat b { font-family: var(--ff-2); font-weight: 300; font-size: clamp(1.4rem, 1.75vw, 1.95rem); line-height: 1; letter-spacing: -0.03em; color: var(--clr-white); white-space: nowrap; }
+.case__stat:first-child b { color: var(--clr-green); }
+.case__stat span { max-width: 8rem; font-size: 0.82rem; line-height: 1.4; color: rgba(255, 255, 255, 0.55); }
+.cases__tile {
+  display: flex; flex-direction: column; justify-content: space-between; gap: var(--sp-sm);
+  padding: clamp(1.5rem, 2.6vw, 2.5rem);
+  background: linear-gradient(155deg, rgba(133, 194, 156, 0.09), rgba(133, 194, 156, 0.02) 45%, rgba(255, 255, 255, 0.015)), var(--bg-dark-1); border: 1px solid rgba(255, 255, 255, 0.09); box-shadow: 0 48px 90px -60px rgba(94, 159, 121, 0.45);
+}
+.cases__note { margin-top: 1.25rem; max-width: 26rem; font-size: var(--text-xs); line-height: 1.7; color: var(--clr-text-2); }
+.cases__count { font-family: var(--ff-2); font-weight: 300; font-size: var(--h3); line-height: 1; color: var(--clr-white); }
+.more-link { display: inline-flex; align-items: center; gap: 0.5em; font-family: var(--ff-2); font-weight: 400; font-size: var(--h3); line-height: 1; letter-spacing: -0.02em; text-transform: uppercase; color: var(--clr-white); }
+.more-link .icon { font-size: 0.85em; transition: transform 0.55s var(--ease-spring); }
+.more-link:hover .icon, .more-link:focus-visible .icon { transform: rotate(135deg); color: var(--clr-green); }
+.more-link:active { opacity: 0.7; }
+.cases__thumbs { display: flex; gap: 0.4rem; margin-top: 1.25rem; }
+.cases__thumbs img { width: 31%; max-width: 12.25rem; aspect-ratio: 3 / 2; object-fit: cover; }
+@media (min-width: 640px) { .cases__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 992px) {
+  .cases__grid { grid-template-columns: repeat(3, 1fr); }
+  .cases__tile { grid-column: span 2; }
+}
+
+/* ---------- Big CTA ---------- */
+.bigcta { text-align: center; padding-block: var(--sp-xl); }
+.bigcta__title { font-size: clamp(2.1rem, 9.6vw, 8.75rem); line-height: 1.02; }
+.bigcta__title .title-thumb { vertical-align: -0.12em; margin-right: 0.12em; }
+.bigcta .btn { margin-top: var(--sp-sm); }
+
+/* ---------- Scroll expand (React Bits port) ---------- */
+.scroll-expand { position: relative; width: 100%; }
+.scroll-expand__track { position: relative; width: 100%; height: 255svh; }
+.scroll-expand__stage { position: sticky; top: 0; width: 100%; height: 100svh; overflow: hidden; }
+.scroll-expand__frame { position: absolute; inset: 0; clip-path: inset(31% 34% 31% 34% round 21px); will-change: clip-path; }
+.scroll-expand__media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.33); transform-origin: center; will-change: transform; user-select: none; -webkit-user-drag: none; }
+.scroll-expand__scrim { position: absolute; inset: 0; pointer-events: none; opacity: 0; background: linear-gradient(to top, rgba(5, 8, 6, 0.85), rgba(5, 8, 6, 0.15) 45%, rgba(5, 8, 6, 0.45)); }
+.scroll-expand__overlay {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem;
+  padding: 6%; text-align: center; opacity: 0; will-change: opacity, transform; isolation: isolate;
+}
+.scroll-expand__overlay::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(60% 55% at 50% 50%, rgba(5, 8, 6, 0.78), rgba(5, 8, 6, 0.45) 55%, transparent 100%);
+}
+.scroll-expand__overlay > * { text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5); }
+.scroll-expand__overlay .btn { text-shadow: none; }
+.scroll-expand__overlay h2 { max-width: 16em; font-size: var(--h2); line-height: 1.02; }
+.scroll-expand__overlay p { max-width: 34rem; font-size: var(--text-sm); line-height: 1.7; color: rgba(255, 255, 255, 0.85); }
+.scroll-expand__overlay .btn { margin-top: 0.75rem; }
+.scroll-expand__title {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0 6%;
+  font-size: clamp(2.1rem, 7.5vw, 7rem); line-height: 1; text-align: center; text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+  pointer-events: none; will-change: opacity, transform;
+}
+.scroll-expand__hint {
+  position: absolute; left: 0; right: 0; bottom: 1.75rem; text-align: center;
+  font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: rgba(255, 255, 255, 0.55);
+  pointer-events: none; will-change: opacity, transform;
+}
+
+/* ---------- About ---------- */
+.about__grid { display: grid; gap: var(--sp-md); align-items: center; }
+.about__media { position: relative; aspect-ratio: 1 / 1; overflow: hidden; border-bottom: 0.2rem solid var(--clr-grey); }
+.about__media img { width: 100%; height: 100%; object-fit: cover; }
+.about__copy .lead { font-size: clamp(1.6rem, 2.45vw, 2.75rem); }
+.about__copy .lead--gap { margin-top: var(--sp-sm); }
+.about__copy .btn { margin-top: var(--sp-sm); }
+.about__copy .eyebrow { display: block; margin-bottom: 1.5rem; }
+.stats .stat__num { font-size: var(--h2); }
+.stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-sm) 1.5rem; margin-top: var(--sp-lg); padding-top: var(--sp-sm); border-top: 0.125rem solid var(--clr-border-soft); }
+.stat__num { font-family: var(--ff-2); font-weight: 300; font-size: var(--h1); line-height: 1; letter-spacing: -0.04em; color: var(--clr-white); opacity: 0.42; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.stat__label { margin-top: 0.75rem; font-family: var(--ff-2); font-weight: 300; font-size: var(--h6); text-transform: uppercase; letter-spacing: -0.01em; color: var(--clr-white); }
+@media (min-width: 992px) {
+  .about__grid { grid-template-columns: 54% 1fr; gap: 6.5%; }
+  .stats { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ---------- Approach ---------- */
+.approach__grid { display: grid; gap: var(--sp-md); }
+.approach__intro { display: flex; flex-direction: column; justify-content: space-between; gap: var(--sp-sm); }
+.approach__intro p { max-width: 25rem; font-size: var(--text-xs); line-height: 1.7; }
+.approach__intro .btn { margin-top: 1.5rem; align-self: flex-start; }
+.stack { display: grid; gap: var(--sp-sm) clamp(1rem, 2vw, 1.9rem); }
+.stack__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; padding-bottom: 1.5rem; font-family: var(--ff-2); font-weight: 300; font-size: var(--h6); letter-spacing: -0.02em; text-transform: uppercase; color: var(--clr-white); }
+.stack__head .icon { font-size: 1.5rem; flex-shrink: 0; }
+.stack__list li { display: flex; align-items: center; gap: 1.1rem; padding-block: 1.35rem; border-top: 1px solid var(--clr-border); font-size: var(--text-xs); font-weight: 500; color: var(--clr-text); }
+.stack__list li:last-child { border-bottom: 1px solid var(--clr-border); }
+.stack__dot { position: relative; width: 1.5rem; height: 1.25rem; flex-shrink: 0; }
+.stack__dot::before, .stack__dot::after { content: ""; position: absolute; top: 0; width: 1.25rem; height: 1.25rem; border-radius: 50%; }
+.stack__dot::before { left: 0; background: var(--clr-pine); }
+.stack__dot::after { left: 0.45rem; top: 0.2rem; background: var(--clr-green); opacity: 0.85; }
+@media (min-width: 640px) { .stack { grid-template-columns: repeat(3, 1fr); } .stack__head { min-height: 5.4rem; } }
+@media (min-width: 992px) { .approach__grid { grid-template-columns: 37% 1fr; gap: 6%; } }
+
+/* ---------- Process ---------- */
+.process__head { display: grid; gap: 1.5rem; margin-bottom: var(--sp-md); }
+.process__head p { max-width: 30rem; font-size: var(--text-sm); line-height: 1.7; }
+.steps { display: grid; gap: var(--sp-sm) 0; }
+.step { cursor: default; opacity: 0.45; transition: opacity 0.6s ease; }
+.step.is-active { opacity: 1; }
+.step__ruler { position: relative; display: block; height: 2.8rem; }
+.step__ruler::before, .step__ruler::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; }
+.step__ruler::before {
+  height: 100%;
+  background:
+    linear-gradient(var(--clr-white), var(--clr-white)) left bottom / 1px 100% no-repeat,
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.45) 0 1px, transparent 1px 0.72rem) left bottom / 100% 28% no-repeat;
+}
+.step__ruler::after {
+  height: 100%; opacity: 0; transition: opacity 0.6s ease;
+  background: repeating-linear-gradient(90deg, var(--clr-green) 0 1px, transparent 1px 0.72rem);
+  -webkit-mask-image: radial-gradient(60% 100% at 30% 100%, #000 20%, transparent 72%);
+  mask-image: radial-gradient(60% 100% at 30% 100%, #000 20%, transparent 72%);
+}
+.step.is-active .step__ruler::after { opacity: 1; }
+.step__num { display: block; margin-top: 1.25rem; font-family: var(--ff-2); font-weight: 300; font-size: var(--h5); color: var(--clr-white); }
+.step__name { margin-top: 1.5rem; padding-right: 1.5rem; font-family: var(--ff-2); font-weight: 300; font-size: var(--h4); letter-spacing: -0.03em; line-height: 1.1; color: var(--clr-white); }
+.step__text { margin-top: 0.9rem; padding-right: 2rem; max-width: 22rem; font-size: var(--text-xs); line-height: 1.7; }
+@media (min-width: 640px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 992px) {
+  .steps { grid-template-columns: repeat(4, 1fr); }
+  .process__head { grid-template-columns: 1fr auto; align-items: end; }
+}
+
+/* ---------- Clients ---------- */
+.clients__head { margin-bottom: var(--sp-md); }
+.marquee { overflow: hidden; padding-block: 0.6rem; margin-block: -0.6rem; }
+.marquee__track { display: flex; width: max-content; animation: marquee 60s linear infinite; }
+.marquee--rev .marquee__track { animation-direction: reverse; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee__item {
+  display: grid; place-items: center; flex-shrink: 0;
+  width: clamp(8.5rem, 16vw, 15.6rem); aspect-ratio: 1 / 1; border-radius: 50%; margin-right: -0.25rem;
+  background: rgba(255, 255, 255, 0.07);
+  font-family: var(--ff-2); font-weight: 400; font-size: clamp(0.8rem, 1.25vw, 1.25rem); text-transform: uppercase; letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.72); text-align: center;
+}
+.marquee--rev { margin-top: -0.5rem; }
+.marquee--rev .marquee__item { background: rgba(133, 194, 156, 0.08); }
+.proof { display: grid; gap: var(--sp-md); align-items: start; margin-top: var(--sp-xl); }
+.proof__media { position: relative; overflow: hidden; aspect-ratio: 8 / 5; box-shadow: var(--shadow-elevated); }
+.proof__media img { width: 100%; height: 100%; object-fit: cover; }
+.proof__quote { font-size: 3.4rem; margin-left: -0.5rem; color: var(--clr-green); }
+.proof__text { margin-top: 0.5rem; font-size: var(--text-sm); line-height: 1.7; color: var(--clr-text); }
+.proof__by { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem 0.85rem; margin-top: 1.25rem; font-size: var(--text-xs); }
+.proof__by b { font-weight: 500; color: var(--clr-white); }
+.proof__by span { padding-left: 0.85rem; border-left: 1px solid var(--clr-border); }
+.proof .stat__num { margin-top: var(--sp-xs); }
+@media (min-width: 992px) { .proof { grid-template-columns: 43% 1fr; gap: 9%; } }
+
+/* ---------- FAQ ---------- */
+.faq__grid { display: grid; gap: var(--sp-md); align-items: start; }
+.faq__card {
+  display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-sm);
+  padding: clamp(1.5rem, 2.6vw, 2.5rem);
+  background: linear-gradient(155deg, rgba(133, 194, 156, 0.09), rgba(133, 194, 156, 0.02) 45%, rgba(255, 255, 255, 0.015)), var(--bg-dark-1); border: 1px solid rgba(255, 255, 255, 0.09); box-shadow: 0 48px 90px -60px rgba(94, 159, 121, 0.45);
+}
+.faq__logo { display: grid; place-items: center; width: 6.75rem; height: 6.75rem; border-radius: 50%; background: var(--clr-white); }
+.faq__logo svg { width: 3.9rem; height: 3.3rem; }
+.faq__card .lead { font-size: var(--h3); line-height: 1.12; }
+.faq__title { margin-bottom: var(--sp-sm); }
+.qa { border-top: 0.125rem solid var(--clr-border-soft); }
+.qa:last-child { border-bottom: 0.125rem solid var(--clr-border-soft); }
+.qa__btn {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+  padding: 1.9rem 0.75rem; background: none; cursor: pointer; text-align: left;
+  font-size: var(--text-xs); font-weight: 500; color: var(--clr-white);
+}
+.qa__btn .icon { flex-shrink: 0; font-size: 1.5rem; transition: transform 0.55s var(--ease-spring); }
+.qa__btn span { transition: transform 0.55s var(--ease-out); }
+.qa__btn:hover span, .qa__btn:focus-visible span { transform: translateX(0.5rem); }
+.qa__btn:active span { transform: translateX(0.2rem); }
+.qa__btn[aria-expanded="true"] .icon { transform: rotate(-90deg); color: var(--clr-green); }
+.qa__panel { padding: 0 0.75rem 1.9rem; max-width: 46rem; font-size: var(--text-xs); line-height: 1.7; animation: fade-up 0.6s var(--ease-out); }
+@media (min-width: 992px) { .faq__grid { grid-template-columns: 34% 1fr; gap: 9%; } }
+
+/* ---------- Form ---------- */
+.contact { padding-block: var(--sp-block); overflow: hidden; }
+.form-panel {
+  position: relative; z-index: 1; padding: clamp(1.5rem, 2.6vw, 2.5rem); padding-bottom: clamp(2rem, 3vw, 3rem);
+  background: var(--clr-white); color: #020202;
+  box-shadow: 0 30px 60px -30px rgba(3, 12, 7, 0.9), 0 60px 140px -50px rgba(94, 159, 121, 0.35);
+}
+.form-panel__title { max-width: 27rem; font-family: var(--ff-2); font-weight: 400; font-size: var(--text-xs); text-transform: uppercase; line-height: 1.3; color: #020202; }
+.form { margin-top: var(--sp-xs); display: grid; gap: 1.9rem; }
+.field label { display: block; font-size: 0.9rem; color: #020202; }
+.field input, .field textarea {
+  display: block; width: 100%; margin-top: 0.35rem; padding: 0.3rem 0 0.9rem; background: none; border-radius: 0;
+  border-bottom: 1px solid #020202; color: #020202;
+  font-family: var(--ff-2); font-weight: 300; font-size: var(--h4); letter-spacing: -0.03em; line-height: 1.1; text-transform: uppercase;
+}
+.field textarea { resize: vertical; min-height: 4.4em; }
+.field input::placeholder, .field textarea::placeholder { color: rgba(2, 2, 2, 0.5); }
+.field input:hover, .field textarea:hover { border-bottom-color: var(--clr-moss); }
+.field input:focus-visible, .field textarea:focus-visible { outline: none; border-bottom-color: var(--clr-pine); box-shadow: 0 2px 0 0 var(--clr-pine); }
+.field input:active, .field textarea:active { border-bottom-color: var(--clr-pine); }
+.form__foot { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; margin-top: 0.5rem; }
+.form__hint { font-size: 0.9rem; line-height: 1.5; color: rgba(2, 2, 2, 0.6); max-width: 20rem; }
+.form__status { font-size: 0.95rem; font-weight: 500; color: var(--clr-pine); }
+@media (min-width: 992px) {
+  .form-panel { margin-left: 29.6%; margin-right: calc(var(--container-pd) * -1); padding-right: calc(var(--container-pd) + 2.5rem); }
+  .form { margin-left: 15.5%; }
+}
+
+/* ---------- Footer ---------- */
+.footer { padding-top: var(--sp-lg); }
+.footer__seo { padding-bottom: var(--sp-sm); }
+.footer__seo h2 { font-size: var(--h3); max-width: 62rem; }
+.footer__seo p { margin-top: 1.9rem; font-size: var(--text-xs); line-height: 1.7; }
+.footer-grid { position: relative; display: grid; gap: 2.5rem; border-top: 0.125rem solid var(--clr-border); padding-block: 2.5rem; }
+@media (min-width: 992px) {
+  .footer-grid { gap: 2.5rem; grid-template-columns: 0.95fr 0.95fr 1.1fr; justify-content: space-between; align-items: start; }
+}
+@media (min-width: 1200px) {
+  .footer-grid { gap: 3.75rem; grid-template-columns: repeat(3, 1fr); }
+}
+.footer__heading { margin-bottom: 1.1rem; font-size: var(--text-xs); font-weight: 500; text-transform: uppercase; color: var(--clr-white); }
+.footer__list a { position: relative; display: inline-block; padding: 0.42rem 0 0.42rem 1.25rem; font-size: 0.93rem; color: var(--clr-text-2); transition: transform 0.45s var(--ease-out); }
+.footer__list a::before { content: ""; position: absolute; left: 0; top: 50%; width: 0.45rem; height: 0.45rem; margin-top: -0.22rem; border-radius: 50%; border: 1px solid currentColor; }
+.footer__list a:hover, .footer__list a:focus-visible { color: var(--clr-white); transform: translateX(0.3rem); }
+.footer__list a:active { color: var(--clr-green); }
+.footer__ask { font-family: var(--ff-2); font-weight: 300; font-size: clamp(1.75rem, 2.9vw, 3rem); line-height: 1.08; letter-spacing: -0.03em; text-transform: uppercase; color: var(--clr-text-2); }
+.footer__contact { display: inline-block; margin-top: 1.25rem; font-family: var(--ff-2); font-weight: 300; font-size: var(--h4); letter-spacing: -0.03em; color: var(--clr-white); transition: opacity var(--transition-1); }
+.footer__contact:hover, .footer__contact:focus-visible { color: var(--clr-green); }
+.footer__contact:active { opacity: 0.6; }
+.footer__cta { display: flex; margin-top: 1.9rem; justify-content: space-between; }
+.footer__bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; padding-block: 1.9rem 2.5rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.02em; color: var(--clr-text); }
+.socials { display: flex; gap: 0.75rem; }
+.social { display: grid; place-items: center; width: 3.6rem; height: 3.6rem; border-radius: 50%; background: var(--bg-dark-1); color: var(--clr-white); font-size: 1.45rem; box-shadow: var(--shadow-elevated); transition: transform 0.45s var(--ease-spring); }
+.social:hover, .social:focus-visible { transform: translateY(-0.25rem); color: var(--clr-green); }
+.social:active { transform: scale(0.92); }
+
+/* ---------- Floating actions ---------- */
+.fab { position: fixed; right: clamp(0.75rem, 1.3vw, 1.25rem); bottom: 1.5rem; z-index: 45; display: grid; gap: 0.6rem; }
+.fab__btn { display: grid; place-items: center; width: 4.4rem; height: 4.4rem; border-radius: 50%; font-size: 1.75rem; box-shadow: var(--shadow-floating); transition: transform 0.45s var(--ease-spring); }
+.fab__dots { display: flex; gap: 0.3rem; }
+.fab__dots span { width: 0.4rem; height: 0.4rem; border-radius: 50%; background: currentColor; animation: dot-wave 1.5s ease-in-out infinite; }
+.fab__dots span:nth-child(2) { animation-delay: 0.18s; }
+.fab__dots span:nth-child(3) { animation-delay: 0.36s; }
+@keyframes dot-wave { 0%, 55%, 100% { transform: translateY(0); opacity: 0.45; } 28% { transform: translateY(-0.32rem); opacity: 1; } }
+.fab__btn--ghost { background: var(--clr-grey); color: var(--clr-white); }
+.fab__btn--main { background: var(--clr-white); color: #020202; }
+.fab__btn:hover, .fab__btn:focus-visible { transform: scale(1.08); }
+.fab__btn--main:hover, .fab__btn--main:focus-visible { color: var(--clr-pine); }
+.fab__btn:active { transform: scale(0.92); }
+@media (max-width: 639.98px) { .fab__btn { width: 3.4rem; height: 3.4rem; font-size: 1.4rem; } .fab__btn--ghost { display: none; } }
+
+/* ---------- Responsive refinements ---------- */
+/* floating actions step aside where the page already offers the same action */
+.fab { transition: opacity 0.35s ease, transform 0.5s var(--ease-out); }
+.fab.is-hidden { opacity: 0; transform: translateY(1rem); pointer-events: none; }
+
+/* comfortable tap targets */
+.logo { min-height: 2.75rem; }
+.more-link { min-height: 2.75rem; }
+.footer__list a { padding-block: 0.6rem; }
+
+.svc__name, .stat__label, .stack__head, .step__name, .case__name, .lead { overflow-wrap: anywhere; }
+.mobile-nav { overflow-y: auto; gap: 2rem; }
+@media (max-height: 700px) {
+  .mobile-nav { padding-top: 5.75rem; padding-bottom: 1.5rem; gap: 1.25rem; }
+  .mobile-nav__link { padding-block: 0.4rem; font-size: clamp(1.4rem, 4.6vh, 2.1rem); }
+}
+
+@media (max-width: 1199.98px) {
+  .header__bar::before { inset: 0.35rem -0.5rem; }
+  .approach__grid { grid-template-columns: 1fr; }
+  /* no hover on touch layouts: keep every step fully readable */
+  .step { opacity: 1; }
+}
+@media (min-width: 768px) {
+  .stats { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 991.98px) {
+  .hero { min-height: 0; padding-bottom: var(--sp-md); }
+  .hero__inner { gap: var(--sp-sm); }
+  .about__media { aspect-ratio: 4 / 3; }
+  .proof { margin-top: var(--sp-lg); }
+}
+@media (max-width: 639.98px) {
+  .section { padding-block: 4.5rem; }
+  .hero__reel { width: min(13rem, 60vw); }
+  .trust { flex-wrap: wrap; gap: 0.9rem 1.1rem; }
+  .trust__avatars img { width: 3.25rem; height: 3.25rem; }
+  .trust > p { flex: 1 1 9rem; }
+  .svc__btn { gap: 0.85rem; padding-block: 1.25rem; }
+  .svc__name { font-size: clamp(1.35rem, 6.4vw, 2rem); }
+  .svc__arrow { font-size: 1.4rem; }
+  .svc__panel { padding-bottom: 2rem; }
+  .cases__title { margin-bottom: 2rem; }
+  .cases__grid { gap: 3rem; }
+  .case__chip { top: 1rem; left: 1rem; }
+  .case__index { top: 1.3rem; right: 1.1rem; }
+  .case__caption { left: 1.25rem; right: 1.25rem; bottom: 1.25rem; }
+  .case__stats { gap: 0 0.9rem; padding-top: 1.25rem; }
+  .case__stat + .case__stat { padding-left: 0.9rem; }
+  .case__stat b { font-size: clamp(1.2rem, 6.2vw, 1.6rem); }
+  .case__stat span { font-size: 0.78rem; }
+  .stats { gap: 2rem 1rem; }
+  .stats .stat__num { font-size: clamp(1.9rem, 10vw, 2.6rem); }
+  .stat__label { font-size: 0.85rem; line-height: 1.35; }
+  .stack__list li { padding-block: 1.1rem; }
+  .step__name, .step__text { padding-right: 0; }
+  .strip__row { font-size: clamp(1.6rem, 8vw, 2rem); }
+  .marquee__item { width: 7.5rem; font-size: 0.72rem; }
+  .faq__card .lead { font-size: clamp(1.5rem, 7.4vw, 2rem); }
+  .qa__btn { padding: 1.4rem 0.25rem; font-size: 1rem; }
+  .qa__panel { padding: 0 0.25rem 1.5rem; font-size: 0.95rem; }
+  .form-panel { margin-inline: -0.25rem; }
+  .field input, .field textarea { font-size: clamp(1.2rem, 6vw, 1.5rem); }
+  .form__foot .btn { width: 100%; }
+  .form__foot .btn__label { flex: 1; justify-content: center; }
+  .footer__seo h2 { font-size: clamp(1.6rem, 8vw, 2rem); }
+  .footer__bottom { padding-bottom: 5.5rem; }
+  .scroll-expand__overlay { gap: 1rem; padding: 1.25rem; }
+  .scroll-expand__overlay h2 { font-size: clamp(1.7rem, 8.4vw, 2.25rem); }
+  .scroll-expand__overlay p { font-size: 0.95rem; line-height: 1.55; }
+}
+@media (max-width: 359.98px) {
+  .logo__word { font-size: 1.3rem; }
+  .btn__label { padding-inline: 1.35em; }
+  .case__chip { font-size: 0.66rem; }
+  .bigcta__title { font-size: 1.9rem; }
+}
+/* landscape phones */
+@media (max-height: 480px) and (orientation: landscape) {
+  .hero { min-height: 0; }
+  .mobile-nav { padding-top: 5.5rem; }
+  .mobile-nav ul { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 2rem; }
+  .mobile-nav__link { font-size: 1.5rem; }
+  .scroll-expand__overlay { gap: 0.6rem; padding-top: 4.5rem; }
+  .scroll-expand__overlay h2 { font-size: 1.6rem; }
+  .scroll-expand__overlay p { display: none; }
+  .scroll-expand__title { font-size: 2.25rem; }
+}
+
+/* ---------- Hover layer (pointer devices only) ---------- */
+@media (hover: hover) {
+  /* logo */
+  .logo__mark { transition: transform 0.6s var(--ease-spring); }
+  .logo:hover .logo__mark { transform: rotate(-14deg) scale(1.08); }
+
+  /* hero trust avatars */
+  .trust__avatars img { transition: transform 0.45s var(--ease-spring); }
+  .trust__avatars img:hover { transform: translateY(-0.35rem) scale(1.08); }
+
+  /* service + FAQ rows: soft mint wash from the left */
+  .svc, .qa { position: relative; }
+  .svc::before, .qa::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.45s ease;
+    background: linear-gradient(90deg, rgba(133, 194, 156, 0.10), rgba(133, 194, 156, 0.02) 55%, transparent 80%);
+  }
+  .svc:hover::before, .qa:hover::before { opacity: 1; }
+  .svc__num { transition: transform 0.55s var(--ease-out); }
+  .svc__btn:hover .svc__num { transform: translateX(-0.4rem); }
+  .svc__item { transition: transform 0.45s var(--ease-out); }
+  .svc__item h4 { position: relative; }
+  .svc__item h4::before {
+    content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 1px; background: var(--clr-green);
+    transform: scaleX(0); transform-origin: left; transition: transform 0.55s var(--ease-out);
+  }
+  .svc__item:hover { transform: translateY(-0.25rem); }
+  .svc__item:hover h4::before { transform: scaleX(1); }
+  .svc__item:hover p { color: var(--clr-text); }
+
+  /* title thumbnails */
+  .title-thumb img { transition: transform 0.9s var(--ease-out); }
+  .cases__title:hover .title-thumb img, .bigcta__title:hover .title-thumb img { transform: scale(1.18); }
+
+  /* case cards */
+  .case__media .mix-blend-multiply { transition: opacity 0.7s ease; }
+  .case:hover .case__media .mix-blend-multiply { opacity: 0; }
+  .cases__thumbs img { transition: transform 0.5s var(--ease-spring); }
+  .cases__thumbs img:hover { transform: translateY(-0.35rem); }
+
+  /* media blocks */
+  .about__media img, .proof__media img { transition: transform 1.4s var(--ease-out); }
+  .about__media:hover img, .proof__media:hover img { transform: scale(1.05); }
+
+  /* stats */
+  .stat__num { transition: opacity 0.45s ease, transform 0.6s var(--ease-out); }
+  .stats li:hover .stat__num, .proof .stat__num:hover { opacity: 1; transform: translateY(-0.25rem); }
+
+  /* formats lists */
+  .stack__head .icon { transition: transform 0.55s var(--ease-spring); }
+  .stack > div:hover .stack__head .icon { transform: rotate(-45deg); color: var(--clr-green); }
+  .stack__list li { transition: transform 0.45s var(--ease-out); }
+  .stack__dot::after { transition: transform 0.5s var(--ease-spring); }
+  .stack__list li:hover { transform: translateX(0.4rem); color: var(--clr-white); }
+  .stack__list li:hover .stack__dot::after { transform: translateX(0.3rem); }
+
+  /* process */
+  .step__name, .step__num { transition: transform 0.55s var(--ease-out); }
+  .step:hover .step__name { transform: translateX(0.35rem); }
+  .step:hover .step__num { color: var(--clr-green); }
+
+  /* countries */
+  .marquee__item { position: relative; transition: transform 0.5s var(--ease-spring); }
+  .marquee__item::after {
+    content: ""; position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--clr-green);
+    opacity: 0; transition: opacity 0.4s ease;
+  }
+  .marquee__item:hover { transform: scale(1.06); color: var(--clr-white); z-index: 1; }
+  .marquee__item:hover::after { opacity: 0.8; }
+
+  /* FAQ card */
+  .faq__card { position: relative; }
+  .faq__card::after {
+    content: ""; position: absolute; inset: -1px; pointer-events: none; border: 1px solid var(--clr-green);
+    opacity: 0; transition: opacity 0.45s ease;
+  }
+  .faq__logo svg { transition: transform 0.8s var(--ease-spring); }
+  .faq__card:hover::after { opacity: 0.45; }
+  .faq__card:hover .faq__logo svg { transform: rotate(-14deg) scale(1.1); }
+
+  /* footer contact link */
+  .footer__contact { position: relative; }
+  .footer__contact::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -0.2rem; height: 1px; background: var(--clr-green);
+    transform: scaleX(0); transform-origin: left; transition: transform 0.5s var(--ease-out);
+  }
+  .footer__contact:hover::after, .footer__contact:focus-visible::after { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero__line > span, .hero__reel, .hero__foot { animation: none; opacity: 1; transform: none; }
+  .marquee__track, .fab__dots span { animation: none; }
+  .blur-word, .is-in > .blur-word { opacity: 1; filter: none; transform: none; animation: none; }
+}
+</style>
+</head>
+<body>
+<div class="page-bg" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<svg class="svg-defs" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="logo-clip"><circle cx="219" cy="219" r="219"/></clipPath>
+    <symbol id="logo-mark" viewBox="0 0 605 511">
+      <circle cx="219" cy="219" r="219" fill="#264A36"/>
+      <circle cx="386" cy="292" r="219" fill="#85C29C"/>
+      <circle cx="386" cy="292" r="219" fill="#5E9F79" clip-path="url(#logo-clip)"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6" vector-effect="non-scaling-stroke"/></symbol>
+    <symbol id="i-arrow-dr" viewBox="0 0 24 24"><path d="M7 7l10 10M17 8.500V17H8.500" vector-effect="non-scaling-stroke"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M4 17v-4.500C4 8.900 6.200 6.600 9.500 6v2.200c-1.700.5-2.700 1.700-2.800 3.300h2.800V17H4zm10.500 0v-4.500c0-3.600 2.200-5.900 5.500-6.500v2.200c-1.700.5-2.700 1.700-2.800 3.300H20V17h-5.500z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ Header ============ -->
+<header class="site-header" id="header">
+  <div class="container">
+    <div class="header__bar">
+      <a class="logo" href="#top" aria-label="Tuhano — на главную">
+        <svg class="logo__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+        <span class="logo__word">Tuhano</span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#services">Услуги</a></li>
+          <li><a class="nav__link" href="#cases">Кейсы</a></li>
+          <li><a class="nav__link" href="#about">Об агентстве</a></li>
+          <li><a class="nav__link" href="#approach">Подход</a></li>
+          <li><a class="nav__link" href="#process">Процесс</a></li>
+          <li><a class="nav__link" href="#faq">FAQ</a></li>
+          <li><a class="nav__link" href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--sm header__cta" href="#contact">
+        <span class="btn__label">Получить КП</span>
+        <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a>
+      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobile-nav" inert>
+  <ul>
+    <li><a class="mobile-nav__link" href="#services">Услуги</a></li>
+    <li><a class="mobile-nav__link" href="#cases">Кейсы</a></li>
+    <li><a class="mobile-nav__link" href="#about">Об агентстве</a></li>
+    <li><a class="mobile-nav__link" href="#approach">Подход</a></li>
+    <li><a class="mobile-nav__link" href="#process">Процесс</a></li>
+    <li><a class="mobile-nav__link" href="#faq">FAQ</a></li>
+    <li><a class="mobile-nav__link" href="#contacts">Контакты</a></li>
+  </ul>
+  <a class="btn" href="#contact">
+    <span class="btn__label">Получить КП</span>
+    <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+  </a>
+</div>
+
+<main id="top">
+
+  <!-- ============ 1. Hero ============ -->
+  <section class="hero">
+    <canvas class="hero__waves" id="hero-waves" aria-hidden="true"></canvas>
+    <div class="container hero__inner">
+      <h1 class="display hero__title">
+        <span class="hero__line"><span>Бренд. AI.</span></span>
+        <span class="hero__line"><span>Контент. Реклама</span></span>
+      </h1>
+      <a class="hero__reel" href="#cases" aria-label="Смотреть кейсы">
+        <img src="assets/img/hero.jpg" alt="AI-визуализация резиденции на побережье" width="1200" height="675">
+        <span class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
+        <span class="absolute inset-0 bg-pine/40 mix-blend-multiply"></span>
+      </a>
+      <div class="hero__foot">
+        <div class="trust">
+          <div class="trust__avatars" aria-hidden="true">
+            <img src="assets/img/case-rak.jpg" alt="" width="120" height="120">
+            <img src="assets/img/case-marbella.jpg" alt="" width="120" height="120">
+            <img src="assets/img/case-bali.jpg" alt="" width="120" height="120">
+            <img src="assets/img/case-dubai.jpg" alt="" width="120" height="120">
+          </div>
+          <p>
+            <span class="trust__top">28 рынков · с 2022 года</span>
+            <span class="trust__text">10 000+ реализованных проектов</span>
+          </p>
+        </div>
+        <div class="hero__copy">
+          <p>Упаковываем и продвигаем бизнес и объекты недвижимости: бренд, контент, AI-продакшн и реклама — в одной команде, с единой точкой ответственности.</p>
+          <a class="btn" href="#contact">
+            <span class="btn__label"><span class="sm:hidden">Получить КП</span><span class="hidden sm:inline">Получить коммерческое предложение</span></span>
+            <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. Services ============ -->
+  <section class="section" id="services">
+    <div class="container">
+      <h2 class="display h1 services__head" data-blur>Услуги</h2>
+      <ul class="reveal">
+        <li class="svc">
+          <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-1" data-accordion>
+            <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
+            <span class="svc__name">Performance и реклама</span>
+            <span class="svc__num">01</span><span class="svc__ticks" aria-hidden="true"></span>
+          </button>
+          <div class="svc__panel" id="svc-1" hidden>
+            <ul class="svc__grid">
+              <li class="svc__item"><h4>Meta Ads</h4><p>Ежемесячная оптимизация кампаний, тестирование креативов, отчётность.</p></li>
+              <li class="svc__item"><h4>Google Ads</h4><p>Управление ставками, ключевыми словами и фидом, отчётность.</p></li>
+              <li class="svc__item"><h4>TikTok Ads</h4><p>Настройка и ведение рекламных кампаний в TikTok Ads.</p></li>
+              <li class="svc__item"><h4>LinkedIn Ads</h4><p>Реклама для B2B-аудитории и инвесторов, премиум-сегмент.</p></li>
+              <li class="svc__item"><h4>Programmatic / Display</h4><p>Программатик-закупка охватной рекламы через DSP.</p></li>
+            </ul>
+          </div>
+        </li>
+        <li class="svc">
+          <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-2" data-accordion>
+            <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
+            <span class="svc__name">Контент и креатив</span>
+            <span class="svc__num">02</span><span class="svc__ticks" aria-hidden="true"></span>
+          </button>
+          <div class="svc__panel" id="svc-2" hidden>
+            <ul class="svc__grid">
+              <li class="svc__item"><h4>SMM под ключ</h4><p>Стратегия, контент, дизайн, таргет, community-менеджмент, отчётность. Или базовое ведение одной соцсети.</p></li>
+              <li class="svc__item"><h4>AI-видео и визуалы</h4><p>Пакет сгенерированных нейросетью изображений и коротких видео.</p></li>
+              <li class="svc__item"><h4>Видеопродакшн</h4><p>От короткого ролика на 30–60 секунд до имиджевого фильма: сценарий, съёмка, монтаж, музыка.</p></li>
+              <li class="svc__item"><h4>Фото и аэросъёмка</h4><p>Фотосессия для сайта, соцсетей и рекламы. Съёмка с дрона, сертифицированный оператор.</p></li>
+              <li class="svc__item"><h4>Контент-маркетинг и блог</h4><p>SEO-статьи под ключевые запросы, ведение блога с редакционным планом — 4–8 статей в месяц.</p></li>
+              <li class="svc__item"><h4>Копирайтинг и сценарии</h4><p>Тексты для сайта, рекламы и презентаций. Сценарий и раскадровка для ролика.</p></li>
+              <li class="svc__item"><h4>Мультипликация видео</h4><p>Уникализация роликов под алгоритмы соцсетей и автопостинг в Reels: 2–3 публикации в день из одной съёмки.</p></li>
+            </ul>
+          </div>
+        </li>
+        <li class="svc">
+          <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-3" data-accordion>
+            <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
+            <span class="svc__name">Digital-инфраструктура</span>
+            <span class="svc__num">03</span><span class="svc__ticks" aria-hidden="true"></span>
+          </button>
+          <div class="svc__panel" id="svc-3" hidden>
+            <ul class="svc__grid">
+              <li class="svc__item"><h4>Сайты</h4><p>Лендинг под оффер или кампанию, корпоративный сайт, интернет-магазин с каталогом, оплатой и интеграциями.</p></li>
+              <li class="svc__item"><h4>SEO</h4><p>Технический и контентный аудит с планом работ, ежемесячная работа над органическим трафиком и позициями.</p></li>
+              <li class="svc__item"><h4>Email-маркетинг</h4><p>Цепочки писем, сегментация базы, интеграция с сайтом. Регулярные рассылки и A/B-тесты.</p></li>
+              <li class="svc__item"><h4>CRM</h4><p>Внедрение CRM, настройка воронок и полей под бизнес.</p></li>
+              <li class="svc__item"><h4>Аналитика и дашборды</h4><p>Сквозная аналитика, цели, события, пиксели. Визуальные отчёты по рекламе, сайту и продажам.</p></li>
+              <li class="svc__item"><h4>Сеть аккаунтов для охвата</h4><p>Управляемая сеть Instagram-аккаунтов с автопубликацией Reels для масштабирования охвата бренда.</p></li>
+            </ul>
+          </div>
+        </li>
+        <li class="svc">
+          <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-4" data-accordion>
+            <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
+            <span class="svc__name">Стратегия и бренд</span>
+            <span class="svc__num">04</span><span class="svc__ticks" aria-hidden="true"></span>
+          </button>
+          <div class="svc__panel" id="svc-4" hidden>
+            <ul class="svc__grid">
+              <li class="svc__item"><h4>Логотип</h4><p>Разработка знака и логотипа компании или бренда.</p></li>
+              <li class="svc__item"><h4>Брендбук и айдентика</h4><p>Логотип, цвета, шрифты, гайдлайны для всех носителей.</p></li>
+              <li class="svc__item"><h4>Упаковка КП и презентаций</h4><p>Дизайн и структура презентации или коммерческого предложения для клиентов.</p></li>
+              <li class="svc__item"><h4>Маркетинговый аудит</h4><p>Анализ текущих каналов, конкурентов, точек роста.</p></li>
+              <li class="svc__item"><h4>Стратегия и консалтинг</h4><p>Разработка стратегии продвижения на период от 3 до 12 месяцев.</p></li>
+              <li class="svc__item"><h4>PR-сопровождение</h4><p>Публикации в медиа, работа с журналистами, инфоповоды.</p></li>
+            </ul>
+          </div>
+        </li>
+        <li class="svc">
+          <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-5" data-accordion>
+            <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
+            <span class="svc__name">Недвижимость и девелопмент</span>
+            <span class="svc__num">05</span><span class="svc__ticks" aria-hidden="true"></span>
+          </button>
+          <div class="svc__panel" id="svc-5" hidden>
+            <ul class="svc__grid">
+              <li class="svc__item"><h4>AI-видео объекта</h4><p>Показываем объект до сдачи: продажи «с котлована» без дорогого классического продакшна.</p></li>
+              <li class="svc__item"><h4>3D Property Tour</h4><p>Виртуальный тур с планировкой для сайта и порталов.</p></li>
+              <li class="svc__item"><h4>Real Estate Photo + Video</h4><p>Профессиональная съёмка объекта для порталов и рекламы.</p></li>
+              <li class="svc__item"><h4>Локализация</h4><p>Перевод и адаптация текстов под целевой рынок — для покупателей за границей.</p></li>
+              <li class="svc__item"><h4>UGC-контент</h4><p>Живой контент от лица клиента или пользователя для соцсетей.</p></li>
+              <li class="svc__item"><h4>CRM и автоматизация лидов</h4><p>Единая система учёта, чтобы заявки не терялись между рекламой и отделом продаж.</p></li>
+              <li class="svc__item"><h4>Брендинг для доверия</h4><p>Упаковка нового или небольшого застройщика, которая снимает недоверие покупателя.</p></li>
+            </ul>
+          </div>
+        </li>
+        <li class="svc">
+          <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-6" data-accordion>
+            <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
+            <span class="svc__name">Маркетинг для продаж</span>
+            <span class="svc__num">06</span><span class="svc__ticks" aria-hidden="true"></span>
+          </button>
+          <div class="svc__panel" id="svc-6" hidden>
+            <ul class="svc__grid">
+              <li class="svc__item"><h4>Воронки продаж</h4><p>Проектируем путь клиента от первого касания до сделки.</p></li>
+              <li class="svc__item"><h4>Скрипты</h4><p>Сценарии первого контакта и регламент обработки лидов для отдела продаж.</p></li>
+              <li class="svc__item"><h4>CRM</h4><p>Связываем воронку, скрипты и CRM в одну систему — комплексным подходом.</p></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 3. Cases ============ -->
+  <section class="section" id="cases">
+    <div class="container">
+      <h2 class="display cases__title" data-blur>
+        <span>Кейсы</span>
+        <span class="title-thumb" aria-hidden="true"><img src="assets/img/hero.jpg" alt="" width="300" height="190" loading="lazy"></span>
+        <span>в цифрах</span>
+      </h2>
+
+      <div class="cases__grid">
+        <article class="case reveal">
+          <div class="case__media">
+            <img src="assets/img/case-rak.jpg" alt="Резиденции на побережье Ras Al Khaimah" width="900" height="1200" loading="lazy">
+            <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent"></span>
+            <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
+            <span class="case__chip">Полный digital setup</span>
+            <span class="case__index" aria-hidden="true">01</span>
+            <div class="case__caption">
+              <h3 class="case__name">Ras Al Khaimah</h3>
+              <p class="case__ctx">76 юнитов · 6 месяцев</p>
+            </div>
+          </div>
+          <ul class="case__stats"><li class="case__stat"><b>540</b><span>лидов</span></li><li class="case__stat"><b>33</b><span>сделки</span></li><li class="case__stat"><b>€17,2 млн</b><span>объём продаж</span></li></ul>
+        </article>
+        <article class="case reveal reveal--d1">
+          <div class="case__media">
+            <img src="assets/img/case-dubai.jpg" alt="Жилая башня в Дубае" width="900" height="1200" loading="lazy">
+            <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent"></span>
+            <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
+            <span class="case__chip">Запуск с нуля</span>
+            <span class="case__index" aria-hidden="true">02</span>
+            <div class="case__caption">
+              <h3 class="case__name">Dubai</h3>
+              <p class="case__ctx">Off-plan · 48 юнитов · 6 месяцев</p>
+            </div>
+          </div>
+          <ul class="case__stats"><li class="case__stat"><b>620</b><span>лидов</span></li><li class="case__stat"><b>€95</b><span>стоимость лида</span></li><li class="case__stat"><b>21</b><span>сделка</span></li></ul>
+        </article>
+        <article class="case reveal reveal--d2">
+          <div class="case__media">
+            <img src="assets/img/case-marbella.jpg" alt="Премиальная вилла в Марбелье" width="900" height="1200" loading="lazy">
+            <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent"></span>
+            <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
+            <span class="case__chip">Luxury-недвижимость</span>
+            <span class="case__index" aria-hidden="true">03</span>
+            <div class="case__caption">
+              <h3 class="case__name">Costa del Sol</h3>
+              <p class="case__ctx">9 вилл · 5 месяцев</p>
+            </div>
+          </div>
+          <ul class="case__stats"><li class="case__stat"><b>55%</b><span>квал. лидов</span></li><li class="case__stat"><b>5</b><span>сделок</span></li><li class="case__stat"><b>€16 млн</b><span>объём продаж</span></li></ul>
+        </article>
+        <article class="case reveal">
+          <div class="case__media">
+            <img src="assets/img/case-bali.jpg" alt="Вилла на Бали" width="900" height="1200" loading="lazy">
+            <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent"></span>
+            <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
+            <span class="case__chip">Перестройка маркетинга</span>
+            <span class="case__index" aria-hidden="true">04</span>
+            <div class="case__caption">
+              <h3 class="case__name">Bali</h3>
+              <p class="case__ctx">32 виллы · 4 месяца</p>
+            </div>
+          </div>
+          <ul class="case__stats"><li class="case__stat"><b>−60%</b><span>CPL: €120 → €48</span></li><li class="case__stat"><b>×3,5</b><span>конверсия: 4% → 14%</span></li><li class="case__stat"><b>12</b><span>сделок</span></li></ul>
+        </article>
+        <article class="case reveal reveal--d1">
+          <div class="case__media">
+            <img src="assets/img/case-phuket.jpg" alt="Кондоминиум на Пхукете" width="900" height="1200" loading="lazy">
+            <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent"></span>
+            <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
+            <span class="case__chip">Масштабирование</span>
+            <span class="case__index" aria-hidden="true">05</span>
+            <div class="case__caption">
+              <h3 class="case__name">Phuket</h3>
+              <p class="case__ctx">90 юнитов · 6 месяцев</p>
+            </div>
+          </div>
+          <ul class="case__stats"><li class="case__stat"><b>+58%</b><span>лидов</span></li><li class="case__stat"><b>€55</b><span>CPL удержан</span></li><li class="case__stat"><b>+26</b><span>сделок</span></li></ul>
+        </article>
+        <article class="case reveal reveal--d2">
+          <div class="case__media">
+            <img src="assets/img/case-cyprus.jpg" alt="Апартаменты на набережной Лимассола" width="900" height="1200" loading="lazy">
+            <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent"></span>
+            <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
+            <span class="case__chip">Международные продажи</span>
+            <span class="case__index" aria-hidden="true">06</span>
+            <div class="case__caption">
+              <h3 class="case__name">Limassol</h3>
+              <p class="case__ctx">55 юнитов · 6 месяцев</p>
+            </div>
+          </div>
+          <ul class="case__stats"><li class="case__stat"><b>410</b><span>лидов</span></li><li class="case__stat"><b>3</b><span>рынка</span></li><li class="case__stat"><b>19</b><span>сделок</span></li></ul>
+        </article>
+        <article class="case reveal">
+          <div class="case__media">
+            <img src="assets/img/case-montenegro.jpg" alt="Жилой комплекс над Которским заливом" width="900" height="1200" loading="lazy">
+            <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent"></span>
+            <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
+            <span class="case__chip">Большой объём inventory</span>
+            <span class="case__index" aria-hidden="true">07</span>
+            <div class="case__caption">
+              <h3 class="case__name">Tivat · Kotor</h3>
+              <p class="case__ctx">140 юнитов · 6 месяцев</p>
+            </div>
+          </div>
+          <ul class="case__stats"><li class="case__stat"><b>980</b><span>лидов</span></li><li class="case__stat"><b>€38</b><span>стоимость лида</span></li><li class="case__stat"><b>52</b><span>юнита продано</span></li></ul>
+        </article>
+        <div class="cases__tile reveal reveal--d1">
+          <div>
+            <p class="cases__count">(07)</p>
+            <p class="cases__note">Клиенты работают под NDA. Цифры — иллюстративный пример на основе типового проекта.</p>
+          </div>
+          <div>
+            <a class="more-link" href="#contact">Больше кейсов <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <div class="cases__thumbs" aria-hidden="true">
+              <img src="assets/img/case-cyprus.jpg" alt="" width="300" height="200" loading="lazy">
+              <img src="assets/img/case-phuket.jpg" alt="" width="300" height="200" loading="lazy">
+              <img src="assets/img/case-montenegro.jpg" alt="" width="300" height="200" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. CTA ============ -->
+  <section class="bigcta">
+    <div class="container reveal">
+      <h2 class="display bigcta__title" data-blur>Давайте запустим<br><span class="title-thumb" aria-hidden="true"><img src="assets/img/case-marbella.jpg" alt="" width="300" height="190" loading="lazy"></span>ваш проект</h2>
+      <a class="btn btn--lg" href="#contact">
+        <span class="btn__label">Получить КП</span>
+        <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ Showcase: scroll expand ============ -->
+  <section class="scroll-expand" id="showcase" aria-label="AI-продакшн">
+    <div class="scroll-expand__track">
+      <div class="scroll-expand__stage">
+        <div class="scroll-expand__frame">
+          <img class="scroll-expand__media" src="assets/img/expand.jpg" alt="AI-визуализация жилого комплекса на побережье" width="1376" height="768" loading="lazy" draggable="false">
+          <div class="scroll-expand__scrim"></div>
+          <div class="scroll-expand__overlay">
+            <span class="eyebrow">AI-продакшн под ключ</span>
+            <h2 class="display">Показываем объект до того, как он построен</h2>
+            <p>AI-видео, визуализация и 3D-туры вместо дорогой съёмки. Продажи стартуют ещё на этапе котлована — и на любом из 28 рынков.</p>
+            <a class="btn" href="#contact">
+              <span class="btn__label">Обсудить проект</span>
+              <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </a>
+          </div>
+        </div>
+        <p class="display scroll-expand__title" aria-hidden="true">Смотрите шире</p>
+        <p class="scroll-expand__hint" aria-hidden="true">Листайте вниз</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. About ============ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__media reveal">
+          <img src="assets/img/about.jpg" alt="Архитектурный макет виллы в контровом свете" width="1200" height="1200" loading="lazy">
+          <span class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
+          <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
+        </div>
+        <div class="about__copy reveal reveal--d1">
+          <span class="eyebrow">Об агентстве</span>
+          <p class="lead">AI-продакшн под ключ:</p>
+          <p class="lead lead--muted">Визуализация объектов.</p>
+          <p class="lead lead--muted">AI-видео.</p>
+          <p class="lead lead--muted">Мультиязычный контент.</p>
+          <p class="lead lead--gap">Tuhano — агентство полного цикла: от бренда до продаж.</p>
+          <a class="btn btn--lg" href="#contact">
+            <span class="btn__label">Обсудить проект</span>
+            <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+        </div>
+      </div>
+      <ul class="stats reveal">
+        <li><p class="stat__num" data-count="2022" data-from="2000" data-plain>2022</p><p class="stat__label">год основания</p></li>
+        <li><p class="stat__num" data-count="10000" data-suffix="+">10 000+</p><p class="stat__label">реализованных проектов</p></li>
+        <li><p class="stat__num" data-count="28">28</p><p class="stat__label">стран и рынков</p></li>
+        <li><p class="stat__num" data-count="4">4</p><p class="stat__label">языка коммуникации</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 6. Advantages & approach ============ -->
+  <section class="section" id="approach">
+    <div class="container approach__grid">
+      <div class="approach__intro reveal">
+        <h2 class="display h2" data-blur>Форматы<br>и подход</h2>
+        <div>
+          <p>Индивидуальный набор под каждого клиента — без фиксированного состава и фиксированной цены. Для точечных задач есть отдельный формат: <strong>performance на результат</strong>.</p>
+          <a class="btn btn--sm" href="#services">
+            <span class="btn__label">Все услуги</span>
+            <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+        </div>
+      </div>
+      <div class="stack reveal reveal--d1">
+        <div>
+          <h3 class="stack__head">AI-продакшн <svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></h3>
+          <ul class="stack__list">
+            <li><span class="stack__dot"></span>Визуализация объектов</li>
+            <li><span class="stack__dot"></span>AI-видео</li>
+            <li><span class="stack__dot"></span>3D Property Tour</li>
+            <li><span class="stack__dot"></span>Мультипликация контента</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="stack__head">Международный запуск <svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></h3>
+          <ul class="stack__list">
+            <li><span class="stack__dot"></span>28 рынков</li>
+            <li><span class="stack__dot"></span>Мультиязычность</li>
+            <li><span class="stack__dot"></span>Локализация подачи</li>
+            <li><span class="stack__dot"></span>UGC-контент</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="stack__head">Full-service <svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></h3>
+          <ul class="stack__list">
+            <li><span class="stack__dot"></span>Бренд и упаковка</li>
+            <li><span class="stack__dot"></span>Сайт и CRM</li>
+            <li><span class="stack__dot"></span>Реклама и контент</li>
+            <li><span class="stack__dot"></span>Воронки и скрипты</li>
+            <li><span class="stack__dot"></span>Единая точка ответственности</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. Process ============ -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="process__head reveal">
+        <h2 class="display h2" data-blur>Как мы<br>работаем</h2>
+        <p>Четыре шага от первого сообщения до запуска. Без длинных брифов и лишних согласований.</p>
+      </div>
+      <ol class="steps reveal" id="steps">
+        <li class="step is-active" tabindex="0">
+          <span class="step__ruler" aria-hidden="true"></span>
+          <span class="step__num">01</span>
+          <h3 class="step__name">Консультация</h3>
+          <p class="step__text">Разбираем задачу, рынок и то, что уже сделано. Созвон или переписка в WhatsApp.</p>
+        </li>
+        <li class="step" tabindex="0">
+          <span class="step__ruler" aria-hidden="true"></span>
+          <span class="step__num">02</span>
+          <h3 class="step__name">Коммерческое предложение</h3>
+          <p class="step__text">Собираем набор услуг под вашу задачу: состав работ, сроки, стоимость.</p>
+        </li>
+        <li class="step" tabindex="0">
+          <span class="step__ruler" aria-hidden="true"></span>
+          <span class="step__num">03</span>
+          <h3 class="step__name">Договор</h3>
+          <p class="step__text">Фиксируем объём, этапы и зоны ответственности с обеих сторон.</p>
+        </li>
+        <li class="step" tabindex="0">
+          <span class="step__ruler" aria-hidden="true"></span>
+          <span class="step__num">04</span>
+          <h3 class="step__name">Работа</h3>
+          <p class="step__text">Запускаем проект и отчитываемся по результату на каждом этапе.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 8. CTA strip ============ -->
+  <section class="strip">
+    <div class="container">
+      <p class="strip__row reveal">
+        <span>Упаковку бизнеса</span>
+        <a class="btn btn--grey btn--lg" href="#contact">
+          <span class="btn__label">Получить КП</span>
+          <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+        <span>собираем под задачу.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 9. Clients ============ -->
+  <section class="section" id="clients">
+    <div class="container">
+      <h2 class="display h2 clients__head" data-blur>Нам доверяют<br>на 28 рынках</h2>
+    </div>
+    <div class="marquee reveal" aria-label="География проектов: 28 стран">
+      <ul class="marquee__track" data-marquee>
+        <li class="marquee__item">ОАЭ</li><li class="marquee__item">Индонезия</li><li class="marquee__item">Таиланд</li><li class="marquee__item">Кипр</li><li class="marquee__item">Испания</li><li class="marquee__item">Черногория</li><li class="marquee__item">Турция</li><li class="marquee__item">Албания</li><li class="marquee__item">Грузия</li><li class="marquee__item">Португалия</li><li class="marquee__item">Греция</li><li class="marquee__item">Вьетнам</li><li class="marquee__item">Мексика</li><li class="marquee__item">Доминикана</li>
+      </ul>
+    </div>
+    <div class="marquee marquee--rev reveal">
+      <ul class="marquee__track" data-marquee>
+        <li class="marquee__item">Маврикий</li><li class="marquee__item">Танзания</li><li class="marquee__item">Египет</li><li class="marquee__item">Марокко</li><li class="marquee__item">Сербия</li><li class="marquee__item">Болгария</li><li class="marquee__item">Хорватия</li><li class="marquee__item">Италия</li><li class="marquee__item">Франция</li><li class="marquee__item">Австрия</li><li class="marquee__item">Швейцария</li><li class="marquee__item">Малайзия</li><li class="marquee__item">Филиппины</li><li class="marquee__item">Панама</li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="proof">
+        <div class="proof__media reveal">
+          <img src="assets/img/clients.jpg" alt="Съёмочное оборудование на террасе виллы" width="1200" height="900" loading="lazy">
+          <span class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
+          <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
+        </div>
+        <div class="reveal reveal--d1">
+          <svg class="icon icon--fill proof__quote" aria-hidden="true"><use href="#i-quote"/></svg>
+          <p class="proof__text">Большинство проектов мы ведём под <strong>NDA</strong> — поэтому вместо громких имён здесь география и цифры. За ними стоят девелоперы, застройщики и бренды из 28 стран, которые доверили нам упаковку и продажи.</p>
+          <p class="proof__by"><b>Команда Tuhano</b><span>о клиентах агентства</span></p>
+          <p class="stat__num" data-count="273" data-prefix="€" data-suffix="M+">€273M+</p>
+          <p class="stat__label">выручки клиентов</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10. FAQ ============ -->
+  <section class="section" id="faq">
+    <div class="container faq__grid">
+      <div class="faq__card reveal">
+        <span class="faq__logo"><svg aria-hidden="true"><use href="#logo-mark"/></svg></span>
+        <p class="lead">Забронировать ознакомительную консультацию</p>
+        <a class="btn btn--sm" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Здравствуйте! Хочу записаться на консультацию.">
+          <span class="btn__label">Написать в WhatsApp</span>
+          <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+      <div class="reveal reveal--d1">
+        <h2 class="display h2 faq__title" data-blur>Частые вопросы<br>и ответы</h2>
+        <ul>
+          <li class="qa">
+            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-1" data-accordion><span>Сколько стоит работа с агентством?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
+            <div class="qa__panel" id="qa-1" hidden>Фиксированных пакетов и прайса нет: набор услуг собирается под задачу. После консультации вы получаете коммерческое предложение с составом работ, сроками и стоимостью.</div>
+          </li>
+          <li class="qa">
+            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-2" data-accordion><span>Что входит в «полную упаковку бизнеса»?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
+            <div class="qa__panel" id="qa-2" hidden>Гибкий набор из доступных направлений: брендинг, сайт, контент, реклама и автоматизация. Состав формируется индивидуально — вы платите только за то, что нужно вашему проекту.</div>
+          </li>
+          <li class="qa">
+            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-3" data-accordion><span>Можно ли подключить вас до старта продаж?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
+            <div class="qa__panel" id="qa-3" hidden>Да, и это лучший момент. Мы выстраиваем позиционирование, сайт, CRM и рекламу ещё до запуска, а AI-видео и 3D-туры позволяют показывать объект до сдачи.</div>
+          </li>
+          <li class="qa">
+            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-4" data-accordion><span>На каких рынках и языках вы работаете?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
+            <div class="qa__panel" id="qa-4" hidden>География проектов — 28 стран: от ОАЭ, Испании и Кипра до Индонезии, Таиланда и Мексики. Контент локализуем под целевой рынок: адаптируем не только язык, но и подачу.</div>
+          </li>
+          <li class="qa">
+            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-5" data-accordion><span>Вы работаете только с недвижимостью?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
+            <div class="qa__panel" id="qa-5" hidden>Нет. Недвижимость и девелопмент — наша отдельная ниша с собственным набором услуг, но брендинг, контент, реклама и digital-инфраструктура доступны бизнесу из любой сферы.</div>
+          </li>
+          <li class="qa">
+            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-6" data-accordion><span>С чего начать?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
+            <div class="qa__panel" id="qa-6" hidden>Напишите нам в WhatsApp или оставьте заявку в форме ниже. Дальше — консультация, коммерческое предложение, договор и старт работ.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11. Form ============ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="form-panel reveal">
+        <h2 class="form-panel__title">Получите коммерческое предложение — просто напишите нам</h2>
+        <form class="form" id="lead-form">
+          <div class="field">
+            <label for="f-name">(Имя)*</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Ваше имя" required>
+          </div>
+          <div class="field">
+            <label for="f-phone">(Телефон)*</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+00 000 000 00 00" required>
+          </div>
+          <div class="field">
+            <label for="f-email">(Почта)</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="name@mail.com">
+          </div>
+          <div class="field">
+            <label for="f-message">(Ваше сообщение)</label>
+            <textarea id="f-message" name="message" rows="2" placeholder="Немного о вашем проекте..."></textarea>
+          </div>
+          <div class="form__foot">
+            <button class="btn btn--dark btn--lg" type="submit">
+              <span class="btn__label">Получить КП</span>
+              <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </button>
+            <p class="form__hint">Заявка откроется в WhatsApp готовым сообщением — останется нажать «Отправить».</p>
+          </div>
+          <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ 12. Contacts / Footer ============ -->
+<footer class="footer" id="contacts">
+  <div class="container">
+    <div class="footer__seo reveal">
+      <h2 class="display" data-blur>Tuhano — маркетинг, контент и брендинг для роста продаж</h2>
+      <p>С 2022 года мы упаковываем и продвигаем бизнес на 28 рынках: строим бренды, создаём контент — живой и AI, запускаем рекламу и собираем digital-инфраструктуру, которая доводит клиента до сделки.</p>
+    </div>
+    <div class="footer-grid">
+      <div>
+        <h3 class="footer__heading">Навигация</h3>
+        <ul class="footer__list">
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#cases">Кейсы</a></li>
+          <li><a href="#about">Об агентстве</a></li>
+          <li><a href="#approach">Форматы и подход</a></li>
+          <li><a href="#process">Процесс</a></li>
+          <li><a href="#clients">Клиенты</a></li>
+          <li><a href="#faq">Вопросы и ответы</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__heading">Услуги</h3>
+        <ul class="footer__list">
+          <li><a href="#services">Performance и реклама</a></li>
+          <li><a href="#services">Контент и креатив</a></li>
+          <li><a href="#services">Digital-инфраструктура</a></li>
+          <li><a href="#services">Стратегия и бренд</a></li>
+          <li><a href="#services">Недвижимость и девелопмент</a></li>
+          <li><a href="#services">Маркетинг для продаж</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__ask">Интересует сотрудничество?</p>
+        <a class="footer__contact" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Здравствуйте! Интересует сотрудничество с Tuhano.">Написать в WhatsApp</a>
+        <a class="more-link footer__cta" href="#contact">Получить КП <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span id="year">2026</span> <strong>Tuhano</strong> · Маркетинговое агентство</p>
+      <div class="socials">
+        <a class="social" href="#" id="instagram-link" target="_blank" rel="noopener" aria-label="Instagram" hidden><svg class="icon icon--fill" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+        <a class="social" href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp" data-wa="Здравствуйте!"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="fab">
+  <a class="fab__btn fab__btn--ghost" href="#contact" aria-label="Перейти к форме заявки"><span class="fab__dots" aria-hidden="true"><span></span><span></span><span></span></span></a>
+  <a class="fab__btn fab__btn--main" href="https://wa.me/" target="_blank" rel="noopener" aria-label="Написать в WhatsApp" data-wa="Здравствуйте! Хочу получить коммерческое предложение."><svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+</div>
+
+<script>
+(() => {
+  // TODO before launch: agency WhatsApp number (digits only, with country code) and Instagram profile URL.
+  const WHATSAPP_NUMBER = '';
+  const INSTAGRAM_URL = '';
+
+  const waLink = (text) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+  document.querySelectorAll('[data-wa]').forEach((a) => { a.href = waLink(a.dataset.wa); });
+  const insta = document.getElementById('instagram-link');
+  if (INSTAGRAM_URL) { insta.href = INSTAGRAM_URL; insta.hidden = false; }
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // header
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('is-stuck', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const burger = header.querySelector('.burger');
+  const mobileNav = document.getElementById('mobile-nav');
+  const setMenu = (open) => {
+    header.classList.toggle('is-open', open);
+    mobileNav.classList.toggle('is-open', open);
+    mobileNav.inert = !open;
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+  };
+  burger.addEventListener('click', () => setMenu(!mobileNav.classList.contains('is-open')));
+  mobileNav.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+
+  // floating actions: hide over the hero, the form and the footer, which carry their own CTAs
+  const fab = document.querySelector('.fab');
+  const covered = new Set();
+  const fabIO = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => { entry.isIntersecting ? covered.add(entry.target) : covered.delete(entry.target); });
+    fab.classList.toggle('is-hidden', covered.size > 0);
+  }, { rootMargin: '0px 0px -12% 0px' });
+  document.querySelectorAll('.hero, #contact, #contacts').forEach((el) => fabIO.observe(el));
+
+  // accordions (services + FAQ)
+  document.querySelectorAll('[data-accordion]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      document.getElementById(btn.getAttribute('aria-controls')).hidden = open;
+    });
+  });
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // blur text — vanilla port of React Bits <BlurText animateBy="words" direction="top" />
+  (() => {
+    const STAGGER = 120;
+    const blurIO = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { entry.target.classList.add('is-in'); blurIO.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-blur]').forEach((el) => {
+      let index = 0;
+      const tag = (node) => { node.classList.add('blur-word'); node.style.animationDelay = `${index++ * STAGGER}ms`; };
+      [...el.childNodes].forEach((node) => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          const frag = document.createDocumentFragment();
+          node.textContent.split(/(\s+)/).forEach((part) => {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.append(' '); return; }
+            const word = document.createElement('span');
+            word.textContent = part;
+            tag(word);
+            frag.append(word);
+          });
+          node.replaceWith(frag);
+        } else if (node.nodeName !== 'BR') {
+          tag(node);
+        }
+      });
+      blurIO.observe(el);
+    });
+  })();
+
+  // stat counters: count up once when the number scrolls into view
+  (() => {
+    const nums = document.querySelectorAll('[data-count]');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const DURATION = 1800;
+    const easeOut = (t) => 1 - Math.pow(1 - t, 4);
+    const format = (el, value) => {
+      const body = el.hasAttribute('data-plain') ? String(value) : value.toLocaleString('ru-RU').replace(/\u00a0|\u202f/g, ' ');
+      return (el.dataset.prefix || '') + body + (el.dataset.suffix || '');
+    };
+    const run = (el) => {
+      const to = Number(el.dataset.count), from = Number(el.dataset.from || 0);
+      const start = performance.now();
+      const frame = (now) => {
+        const t = Math.min(1, (now - start) / DURATION);
+        el.textContent = format(el, Math.round(from + (to - from) * easeOut(t)));
+        if (t < 1) requestAnimationFrame(frame);
+      };
+      requestAnimationFrame(frame);
+    };
+    const countIO = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { run(entry.target); countIO.unobserve(entry.target); }
+      });
+    }, { threshold: 0.6 });
+    nums.forEach((el) => { el.textContent = format(el, Number(el.dataset.from || 0)); countIO.observe(el); });
+  })();
+
+  // marquee: duplicate items for a seamless loop
+  document.querySelectorAll('[data-marquee]').forEach((track) => {
+    [...track.children].forEach((item) => {
+      const clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+  });
+
+  // process steps: cycle the active step, pause on hover / focus
+  const steps = [...document.querySelectorAll('#steps .step')];
+  let current = 0;
+  let paused = false;
+  const activate = (i) => { current = i; steps.forEach((s, n) => s.classList.toggle('is-active', n === i)); };
+  steps.forEach((s, i) => {
+    s.addEventListener('mouseenter', () => { paused = true; activate(i); });
+    s.addEventListener('focus', () => { paused = true; activate(i); });
+    s.addEventListener('mouseleave', () => { paused = false; });
+    s.addEventListener('blur', () => { paused = false; });
+  });
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setInterval(() => { if (!paused) activate((current + 1) % steps.length); }, 2800);
+  }
+
+  // gradient waves — plain WebGL2 port of the React Bits shader, tuned down for the hero
+  (() => {
+    const canvas = document.getElementById('hero-waves');
+    const gl = canvas && canvas.getContext('webgl2', { alpha: true, premultipliedAlpha: true, antialias: false });
+    if (!gl) return;
+    const cfg = {
+      horizon: '#050806', wave: '#264A36', crest: '#85C29C',
+      speed: 0.14, amplitude: 2.5, waveScale: 0.6, waveRatio: 0.9, swell: 35, turbulence: 20,
+      tilt: 1.11, zoom: 1.0, height: 5.5, fogDepth: 15, steps: 40, brightness: 1.0, opacity: 1.0, grainIntensity: 0.03,
+    };
+    const vertex = `#version 300 es
+in vec2 position;
+void main() { gl_Position = vec4(position, 0.0, 1.0); }`;
+    const fragment = `#version 300 es
+precision highp float;
+uniform vec2 iResolution;
+uniform float iTime, uSpeed, uAmplitude, uWaveScale, uWaveRatio, uSwell, uTurbulence, uTilt, uZoom, uHeight, uFogDepth, uSteps, uBrightness, uOpacity, uGrainIntensity;
+uniform vec3 uHorizonColor, uWaveColor, uCrestColor;
+out vec4 fragColor;
+const float MAX_DIST = 20000.0;
+float hash21(vec2 p) {
+  vec3 p3 = fract(vec3(p.xyx) * 0.1031);
+  p3 += dot(p3, p3.yzx + 33.33);
+  return fract((p3.x + p3.y) * p3.z);
+}
+float plasma(vec3 r, vec2 freq, vec4 tc) {
+  float mx = r.x + tc.x;
+  mx += uSwell * sin((r.y + mx) / 20.0 + tc.y);
+  float my = r.y - tc.z;
+  my += uTurbulence * cos(r.x / 23.0 + tc.w);
+  return r.z - (sin(mx * freq.x) * uAmplitude + sin(my * freq.y) * uAmplitude + uHeight);
+}
+float raymarch(vec3 pos, vec3 dir, vec2 freq, vec4 tc) {
+  float dist = 0.0;
+  for (int i = 0; i < 128; i++) {
+    if (float(i) >= uSteps) break;
+    float dscene = plasma(pos + dist * dir, freq, tc);
+    if (abs(dscene) < 0.1) break;
+    dist += 0.9 * dscene;
+    if (!(abs(dist) < MAX_DIST)) return MAX_DIST;
+  }
+  return dist;
+}
+void main() {
+  float T = iTime * uSpeed;
+  vec2 freq = vec2(uWaveScale / 7.0, (uWaveScale * uWaveRatio) / 3.0);
+  vec4 tc = vec4(T / 0.130, T / 0.810, T / 0.200, T / 0.710);
+  float c, s;
+  float vfov = (3.14159 / 2.3) / max(uZoom, 0.05);
+  vec3 cam = vec3(0.0, 0.0, 30.0);
+  vec2 uv = (gl_FragCoord.xy / iResolution.xy) - 0.5;
+  uv.x *= iResolution.x / iResolution.y;
+  uv.y *= -1.0;
+  vec3 dir = vec3(0.0, 0.0, -1.0);
+  float ulen = length(uv);
+  float xrot = vfov * ulen;
+  c = cos(xrot); s = sin(xrot);
+  dir = mat3(1.0, 0.0, 0.0, 0.0, c, -s, 0.0, s, c) * dir;
+  vec2 nuv = ulen > 1e-5 ? uv / ulen : vec2(1.0, 0.0);
+  c = nuv.x; s = nuv.y;
+  dir = mat3(c, -s, 0.0, s, c, 0.0, 0.0, 0.0, 1.0) * dir;
+  c = cos(uTilt); s = sin(uTilt);
+  dir = mat3(c, 0.0, s, 0.0, 1.0, 0.0, -s, 0.0, c) * dir;
+  float dist = raymarch(cam, dir, freq, tc);
+  vec3 pos = cam + dist * dir;
+  float t = clamp(uFogDepth / max(dist, 0.001), 0.0, 1.0);
+  vec3 body = mix(uWaveColor, uCrestColor, clamp(pos.z * 0.08 + 0.5, 0.0, 1.0));
+  vec3 col = clamp(mix(uHorizonColor, body, t) * uBrightness, 0.0, 1.0);
+  float alpha = t * uOpacity;
+  alpha += (hash21(gl_FragCoord.xy + mod(iTime, 64.0) * 11.0) - 0.5) * uGrainIntensity;
+  alpha = clamp(alpha, 0.0, 1.0);
+  fragColor = vec4(col * alpha, alpha);
+}`;
+    const compile = (type, src) => { const sh = gl.createShader(type); gl.shaderSource(sh, src); gl.compileShader(sh); return sh; };
+    const program = gl.createProgram();
+    gl.attachShader(program, compile(gl.VERTEX_SHADER, vertex));
+    gl.attachShader(program, compile(gl.FRAGMENT_SHADER, fragment));
+    gl.linkProgram(program);
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) return;
+    gl.useProgram(program);
+
+    // one oversized triangle covers the viewport
+    gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+    const loc = gl.getAttribLocation(program, 'position');
+    gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+    const u = (name) => gl.getUniformLocation(program, name);
+    const rgb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
+    gl.uniform1f(u('uSpeed'), cfg.speed);
+    gl.uniform1f(u('uAmplitude'), cfg.amplitude);
+    gl.uniform1f(u('uWaveScale'), cfg.waveScale);
+    gl.uniform1f(u('uWaveRatio'), cfg.waveRatio);
+    gl.uniform1f(u('uSwell'), cfg.swell);
+    gl.uniform1f(u('uTurbulence'), cfg.turbulence);
+    gl.uniform1f(u('uTilt'), cfg.tilt);
+    gl.uniform1f(u('uZoom'), cfg.zoom);
+    gl.uniform1f(u('uHeight'), cfg.height);
+    gl.uniform1f(u('uFogDepth'), cfg.fogDepth);
+    gl.uniform1f(u('uSteps'), cfg.steps);
+    gl.uniform1f(u('uBrightness'), cfg.brightness);
+    gl.uniform1f(u('uOpacity'), cfg.opacity);
+    gl.uniform1f(u('uGrainIntensity'), cfg.grainIntensity);
+    gl.uniform3fv(u('uHorizonColor'), rgb(cfg.horizon));
+    gl.uniform3fv(u('uWaveColor'), rgb(cfg.wave));
+    gl.uniform3fv(u('uCrestColor'), rgb(cfg.crest));
+    const uTime = u('iTime'), uRes = u('iResolution');
+    gl.clearColor(0, 0, 0, 0);
+
+    const draw = (time) => {
+      gl.uniform1f(uTime, time);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    };
+    // soft shapes: render at reduced resolution to keep the GPU cost low
+    const resize = () => {
+      const scale = Math.min(window.devicePixelRatio || 1, 1) * 0.75;
+      canvas.width = Math.max(1, Math.floor(canvas.clientWidth * scale));
+      canvas.height = Math.max(1, Math.floor(canvas.clientHeight * scale));
+      gl.viewport(0, 0, canvas.width, canvas.height);
+      gl.uniform2f(uRes, canvas.width, canvas.height);
+      draw(last);
+    };
+
+    let raf = 0, last = 0, visible = true;
+    const t0 = performance.now();
+    const loop = (t) => { last = (t - t0) * 0.001; draw(last); raf = requestAnimationFrame(loop); };
+    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const sync = () => {
+      const run = visible && !document.hidden && !still;
+      if (run && !raf) raf = requestAnimationFrame(loop);
+      if (!run && raf) { cancelAnimationFrame(raf); raf = 0; }
+    };
+    new ResizeObserver(resize).observe(canvas);
+    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); }).observe(canvas);
+    document.addEventListener('visibilitychange', sync);
+    resize();
+    sync();
+    canvas.classList.add('is-ready');
+  })();
+
+  // scroll expand — vanilla port of React Bits <ScrollExpand useWindowScroll />
+  (() => {
+    const root = document.getElementById('showcase');
+    if (!root) return;
+    const cfg = { startWidth: 32, startHeight: 38, startRadius: 21, endRadius: 0, mediaZoom: 1.33, scrollDistance: 1.2, smoothing: 0.14, overlayScrim: 0.4 };
+    const $ = (name) => root.querySelector(`.scroll-expand__${name}`);
+    const track = $('track'), stage = $('stage'), frame = $('frame'), media = $('media');
+    const scrim = $('scrim'), overlay = $('overlay'), title = $('title'), hint = $('hint');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const clamp = (v, a, b) => (v < a ? a : v > b ? b : v);
+    const smoothstep = (e0, e1, x) => { const t = clamp((x - e0) / (e1 - e0 || 1e-6), 0, 1); return t * t * (3 - 2 * t); };
+
+    const apply = (p) => {
+      const e = smoothstep(0, 1, p);
+      const ix = Math.max(0, (100 - (cfg.startWidth + (100 - cfg.startWidth) * e)) / 2);
+      const iy = Math.max(0, (100 - (cfg.startHeight + (100 - cfg.startHeight) * e)) / 2);
+      const r = cfg.startRadius + (cfg.endRadius - cfg.startRadius) * e;
+      frame.style.clipPath = `inset(${iy}% ${ix}% ${iy}% ${ix}% round ${r}px)`;
+      media.style.transform = `scale(${cfg.mediaZoom + (1 - cfg.mediaZoom) * e})`;
+      scrim.style.opacity = cfg.overlayScrim * e;
+      const out = smoothstep(0.4, 0.88, p);
+      title.style.opacity = 1 - out;
+      title.style.transform = `translate3d(0, ${-28 * out}px, 0) scale(${1 + 0.06 * out})`;
+      const gone = smoothstep(0, 0.12, p);
+      hint.style.opacity = 1 - gone;
+      hint.style.transform = `translate3d(0, ${8 * gone}px, 0)`;
+      const inn = smoothstep(0.68, 1, p);
+      overlay.style.opacity = inn;
+      overlay.style.transform = `translate3d(0, ${18 * (1 - inn)}px, 0)`;
+      overlay.inert = inn < 0.5;
+    };
+
+    let raf = 0, current = 0, target = 0, running = false;
+    const read = () => clamp(-track.getBoundingClientRect().top / (stage.offsetHeight * cfg.scrollDistance), 0, 1);
+    const tick = () => {
+      current += (target - current) * (1 - Math.exp(-1 / (60 * cfg.smoothing)));
+      if (Math.abs(target - current) < 0.0004) { current = target; running = false; }
+      apply(current);
+      raf = running ? requestAnimationFrame(tick) : 0;
+    };
+    const snap = () => { target = current = read(); apply(current); };
+    window.addEventListener('scroll', () => {
+      target = read();
+      if (reduceMotion) { current = target; apply(current); return; }
+      if (!running) { running = true; if (!raf) raf = requestAnimationFrame(tick); }
+    }, { passive: true });
+    window.addEventListener('resize', snap);
+    snap();
+  })();
+
+  // lead form -> WhatsApp
+  const form = document.getElementById('lead-form');
+  const status = document.getElementById('form-status');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const lines = [
+      'Здравствуйте! Хочу получить коммерческое предложение.',
+      `Имя: ${data.get('name').trim()}`,
+      `Телефон: ${data.get('phone').trim()}`,
+    ];
+    if (data.get('email').trim()) lines.push(`Почта: ${data.get('email').trim()}`);
+    if (data.get('message').trim()) lines.push(`О проекте: ${data.get('message').trim()}`);
+    window.open(waLink(lines.join('\n')), '_blank', 'noopener');
+    status.textContent = 'Открываем WhatsApp — отправьте сообщение, и мы ответим с предложением.';
+  });
+})();
+</script>
+</body>
+</html>

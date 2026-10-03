@@ -1,0 +1,8 @@
+# local tooling
+node_modules
+temporary screenshots/
+.DS_Store
+
+# client source documents and design reference — kept out of the public repo
+*.pdf
+desktop.png
