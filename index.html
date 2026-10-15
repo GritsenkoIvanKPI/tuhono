@@ -3,13 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tuhano — маркетинг, контент и брендинг для роста продаж</title>
-<meta name="description" content="Tuhano — агентство полного цикла: брендинг, контент, AI-продакшн, реклама и digital-инфраструктура. 10 000+ проектов на 28 рынках с 2022 года.">
+<title>Tuhono — маркетинг, контент и брендинг для роста продаж</title>
+<meta name="description" content="Tuhono — агентство полного цикла: брендинг, контент, AI-продакшн, реклама и digital-инфраструктура. €273M+ выручки клиентов · 28 рынков · с 2022 года.">
 <meta name="theme-color" content="#050806">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-40 -87 685 685'%3E%3Ccircle cx='219' cy='219' r='219' fill='%23264A36'/%3E%3Ccircle cx='386' cy='292' r='219' fill='%2385C29C'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  // language: ?lang= link > saved choice > Russian (the source copy)
+  (() => {
+    const LANGS = ['es', 'en', 'ru', 'uk'];
+    const fromUrl = new URLSearchParams(location.search).get('lang');
+    let lang = LANGS.includes(fromUrl) ? fromUrl : null;
+    try {
+      if (lang) localStorage.setItem('lang', lang);
+      else lang = localStorage.getItem('lang');
+    } catch (e) { /* storage blocked: the URL still decides */ }
+    if (!LANGS.includes(lang)) lang = 'ru';
+    document.documentElement.lang = lang;
+    if (lang !== 'ru') document.documentElement.classList.add('i18n-pending');
+  })();
+</script>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -224,6 +239,30 @@ strong { font-weight: 600; color: var(--clr-white); }
 .btn--dark .btn__label, .btn--dark .btn__icon { background: #020202; }
 .btn--dark .btn__label::before { background: var(--clr-pine); }
 
+/* ---------- Language switcher ---------- */
+.i18n-pending body { visibility: hidden; }
+.lang { display: flex; align-items: center; gap: 0.2rem; }
+.lang__link {
+  position: relative; isolation: isolate; display: grid; place-items: center; min-width: 2.25rem; height: 2.25rem; padding-inline: 0.45rem;
+  border-radius: 999px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; line-height: 1; color: var(--clr-text-2);
+  transition: transform 0.35s var(--ease-spring);
+}
+.lang__link::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
+  background: rgba(255, 255, 255, 0.1); opacity: 0; transition: opacity 0.3s ease;
+}
+.lang__link:hover, .lang__link:focus-visible { color: var(--clr-white); }
+.lang__link:hover::before, .lang__link:focus-visible::before { opacity: 1; }
+.lang__link:active { transform: scale(0.92); }
+.lang__link[aria-current="true"] { color: #020202; }
+.lang__link[aria-current="true"]::before { background: var(--clr-white); opacity: 1; }
+.header__actions { display: flex; align-items: center; gap: 1.25rem; }
+.header__lang { display: none; }
+.lang--menu { gap: 0.5rem; }
+.lang--menu .lang__link { min-width: 3.1rem; height: 3.1rem; font-size: 0.85rem; border: 1px solid var(--clr-border); }
+.lang--menu .lang__link[aria-current="true"] { border-color: transparent; }
+.mobile-nav__foot { display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+
 /* ---------- Header ---------- */
 .site-header { position: fixed; inset: 0 0 auto 0; z-index: 50; padding-top: 0.75rem; }
 .header__bar {
@@ -246,7 +285,7 @@ strong { font-weight: 600; color: var(--clr-white); }
 .nav { display: none; }
 .nav__list { display: flex; align-items: center; gap: clamp(1.25rem, 2.4vw, 2.75rem); }
 .nav__link {
-  position: relative; display: inline-block; padding-block: 0.5rem;
+  position: relative; display: inline-block; padding-block: 0.5rem; white-space: nowrap;
   font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; color: var(--clr-white);
 }
 .nav__link::after {
@@ -283,9 +322,10 @@ strong { font-weight: 600; color: var(--clr-white); }
 }
 .mobile-nav__link:hover, .mobile-nav__link:focus-visible { opacity: 0.6; }
 .mobile-nav__link:active { opacity: 0.4; }
-@media (min-width: 1100px) {
+@media (min-width: 1320px) {
   .nav { display: block; }
   .header__cta { display: inline-flex; }
+  .header__lang { display: flex; }
   .burger, .mobile-nav { display: none; }
 }
 
@@ -299,8 +339,8 @@ strong { font-weight: 600; color: var(--clr-white); }
 }
 .hero__waves.is-ready { opacity: 0.9; }
 .hero__inner { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: space-between; gap: var(--sp-lg); }
-.hero__title { font-size: clamp(3.3rem, 16.5vw, 9rem); line-height: 0.96; }
-.hero__line { display: block; overflow: hidden; padding-bottom: 0.06em; }
+.hero__title { font-size: calc(clamp(3.3rem, 16.5vw, 9rem) * var(--hero-fit, 1)); line-height: 0.96; }
+.hero__line { display: block; overflow: hidden; padding-top: 0.16em; margin-top: -0.16em; padding-bottom: 0.06em; }
 .hero__line > span { display: inline-block; transform: translateY(108%); animation: line-in 1.2s var(--ease-out) forwards; }
 .hero__line:nth-child(2) > span { animation-delay: 0.12s; }
 @keyframes line-in { to { transform: none; } }
@@ -326,9 +366,10 @@ strong { font-weight: 600; color: var(--clr-white); }
 .hero__copy p { max-width: 32rem; font-size: var(--text-sm); line-height: 1.5; color: var(--clr-text); }
 .hero__copy .btn { margin-top: 1.75rem; }
 @media (min-width: 992px) {
-  .hero__title { font-size: min(10.2vw, 14.5rem); }
+  .hero__title { font-size: calc(min(10.2vw, 14.5rem) * var(--hero-fit, 1)); }
   .hero__line { white-space: nowrap; }
-  .hero__reel { position: absolute; top: 0.9rem; right: 0; width: 15.6rem; }
+  .hero { padding-top: calc(var(--h-height) + 2.5rem); }
+  .hero__reel { position: absolute; top: 0.9rem; right: 0; width: calc(min(15.6rem, 17vw - 2rem) * var(--hero-fit, 1)); }
 }
 @media (min-width: 1200px) {
   .hero__foot { grid-template-columns: 54% 1fr; }
@@ -343,7 +384,11 @@ strong { font-weight: 600; color: var(--clr-white); }
 }
 
 /* ---------- Services ---------- */
-.services__head { margin-bottom: var(--sp-sm); }
+.services__top { display: grid; gap: 1.25rem; align-items: end; margin-bottom: var(--sp-sm); }
+.services__intro { max-width: 30rem; font-size: var(--text-sm); line-height: 1.7; }
+@media (min-width: 992px) { .services__top { grid-template-columns: 1fr auto; } }
+.svc__title { flex: 1; display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
+.svc__sub { font-size: var(--text-xs); font-weight: 400; line-height: 1.4; color: var(--clr-text-2); }
 .svc { border-top: 0.125rem solid var(--clr-border-soft); }
 .svc:last-child { border-bottom: 0.125rem solid var(--clr-border-soft); }
 .svc__btn {
@@ -352,7 +397,7 @@ strong { font-weight: 600; color: var(--clr-white); }
   background: none; color: var(--clr-white); text-align: left; cursor: pointer;
 }
 .svc__arrow { flex-shrink: 0; font-size: 1.9rem; transition: transform 0.55s var(--ease-spring); }
-.svc__name { flex: 1; font-family: var(--ff-2); font-weight: 300; font-size: var(--h3); letter-spacing: -0.03em; line-height: 1.1; transition: transform 0.55s var(--ease-out); }
+.svc__name { font-family: var(--ff-2); font-weight: 300; font-size: var(--h3); letter-spacing: -0.03em; line-height: 1.1; transition: transform 0.55s var(--ease-out); }
 .svc__num { font-family: var(--ff-2); font-weight: 300; font-size: var(--h6); line-height: 1; }
 .svc__ticks {
   position: relative; display: none; width: 6.4rem; height: 0.6rem;
@@ -378,6 +423,19 @@ strong { font-weight: 600; color: var(--clr-white); }
   .svc__panel { padding-left: calc(clamp(0rem, 1.2vw, 1.25rem) + 1.75rem + clamp(1rem, 3vw, 3rem)); }
   .svc__grid { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* ---------- For developers ---------- */
+.dev__grid { display: grid; gap: var(--sp-md); }
+.dev__intro { display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+.dev__intro p { max-width: 26rem; font-size: var(--text-xs); line-height: 1.7; }
+.dev__intro .btn { margin-top: 0.5rem; }
+.dev__item { position: relative; display: grid; gap: 0.6rem 2.5rem; padding-block: 1.75rem; border-top: 1px solid var(--clr-border); }
+.dev__item:last-child { border-bottom: 1px solid var(--clr-border); }
+.dev__pain { font-family: var(--ff-2); font-weight: 300; font-size: var(--h6); line-height: 1.3; letter-spacing: -0.01em; color: var(--clr-text-2); }
+.dev__name { font-size: var(--text-sm); font-weight: 500; line-height: 1.3; color: var(--clr-white); }
+.dev__text { margin-top: 0.5rem; font-size: var(--text-xs); line-height: 1.7; color: var(--clr-text-2); }
+@media (min-width: 640px) { .dev__item { grid-template-columns: 0.85fr 1.15fr; } }
+@media (min-width: 1200px) { .dev__grid { grid-template-columns: 37% 1fr; gap: 6%; } }
 
 /* ---------- Cases ---------- */
 .cases__title { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem clamp(0.75rem, 1.6vw, 1.75rem); font-size: var(--h1); line-height: 1; margin-bottom: var(--sp-md); }
@@ -408,14 +466,15 @@ strong { font-weight: 600; color: var(--clr-white); }
   padding: clamp(1.5rem, 2.6vw, 2.5rem);
   background: linear-gradient(155deg, rgba(133, 194, 156, 0.09), rgba(133, 194, 156, 0.02) 45%, rgba(255, 255, 255, 0.015)), var(--bg-dark-1); border: 1px solid rgba(255, 255, 255, 0.09); box-shadow: 0 48px 90px -60px rgba(94, 159, 121, 0.45);
 }
-.cases__note { margin-top: 1.25rem; max-width: 26rem; font-size: var(--text-xs); line-height: 1.7; color: var(--clr-text-2); }
+.cases__note { max-width: 46rem; padding-left: 1.4rem; border-left: 2px solid var(--clr-green); }
+.cases__note-label { display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; font-weight: 600; line-height: 1; text-transform: uppercase; letter-spacing: 0.06em; color: var(--clr-green); }
+.cases__note-label::before { content: ""; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: currentColor; }
+.cases__note-text { margin-top: 0.9rem; font-family: var(--ff-2); font-weight: 300; font-size: clamp(1.35rem, 2.7vw, 2.85rem); line-height: 1.18; letter-spacing: -0.03em; color: rgba(255, 255, 255, 0.92); }
 .cases__count { font-family: var(--ff-2); font-weight: 300; font-size: var(--h3); line-height: 1; color: var(--clr-white); }
 .more-link { display: inline-flex; align-items: center; gap: 0.5em; font-family: var(--ff-2); font-weight: 400; font-size: var(--h3); line-height: 1; letter-spacing: -0.02em; text-transform: uppercase; color: var(--clr-white); }
 .more-link .icon { font-size: 0.85em; transition: transform 0.55s var(--ease-spring); }
 .more-link:hover .icon, .more-link:focus-visible .icon { transform: rotate(135deg); color: var(--clr-green); }
 .more-link:active { opacity: 0.7; }
-.cases__thumbs { display: flex; gap: 0.4rem; margin-top: 1.25rem; }
-.cases__thumbs img { width: 31%; max-width: 12.25rem; aspect-ratio: 3 / 2; object-fit: cover; }
 @media (min-width: 640px) { .cases__grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 992px) {
   .cases__grid { grid-template-columns: repeat(3, 1fr); }
@@ -748,11 +807,13 @@ strong { font-weight: 600; color: var(--clr-white); }
 
   /* service + FAQ rows: soft mint wash from the left */
   .svc, .qa { position: relative; }
-  .svc::before, .qa::before {
+  .svc::before, .qa::before, .dev__item::before {
     content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.45s ease;
     background: linear-gradient(90deg, rgba(133, 194, 156, 0.10), rgba(133, 194, 156, 0.02) 55%, transparent 80%);
   }
-  .svc:hover::before, .qa:hover::before { opacity: 1; }
+  .svc:hover::before, .qa:hover::before, .dev__item:hover::before { opacity: 1; }
+  .dev__name { transition: transform 0.55s var(--ease-out); }
+  .dev__item:hover .dev__name { transform: translateX(0.35rem); }
   .svc__num { transition: transform 0.55s var(--ease-out); }
   .svc__btn:hover .svc__num { transform: translateX(-0.4rem); }
   .svc__item { transition: transform 0.45s var(--ease-out); }
@@ -772,8 +833,6 @@ strong { font-weight: 600; color: var(--clr-white); }
   /* case cards */
   .case__media .mix-blend-multiply { transition: opacity 0.7s ease; }
   .case:hover .case__media .mix-blend-multiply { opacity: 0; }
-  .cases__thumbs img { transition: transform 0.5s var(--ease-spring); }
-  .cases__thumbs img:hover { transform: translateY(-0.35rem); }
 
   /* media blocks */
   .about__media img, .proof__media img { transition: transform 1.4s var(--ease-out); }
@@ -857,9 +916,9 @@ strong { font-weight: 600; color: var(--clr-white); }
 <header class="site-header" id="header">
   <div class="container">
     <div class="header__bar">
-      <a class="logo" href="#top" aria-label="Tuhano — на главную">
+      <a class="logo" href="#top" aria-label="Tuhono — на главную" data-i18n-skip-text>
         <svg class="logo__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
-        <span class="logo__word">Tuhano</span>
+        <span class="logo__word">Tuhono</span>
       </a>
       <nav class="nav" aria-label="Основная навигация">
         <ul class="nav__list">
@@ -872,11 +931,14 @@ strong { font-weight: 600; color: var(--clr-white); }
           <li><a class="nav__link" href="#contacts">Контакты</a></li>
         </ul>
       </nav>
-      <a class="btn btn--sm header__cta" href="#contact">
-        <span class="btn__label">Получить КП</span>
-        <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-      </a>
-      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
+      <div class="header__actions">
+        <div class="lang header__lang" role="group" aria-label="Язык сайта" data-i18n-skip-text><a class="lang__link" href="?lang=es" hreflang="es" lang="es" data-lang="es">ES</a><a class="lang__link" href="?lang=en" hreflang="en" lang="en" data-lang="en">EN</a><a class="lang__link" href="?lang=ru" hreflang="ru" lang="ru" data-lang="ru">RU</a><a class="lang__link" href="?lang=uk" hreflang="uk" lang="uk" data-lang="uk">UA</a></div>
+        <a class="btn btn--sm header__cta" href="#contact">
+          <span class="btn__label">Получить КП</span>
+          <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+        <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
+      </div>
     </div>
   </div>
 </header>
@@ -890,10 +952,13 @@ strong { font-weight: 600; color: var(--clr-white); }
     <li><a class="mobile-nav__link" href="#faq">FAQ</a></li>
     <li><a class="mobile-nav__link" href="#contacts">Контакты</a></li>
   </ul>
-  <a class="btn" href="#contact">
-    <span class="btn__label">Получить КП</span>
-    <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-  </a>
+  <div class="mobile-nav__foot">
+    <div class="lang lang--menu" role="group" aria-label="Язык сайта" data-i18n-skip-text><a class="lang__link" href="?lang=es" hreflang="es" lang="es" data-lang="es">ES</a><a class="lang__link" href="?lang=en" hreflang="en" lang="en" data-lang="en">EN</a><a class="lang__link" href="?lang=ru" hreflang="ru" lang="ru" data-lang="ru">RU</a><a class="lang__link" href="?lang=uk" hreflang="uk" lang="uk" data-lang="uk">UA</a></div>
+    <a class="btn" href="#contact">
+      <span class="btn__label">Получить КП</span>
+      <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+    </a>
+  </div>
 </div>
 
 <main id="top">
@@ -903,8 +968,8 @@ strong { font-weight: 600; color: var(--clr-white); }
     <canvas class="hero__waves" id="hero-waves" aria-hidden="true"></canvas>
     <div class="container hero__inner">
       <h1 class="display hero__title">
-        <span class="hero__line"><span>Бренд. AI.</span></span>
-        <span class="hero__line"><span>Контент. Реклама</span></span>
+        <span class="hero__line"><span>Создаём</span></span>
+        <span class="hero__line"><span>спрос</span></span>
       </h1>
       <a class="hero__reel" href="#cases" aria-label="Смотреть кейсы">
         <img src="assets/img/hero.jpg" alt="AI-визуализация резиденции на побережье" width="1200" height="675">
@@ -920,8 +985,8 @@ strong { font-weight: 600; color: var(--clr-white); }
             <img src="assets/img/case-dubai.jpg" alt="" width="120" height="120">
           </div>
           <p>
-            <span class="trust__top">28 рынков · с 2022 года</span>
-            <span class="trust__text">10 000+ реализованных проектов</span>
+            <span class="trust__top">€273M+ выручки клиентов</span>
+            <span class="trust__text">28 рынков · с 2022 года</span>
           </p>
         </div>
         <div class="hero__copy">
@@ -938,15 +1003,69 @@ strong { font-weight: 600; color: var(--clr-white); }
   <!-- ============ 2. Services ============ -->
   <section class="section" id="services">
     <div class="container">
-      <h2 class="display h1 services__head" data-blur>Услуги</h2>
+      <div class="services__top">
+        <h2 class="display h1" data-blur>Услуги</h2>
+        <p class="services__intro reveal">Пять уровней — как в строительстве: от фундамента до ключей. Подключаемся на любом уровне или ведём проект целиком.</p>
+      </div>
       <ul class="reveal">
         <li class="svc">
           <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-1" data-accordion>
             <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
-            <span class="svc__name">Performance и реклама</span>
+            <span class="svc__title"><span class="svc__name">Фундамент</span><span class="svc__sub">стратегия, бренд, упаковка</span></span>
             <span class="svc__num">01</span><span class="svc__ticks" aria-hidden="true"></span>
           </button>
           <div class="svc__panel" id="svc-1" hidden>
+            <ul class="svc__grid">
+              <li class="svc__item"><h4>Маркетинговый аудит</h4><p>Анализ текущих каналов, конкурентов, точек роста.</p></li>
+              <li class="svc__item"><h4>Стратегия и консалтинг</h4><p>Разработка стратегии продвижения на период от 3 до 12 месяцев.</p></li>
+              <li class="svc__item"><h4>Логотип</h4><p>Разработка знака и логотипа компании или бренда.</p></li>
+              <li class="svc__item"><h4>Брендбук и айдентика</h4><p>Логотип, цвета, шрифты, гайдлайны для всех носителей.</p></li>
+              <li class="svc__item"><h4>Упаковка КП и презентаций</h4><p>Дизайн и структура презентации или коммерческого предложения для клиентов.</p></li>
+              <li class="svc__item"><h4>PR-сопровождение</h4><p>Публикации в медиа, работа с журналистами, инфоповоды.</p></li>
+            </ul>
+          </div>
+        </li>
+        <li class="svc">
+          <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-2" data-accordion>
+            <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
+            <span class="svc__title"><span class="svc__name">Каркас</span><span class="svc__sub">сайт, CRM, аналитика, автоматизация</span></span>
+            <span class="svc__num">02</span><span class="svc__ticks" aria-hidden="true"></span>
+          </button>
+          <div class="svc__panel" id="svc-2" hidden>
+            <ul class="svc__grid">
+              <li class="svc__item"><h4>Сайты</h4><p>Лендинг под оффер или кампанию, корпоративный сайт, интернет-магазин с каталогом, оплатой и интеграциями.</p></li>
+              <li class="svc__item"><h4>CRM</h4><p>Внедрение CRM, настройка воронок и полей под бизнес.</p></li>
+              <li class="svc__item"><h4>Аналитика и дашборды</h4><p>Сквозная аналитика, цели, события, пиксели. Визуальные отчёты по рекламе, сайту и продажам.</p></li>
+              <li class="svc__item"><h4>Email-маркетинг</h4><p>Цепочки писем, сегментация базы, интеграция с сайтом. Регулярные рассылки и A/B-тесты.</p></li>
+              <li class="svc__item"><h4>SEO</h4><p>Технический и контентный аудит с планом работ, ежемесячная работа над органическим трафиком и позициями.</p></li>
+            </ul>
+          </div>
+        </li>
+        <li class="svc">
+          <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-3" data-accordion>
+            <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
+            <span class="svc__title"><span class="svc__name">Фасад</span><span class="svc__sub">контент, AI-видео, визуализация, соцсети</span></span>
+            <span class="svc__num">03</span><span class="svc__ticks" aria-hidden="true"></span>
+          </button>
+          <div class="svc__panel" id="svc-3" hidden>
+            <ul class="svc__grid">
+              <li class="svc__item"><h4>AI-видео и визуалы</h4><p>Пакет сгенерированных нейросетью изображений и коротких видео.</p></li>
+              <li class="svc__item"><h4>SMM под ключ</h4><p>Стратегия, контент, дизайн, таргет, community-менеджмент, отчётность. Или базовое ведение одной соцсети.</p></li>
+              <li class="svc__item"><h4>Видеопродакшн</h4><p>От короткого ролика на 30–60 секунд до имиджевого фильма: сценарий, съёмка, монтаж, музыка.</p></li>
+              <li class="svc__item"><h4>Фото и аэросъёмка</h4><p>Фотосессия для сайта, соцсетей и рекламы. Съёмка с дрона, сертифицированный оператор.</p></li>
+              <li class="svc__item"><h4>Контент-маркетинг и блог</h4><p>SEO-статьи под ключевые запросы, ведение блога с редакционным планом — 4–8 статей в месяц.</p></li>
+              <li class="svc__item"><h4>Копирайтинг и сценарии</h4><p>Тексты для сайта, рекламы и презентаций. Сценарий и раскадровка для ролика.</p></li>
+              <li class="svc__item"><h4>Мультипликация видео</h4><p>Уникализация роликов под алгоритмы соцсетей и автопостинг в Reels: 2–3 публикации в день из одной съёмки.</p></li>
+            </ul>
+          </div>
+        </li>
+        <li class="svc">
+          <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-4" data-accordion>
+            <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
+            <span class="svc__title"><span class="svc__name">Лифт</span><span class="svc__sub">реклама в Meta, Google, TikTok и LinkedIn</span></span>
+            <span class="svc__num">04</span><span class="svc__ticks" aria-hidden="true"></span>
+          </button>
+          <div class="svc__panel" id="svc-4" hidden>
             <ul class="svc__grid">
               <li class="svc__item"><h4>Meta Ads</h4><p>Ежемесячная оптимизация кампаний, тестирование креативов, отчётность.</p></li>
               <li class="svc__item"><h4>Google Ads</h4><p>Управление ставками, ключевыми словами и фидом, отчётность.</p></li>
@@ -957,89 +1076,42 @@ strong { font-weight: 600; color: var(--clr-white); }
           </div>
         </li>
         <li class="svc">
-          <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-2" data-accordion>
-            <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
-            <span class="svc__name">Контент и креатив</span>
-            <span class="svc__num">02</span><span class="svc__ticks" aria-hidden="true"></span>
-          </button>
-          <div class="svc__panel" id="svc-2" hidden>
-            <ul class="svc__grid">
-              <li class="svc__item"><h4>SMM под ключ</h4><p>Стратегия, контент, дизайн, таргет, community-менеджмент, отчётность. Или базовое ведение одной соцсети.</p></li>
-              <li class="svc__item"><h4>AI-видео и визуалы</h4><p>Пакет сгенерированных нейросетью изображений и коротких видео.</p></li>
-              <li class="svc__item"><h4>Видеопродакшн</h4><p>От короткого ролика на 30–60 секунд до имиджевого фильма: сценарий, съёмка, монтаж, музыка.</p></li>
-              <li class="svc__item"><h4>Фото и аэросъёмка</h4><p>Фотосессия для сайта, соцсетей и рекламы. Съёмка с дрона, сертифицированный оператор.</p></li>
-              <li class="svc__item"><h4>Контент-маркетинг и блог</h4><p>SEO-статьи под ключевые запросы, ведение блога с редакционным планом — 4–8 статей в месяц.</p></li>
-              <li class="svc__item"><h4>Копирайтинг и сценарии</h4><p>Тексты для сайта, рекламы и презентаций. Сценарий и раскадровка для ролика.</p></li>
-              <li class="svc__item"><h4>Мультипликация видео</h4><p>Уникализация роликов под алгоритмы соцсетей и автопостинг в Reels: 2–3 публикации в день из одной съёмки.</p></li>
-            </ul>
-          </div>
-        </li>
-        <li class="svc">
-          <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-3" data-accordion>
-            <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
-            <span class="svc__name">Digital-инфраструктура</span>
-            <span class="svc__num">03</span><span class="svc__ticks" aria-hidden="true"></span>
-          </button>
-          <div class="svc__panel" id="svc-3" hidden>
-            <ul class="svc__grid">
-              <li class="svc__item"><h4>Сайты</h4><p>Лендинг под оффер или кампанию, корпоративный сайт, интернет-магазин с каталогом, оплатой и интеграциями.</p></li>
-              <li class="svc__item"><h4>SEO</h4><p>Технический и контентный аудит с планом работ, ежемесячная работа над органическим трафиком и позициями.</p></li>
-              <li class="svc__item"><h4>Email-маркетинг</h4><p>Цепочки писем, сегментация базы, интеграция с сайтом. Регулярные рассылки и A/B-тесты.</p></li>
-              <li class="svc__item"><h4>CRM</h4><p>Внедрение CRM, настройка воронок и полей под бизнес.</p></li>
-              <li class="svc__item"><h4>Аналитика и дашборды</h4><p>Сквозная аналитика, цели, события, пиксели. Визуальные отчёты по рекламе, сайту и продажам.</p></li>
-              <li class="svc__item"><h4>Сеть аккаунтов для охвата</h4><p>Управляемая сеть Instagram-аккаунтов с автопубликацией Reels для масштабирования охвата бренда.</p></li>
-            </ul>
-          </div>
-        </li>
-        <li class="svc">
-          <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-4" data-accordion>
-            <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
-            <span class="svc__name">Стратегия и бренд</span>
-            <span class="svc__num">04</span><span class="svc__ticks" aria-hidden="true"></span>
-          </button>
-          <div class="svc__panel" id="svc-4" hidden>
-            <ul class="svc__grid">
-              <li class="svc__item"><h4>Логотип</h4><p>Разработка знака и логотипа компании или бренда.</p></li>
-              <li class="svc__item"><h4>Брендбук и айдентика</h4><p>Логотип, цвета, шрифты, гайдлайны для всех носителей.</p></li>
-              <li class="svc__item"><h4>Упаковка КП и презентаций</h4><p>Дизайн и структура презентации или коммерческого предложения для клиентов.</p></li>
-              <li class="svc__item"><h4>Маркетинговый аудит</h4><p>Анализ текущих каналов, конкурентов, точек роста.</p></li>
-              <li class="svc__item"><h4>Стратегия и консалтинг</h4><p>Разработка стратегии продвижения на период от 3 до 12 месяцев.</p></li>
-              <li class="svc__item"><h4>PR-сопровождение</h4><p>Публикации в медиа, работа с журналистами, инфоповоды.</p></li>
-            </ul>
-          </div>
-        </li>
-        <li class="svc">
           <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-5" data-accordion>
             <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
-            <span class="svc__name">Недвижимость и девелопмент</span>
+            <span class="svc__title"><span class="svc__name">Ключи</span><span class="svc__sub">воронки, скрипты, продажи</span></span>
             <span class="svc__num">05</span><span class="svc__ticks" aria-hidden="true"></span>
           </button>
           <div class="svc__panel" id="svc-5" hidden>
             <ul class="svc__grid">
-              <li class="svc__item"><h4>AI-видео объекта</h4><p>Показываем объект до сдачи: продажи «с котлована» без дорогого классического продакшна.</p></li>
-              <li class="svc__item"><h4>3D Property Tour</h4><p>Виртуальный тур с планировкой для сайта и порталов.</p></li>
-              <li class="svc__item"><h4>Real Estate Photo + Video</h4><p>Профессиональная съёмка объекта для порталов и рекламы.</p></li>
-              <li class="svc__item"><h4>Локализация</h4><p>Перевод и адаптация текстов под целевой рынок — для покупателей за границей.</p></li>
-              <li class="svc__item"><h4>UGC-контент</h4><p>Живой контент от лица клиента или пользователя для соцсетей.</p></li>
-              <li class="svc__item"><h4>CRM и автоматизация лидов</h4><p>Единая система учёта, чтобы заявки не терялись между рекламой и отделом продаж.</p></li>
-              <li class="svc__item"><h4>Брендинг для доверия</h4><p>Упаковка нового или небольшого застройщика, которая снимает недоверие покупателя.</p></li>
-            </ul>
-          </div>
-        </li>
-        <li class="svc">
-          <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-6" data-accordion>
-            <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
-            <span class="svc__name">Маркетинг для продаж</span>
-            <span class="svc__num">06</span><span class="svc__ticks" aria-hidden="true"></span>
-          </button>
-          <div class="svc__panel" id="svc-6" hidden>
-            <ul class="svc__grid">
               <li class="svc__item"><h4>Воронки продаж</h4><p>Проектируем путь клиента от первого касания до сделки.</p></li>
               <li class="svc__item"><h4>Скрипты</h4><p>Сценарии первого контакта и регламент обработки лидов для отдела продаж.</p></li>
-              <li class="svc__item"><h4>CRM</h4><p>Связываем воронку, скрипты и CRM в одну систему — комплексным подходом.</p></li>
+              <li class="svc__item"><h4>Система продаж</h4><p>Связываем воронку, скрипты и CRM в одну систему — комплексным подходом.</p></li>
             </ul>
           </div>
         </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ For developers ============ -->
+  <section class="section" id="developers">
+    <div class="container dev__grid">
+      <div class="dev__intro reveal">
+        <span class="eyebrow">Отдельное направление</span>
+        <h2 class="display h2" data-blur>Для<br>девелоперов</h2>
+        <p>Маркетинг для застройщиков, девелоперов и строительных компаний. Решаем типичные задачи ниши — от продаж «с котлована» до покупателей за границей.</p>
+        <a class="btn btn--sm" href="#cases">
+          <span class="btn__label">Смотреть кейсы</span>
+          <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+      <ul class="dev__list reveal reveal--d1">
+        <li class="dev__item"><p class="dev__pain">Нечего показывать до сдачи объекта</p><div><h3 class="dev__name">AI-видео и 3D Property Tour</h3><p class="dev__text">Показываем объект до сдачи: AI-видео и виртуальный тур с планировкой для сайта и порталов. Продажи стартуют «с котлована».</p></div></li>
+        <li class="dev__item"><p class="dev__pain">Классический продакшн дорогой и не масштабируется</p><div><h3 class="dev__name">Real Estate Photo + Video</h3><p class="dev__text">Профессиональная съёмка объекта для порталов и рекламы — и AI-видео там, где съёмка обходится слишком дорого.</p></div></li>
+        <li class="dev__item"><p class="dev__pain">Покупатель за границей, языковой барьер</p><div><h3 class="dev__name">Локализация</h3><p class="dev__text">Перевод и адаптация текстов и подачи под целевой рынок — для покупателей из других стран.</p></div></li>
+        <li class="dev__item"><p class="dev__pain">Нужен постоянный поток контента для соцсетей</p><div><h3 class="dev__name">UGC-контент и мультипликация видео</h3><p class="dev__text">Живой контент от лица клиента и уникализация роликов под алгоритмы соцсетей.</p></div></li>
+        <li class="dev__item"><p class="dev__pain">Лиды теряются, нет единой системы учёта</p><div><h3 class="dev__name">CRM и автоматизация лидов</h3><p class="dev__text">Единая система учёта, чтобы заявки не терялись между рекламой и отделом продаж.</p></div></li>
+        <li class="dev__item"><p class="dev__pain">Недоверие к новому или небольшому застройщику</p><div><h3 class="dev__name">Брендинг для доверия</h3><p class="dev__text">Упаковка застройщика, которая снимает недоверие покупателя.</p></div></li>
       </ul>
     </div>
   </section>
@@ -1153,18 +1225,12 @@ strong { font-weight: 600; color: var(--clr-white); }
           <ul class="case__stats"><li class="case__stat"><b>980</b><span>лидов</span></li><li class="case__stat"><b>€38</b><span>стоимость лида</span></li><li class="case__stat"><b>52</b><span>юнита продано</span></li></ul>
         </article>
         <div class="cases__tile reveal reveal--d1">
-          <div>
-            <p class="cases__count">(07)</p>
-            <p class="cases__note">Клиенты работают под NDA. Цифры — иллюстративный пример на основе типового проекта.</p>
+          <p class="cases__count">(07)</p>
+          <div class="cases__note">
+            <p class="cases__note-label">Иллюстративный пример</p>
+            <p class="cases__note-text">Клиенты работают под NDA, поэтому цифры в кейсах — иллюстративный пример на основе типового проекта.</p>
           </div>
-          <div>
-            <a class="more-link" href="#contact">Больше кейсов <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <div class="cases__thumbs" aria-hidden="true">
-              <img src="assets/img/case-cyprus.jpg" alt="" width="300" height="200" loading="lazy">
-              <img src="assets/img/case-phuket.jpg" alt="" width="300" height="200" loading="lazy">
-              <img src="assets/img/case-montenegro.jpg" alt="" width="300" height="200" loading="lazy">
-            </div>
-          </div>
+        </div>
         </div>
       </div>
     </div>
@@ -1219,7 +1285,7 @@ strong { font-weight: 600; color: var(--clr-white); }
           <p class="lead lead--muted">Визуализация объектов.</p>
           <p class="lead lead--muted">AI-видео.</p>
           <p class="lead lead--muted">Мультиязычный контент.</p>
-          <p class="lead lead--gap">Tuhano — агентство полного цикла: от бренда до продаж.</p>
+          <p class="lead lead--gap">Tuhono — агентство полного цикла: от бренда до продаж.</p>
           <a class="btn btn--lg" href="#contact">
             <span class="btn__label">Обсудить проект</span>
             <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
@@ -1227,9 +1293,9 @@ strong { font-weight: 600; color: var(--clr-white); }
         </div>
       </div>
       <ul class="stats reveal">
-        <li><p class="stat__num" data-count="2022" data-from="2000" data-plain>2022</p><p class="stat__label">год основания</p></li>
-        <li><p class="stat__num" data-count="10000" data-suffix="+">10 000+</p><p class="stat__label">реализованных проектов</p></li>
+        <li><p class="stat__num" data-count="273" data-prefix="€" data-suffix="M+">€273M+</p><p class="stat__label">выручки клиентов</p></li>
         <li><p class="stat__num" data-count="28">28</p><p class="stat__label">стран и рынков</p></li>
+        <li><p class="stat__num" data-count="2022" data-from="2000" data-plain>2022</p><p class="stat__label">год основания</p></li>
         <li><p class="stat__num" data-count="4">4</p><p class="stat__label">языка коммуникации</p></li>
       </ul>
     </div>
@@ -1356,7 +1422,7 @@ strong { font-weight: 600; color: var(--clr-white); }
         <div class="reveal reveal--d1">
           <svg class="icon icon--fill proof__quote" aria-hidden="true"><use href="#i-quote"/></svg>
           <p class="proof__text">Большинство проектов мы ведём под <strong>NDA</strong> — поэтому вместо громких имён здесь география и цифры. За ними стоят девелоперы, застройщики и бренды из 28 стран, которые доверили нам упаковку и продажи.</p>
-          <p class="proof__by"><b>Команда Tuhano</b><span>о клиентах агентства</span></p>
+          <p class="proof__by"><b>Команда Tuhono</b><span>о клиентах агентства</span></p>
           <p class="stat__num" data-count="273" data-prefix="€" data-suffix="M+">€273M+</p>
           <p class="stat__label">выручки клиентов</p>
         </div>
@@ -1447,7 +1513,7 @@ strong { font-weight: 600; color: var(--clr-white); }
 <footer class="footer" id="contacts">
   <div class="container">
     <div class="footer__seo reveal">
-      <h2 class="display" data-blur>Tuhano — маркетинг, контент и брендинг для роста продаж</h2>
+      <h2 class="display" data-blur>Tuhono — маркетинг, контент и брендинг для роста продаж</h2>
       <p>С 2022 года мы упаковываем и продвигаем бизнес на 28 рынках: строим бренды, создаём контент — живой и AI, запускаем рекламу и собираем digital-инфраструктуру, которая доводит клиента до сделки.</p>
     </div>
     <div class="footer-grid">
@@ -1466,22 +1532,23 @@ strong { font-weight: 600; color: var(--clr-white); }
       <div>
         <h3 class="footer__heading">Услуги</h3>
         <ul class="footer__list">
-          <li><a href="#services">Performance и реклама</a></li>
-          <li><a href="#services">Контент и креатив</a></li>
-          <li><a href="#services">Digital-инфраструктура</a></li>
-          <li><a href="#services">Стратегия и бренд</a></li>
-          <li><a href="#services">Недвижимость и девелопмент</a></li>
-          <li><a href="#services">Маркетинг для продаж</a></li>
+          <li><a href="#services">Фундамент</a></li>
+          <li><a href="#services">Каркас</a></li>
+          <li><a href="#services">Фасад</a></li>
+          <li><a href="#services">Лифт</a></li>
+          <li><a href="#services">Ключи</a></li>
+          <li><a href="#developers">Для девелоперов</a></li>
         </ul>
       </div>
       <div>
         <p class="footer__ask">Интересует сотрудничество?</p>
-        <a class="footer__contact" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Здравствуйте! Интересует сотрудничество с Tuhano.">Написать в WhatsApp</a>
+        <a class="footer__contact" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Здравствуйте! Интересует сотрудничество с Tuhono.">Написать в WhatsApp</a>
         <a class="more-link footer__cta" href="#contact">Получить КП <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
     <div class="footer__bottom">
-      <p>© <span id="year">2026</span> <strong>Tuhano</strong> · Маркетинговое агентство</p>
+      <p>© <span id="year">2026</span> <strong>Tuhono</strong> · Маркетинговое агентство</p>
+      <div class="lang" role="group" aria-label="Язык сайта" data-i18n-skip-text><a class="lang__link" href="?lang=es" hreflang="es" lang="es" data-lang="es">ES</a><a class="lang__link" href="?lang=en" hreflang="en" lang="en" data-lang="en">EN</a><a class="lang__link" href="?lang=ru" hreflang="ru" lang="ru" data-lang="ru">RU</a><a class="lang__link" href="?lang=uk" hreflang="uk" lang="uk" data-lang="uk">UA</a></div>
       <div class="socials">
         <a class="social" href="#" id="instagram-link" target="_blank" rel="noopener" aria-label="Instagram" hidden><svg class="icon icon--fill" aria-hidden="true"><use href="#i-instagram"/></svg></a>
         <a class="social" href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp" data-wa="Здравствуйте!"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
@@ -1496,10 +1563,98 @@ strong { font-weight: 600; color: var(--clr-white); }
 </div>
 
 <script>
-(() => {
+(async () => {
+  // ---------- i18n ----------
+  // Russian is the source. Other languages live in i18n/<lang>.json as { "<Russian text>": "<translation>" };
+  // an empty or missing entry falls back to Russian. Rich strings keep their <br>/<strong> tags.
+  const lang = document.documentElement.lang;
+  let dict = {};
+  const missing = new Set();
+  const norm = (str) => str.replace(/\s+/g, ' ').trim();
+  const hasLetters = (str) => /\p{L}/u.test(str);
+  const lookup = (raw) => {
+    const key = norm(raw);
+    if (lang === 'ru' || !hasLetters(key)) return null;
+    if (dict[key]) return dict[key];
+    missing.add(key);
+    return null;
+  };
+  const t = (raw) => lookup(raw) ?? raw;
+
+  if (lang !== 'ru') {
+    try {
+      const res = await fetch(`i18n/${lang}.json`, { cache: 'no-cache' });
+      if (res.ok) dict = await res.json();
+    } catch (e) { /* no dictionary: stay on Russian */ }
+
+    const INLINE = new Set(['STRONG', 'B', 'BR', 'EM']);
+    const visit = (el) => {
+      if (el.matches('script, style, svg, [data-i18n-skip-text]')) return;
+      const kids = [...el.children];
+      if (kids.every((c) => INLINE.has(c.tagName)) && hasLetters(el.textContent)) {
+        const v = lookup(el.innerHTML);
+        if (v) el.innerHTML = v;
+        return;
+      }
+      el.childNodes.forEach((n) => {
+        if (n.nodeType !== Node.TEXT_NODE || !hasLetters(n.textContent)) return;
+        const [, lead, body, trail] = n.textContent.match(/^(\s*)([\s\S]*?)(\s*)$/);
+        const v = lookup(body);
+        if (v) n.textContent = lead + v + trail;
+      });
+      kids.forEach(visit);
+    };
+    visit(document.body);
+    document.querySelectorAll('[placeholder], [aria-label], img[alt], [data-wa]').forEach((el) => {
+      ['placeholder', 'aria-label', 'alt', 'data-wa'].forEach((attr) => {
+        if (el.hasAttribute(attr)) el.setAttribute(attr, t(el.getAttribute(attr)));
+      });
+    });
+    document.title = t(document.title);
+    const desc = document.querySelector('meta[name="description"]');
+    desc.content = t(desc.content);
+  }
+  const UI = {
+    menuOpen: t('Открыть меню'),
+    menuClose: t('Закрыть меню'),
+    waGreeting: t('Здравствуйте! Хочу получить коммерческое предложение.'),
+    waName: t('Имя'),
+    waPhone: t('Телефон'),
+    waEmail: t('Почта'),
+    waAbout: t('О проекте'),
+    formSent: t('Открываем WhatsApp — отправьте сообщение, и мы ответим с предложением.'),
+  };
+  document.querySelectorAll('[data-lang]').forEach((a) => {
+    if (a.dataset.lang === lang) a.setAttribute('aria-current', 'true');
+  });
+  window.__i18nMissing = [...missing];
+
+  // hero headline: one unbroken line per row on desktop, scaled so the rows fill the width
+  // (shrinks long translations, grows short ones up to 14.5rem) without running into the thumbnail
+  const heroTitle = document.querySelector('.hero__title');
+  const heroInner = heroTitle.parentElement;
+  const heroReel = heroInner.querySelector('.hero__reel');
+  const fitHero = () => {
+    heroInner.style.setProperty('--hero-fit', '1');
+    const avail = heroTitle.clientWidth;
+    const widths = [...heroTitle.querySelectorAll('.hero__line > span')].map((el) => el.scrollWidth);
+    if (window.innerWidth < 992) {
+      // stacked layout: only shrink, so a long single word never runs off a narrow screen
+      if (Math.max(...widths) > avail) heroInner.style.setProperty('--hero-fit', (avail / Math.max(...widths)).toFixed(3));
+      return;
+    }
+    const base = parseFloat(getComputedStyle(heroTitle).fontSize);
+    const maxSize = 14.5 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const fit = Math.min(avail / Math.max(...widths), (avail - 32) / (widths[0] + heroReel.offsetWidth), maxSize / base);
+    heroInner.style.setProperty('--hero-fit', fit.toFixed(3));
+  };
+  document.fonts.ready.then(fitHero);
+  window.addEventListener('resize', fitHero);
+  document.documentElement.classList.remove('i18n-pending');
+
   // TODO before launch: agency WhatsApp number (digits only, with country code) and Instagram profile URL.
-  const WHATSAPP_NUMBER = '';
-  const INSTAGRAM_URL = '';
+  const WHATSAPP_NUMBER = '380755653458';
+  const INSTAGRAM_URL = 'https://www.instagram.com/tuhono.es/';
 
   const waLink = (text) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
   document.querySelectorAll('[data-wa]').forEach((a) => { a.href = waLink(a.dataset.wa); });
@@ -1520,7 +1675,7 @@ strong { font-weight: 600; color: var(--clr-white); }
     mobileNav.classList.toggle('is-open', open);
     mobileNav.inert = !open;
     burger.setAttribute('aria-expanded', String(open));
-    burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+    burger.setAttribute('aria-label', open ? UI.menuClose : UI.menuOpen);
   };
   burger.addEventListener('click', () => setMenu(!mobileNav.classList.contains('is-open')));
   mobileNav.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
@@ -1583,7 +1738,8 @@ strong { font-weight: 600; color: var(--clr-white); }
     });
   })();
 
-  // stat counters: count up once when the number scrolls into view
+  // stat counters: the final figures stay in the HTML (and on screen for crawlers, previews, no-JS);
+  // a counter only drops to its start value just before it scrolls into view, then counts up once
   (() => {
     const nums = document.querySelectorAll('[data-count]');
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -1607,8 +1763,19 @@ strong { font-weight: 600; color: var(--clr-white); }
       entries.forEach((entry) => {
         if (entry.isIntersecting) { run(entry.target); countIO.unobserve(entry.target); }
       });
-    }, { threshold: 0.6 });
-    nums.forEach((el) => { el.textContent = format(el, Number(el.dataset.from || 0)); countIO.observe(el); });
+    }, { threshold: 0.35 });
+    // arm while the number is still below the fold, so the reset to the start value is never seen
+    const armIO = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        armIO.unobserve(el);
+        if (el.getBoundingClientRect().top < window.innerHeight) { run(el); return; }
+        el.textContent = format(el, Number(el.dataset.from || 0));
+        countIO.observe(el);
+      });
+    }, { rootMargin: '0px 0px 35% 0px' });
+    nums.forEach((el) => armIO.observe(el));
   })();
 
   // marquee: duplicate items for a seamless loop
@@ -1834,14 +2001,14 @@ void main() {
     e.preventDefault();
     const data = new FormData(form);
     const lines = [
-      'Здравствуйте! Хочу получить коммерческое предложение.',
-      `Имя: ${data.get('name').trim()}`,
-      `Телефон: ${data.get('phone').trim()}`,
+      UI.waGreeting,
+      `${UI.waName}: ${data.get('name').trim()}`,
+      `${UI.waPhone}: ${data.get('phone').trim()}`,
     ];
-    if (data.get('email').trim()) lines.push(`Почта: ${data.get('email').trim()}`);
-    if (data.get('message').trim()) lines.push(`О проекте: ${data.get('message').trim()}`);
+    if (data.get('email').trim()) lines.push(`${UI.waEmail}: ${data.get('email').trim()}`);
+    if (data.get('message').trim()) lines.push(`${UI.waAbout}: ${data.get('message').trim()}`);
     window.open(waLink(lines.join('\n')), '_blank', 'noopener');
-    status.textContent = 'Открываем WhatsApp — отправьте сообщение, и мы ответим с предложением.';
+    status.textContent = UI.formSent;
   });
 })();
 </script>
