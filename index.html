@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tuhono — маркетинг, контент и брендинг для роста продаж</title>
-<meta name="description" content="Tuhono — агентство полного цикла: брендинг, контент, AI-продакшн, реклама и digital-инфраструктура. €273M+ выручки клиентов · 28 рынков · с 2022 года.">
+<title>Tuhono — marketing, content and branding that grow sales</title>
+<meta name="description" content="Tuhono is a full-cycle agency: branding, content, AI production, advertising and digital infrastructure. €273M+ in client revenue · 28 markets · since 2022.">
 <meta name="theme-color" content="#050806">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-40 -87 685 685'%3E%3Ccircle cx='219' cy='219' r='219' fill='%23264A36'/%3E%3Ccircle cx='386' cy='292' r='219' fill='%2385C29C'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>
-  // language: ?lang= link > saved choice > Russian (the source copy)
+  // language: ?lang= link > saved choice > English (the source copy)
   (() => {
     const LANGS = ['es', 'en', 'ru', 'uk'];
     const fromUrl = new URLSearchParams(location.search).get('lang');
@@ -20,9 +20,9 @@
       if (lang) localStorage.setItem('lang', lang);
       else lang = localStorage.getItem('lang');
     } catch (e) { /* storage blocked: the URL still decides */ }
-    if (!LANGS.includes(lang)) lang = 'ru';
+    if (!LANGS.includes(lang)) lang = 'en';
     document.documentElement.lang = lang;
-    if (lang !== 'ru') document.documentElement.classList.add('i18n-pending');
+    if (lang !== 'en') document.documentElement.classList.add('i18n-pending');
   })();
 </script>
 <script src="https://cdn.tailwindcss.com"></script>
@@ -201,22 +201,22 @@ strong { font-weight: 600; color: var(--clr-white); }
 
 /* ---------- Buttons ---------- */
 .btn {
-  display: inline-flex; align-items: stretch; flex-shrink: 0;
+  display: inline-flex; align-items: stretch; flex-shrink: 0; max-width: 100%;
   font-size: var(--btn-m); font-weight: 600; line-height: 1; text-transform: uppercase; letter-spacing: 0.02em;
   color: #020202; cursor: pointer; background: none;
   transition: transform 0.35s var(--ease-spring);
 }
 .btn__label {
   position: relative; isolation: isolate; overflow: hidden;
-  display: flex; align-items: center; height: 3.5em; padding-inline: 1.7em;
-  border-radius: 999px; background: var(--clr-white); white-space: nowrap;
+  display: flex; align-items: center; min-height: 3.5em; padding: 0.55em 1.7em; min-width: 0;
+  border-radius: 999px; background: var(--clr-white); line-height: 1.15;
 }
 .btn__label::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
   background: var(--clr-green); opacity: 0; transition: opacity var(--transition-1);
 }
 .btn__icon {
-  display: grid; place-items: center; width: 3.5em; height: 3.5em; border-radius: 50%;
+  display: grid; place-items: center; flex-shrink: 0; align-self: center; width: 3.5em; height: 3.5em; border-radius: 50%;
   background: var(--clr-white); font-size: 1em;
   transition: transform 0.55s var(--ease-spring);
 }
@@ -226,10 +226,12 @@ strong { font-weight: 600; color: var(--clr-white); }
 .btn:active { transform: scale(0.96); }
 .btn:focus-visible { border-radius: 999px; }
 .btn--sm { font-size: var(--btn-s); }
-.btn--sm .btn__label, .btn--sm .btn__icon { height: 3.1em; }
+.btn--sm .btn__label { min-height: 3.1em; }
+.btn--sm .btn__icon { height: 3.1em; }
 .btn--sm .btn__icon { width: 3.1em; }
 .btn--lg { font-size: var(--btn-l); }
-.btn--lg .btn__label, .btn--lg .btn__icon { height: 3em; }
+.btn--lg .btn__label { min-height: 3em; }
+.btn--lg .btn__icon { height: 3em; }
 .btn--lg .btn__icon { width: 3em; }
 .btn--lg .btn__label { font-weight: 500; }
 .btn--grey { color: var(--clr-white); }
@@ -916,46 +918,46 @@ strong { font-weight: 600; color: var(--clr-white); }
 <header class="site-header" id="header">
   <div class="container">
     <div class="header__bar">
-      <a class="logo" href="#top" aria-label="Tuhono — на главную" data-i18n-skip-text>
+      <a class="logo" href="#top" aria-label="Tuhono — home" data-i18n-skip-text>
         <svg class="logo__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
         <span class="logo__word">Tuhono</span>
       </a>
-      <nav class="nav" aria-label="Основная навигация">
+      <nav class="nav" aria-label="Main navigation">
         <ul class="nav__list">
-          <li><a class="nav__link" href="#services">Услуги</a></li>
-          <li><a class="nav__link" href="#cases">Кейсы</a></li>
-          <li><a class="nav__link" href="#about">Об агентстве</a></li>
-          <li><a class="nav__link" href="#approach">Подход</a></li>
-          <li><a class="nav__link" href="#process">Процесс</a></li>
+          <li><a class="nav__link" href="#services">Services</a></li>
+          <li><a class="nav__link" href="#cases">Case studies</a></li>
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#approach">Approach</a></li>
+          <li><a class="nav__link" href="#process">Process</a></li>
           <li><a class="nav__link" href="#faq">FAQ</a></li>
-          <li><a class="nav__link" href="#contacts">Контакты</a></li>
+          <li><a class="nav__link" href="#contacts">Contact</a></li>
         </ul>
       </nav>
       <div class="header__actions">
-        <div class="lang header__lang" role="group" aria-label="Язык сайта" data-i18n-skip-text><a class="lang__link" href="?lang=es" hreflang="es" lang="es" data-lang="es">ES</a><a class="lang__link" href="?lang=en" hreflang="en" lang="en" data-lang="en">EN</a><a class="lang__link" href="?lang=ru" hreflang="ru" lang="ru" data-lang="ru">RU</a><a class="lang__link" href="?lang=uk" hreflang="uk" lang="uk" data-lang="uk">UA</a></div>
+        <div class="lang header__lang" role="group" aria-label="Site language" data-i18n-skip-text><a class="lang__link" href="?lang=es" hreflang="es" lang="es" data-lang="es">ES</a><a class="lang__link" href="?lang=en" hreflang="en" lang="en" data-lang="en">EN</a><a class="lang__link" href="?lang=ru" hreflang="ru" lang="ru" data-lang="ru">RU</a><a class="lang__link" href="?lang=uk" hreflang="uk" lang="uk" data-lang="uk">UA</a></div>
         <a class="btn btn--sm header__cta" href="#contact">
-          <span class="btn__label">Получить КП</span>
+          <span class="btn__label">Get a proposal</span>
           <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
         </a>
-        <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
+        <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
       </div>
     </div>
   </div>
 </header>
 <div class="mobile-nav" id="mobile-nav" inert>
   <ul>
-    <li><a class="mobile-nav__link" href="#services">Услуги</a></li>
-    <li><a class="mobile-nav__link" href="#cases">Кейсы</a></li>
-    <li><a class="mobile-nav__link" href="#about">Об агентстве</a></li>
-    <li><a class="mobile-nav__link" href="#approach">Подход</a></li>
-    <li><a class="mobile-nav__link" href="#process">Процесс</a></li>
+    <li><a class="mobile-nav__link" href="#services">Services</a></li>
+    <li><a class="mobile-nav__link" href="#cases">Case studies</a></li>
+    <li><a class="mobile-nav__link" href="#about">About</a></li>
+    <li><a class="mobile-nav__link" href="#approach">Approach</a></li>
+    <li><a class="mobile-nav__link" href="#process">Process</a></li>
     <li><a class="mobile-nav__link" href="#faq">FAQ</a></li>
-    <li><a class="mobile-nav__link" href="#contacts">Контакты</a></li>
+    <li><a class="mobile-nav__link" href="#contacts">Contact</a></li>
   </ul>
   <div class="mobile-nav__foot">
-    <div class="lang lang--menu" role="group" aria-label="Язык сайта" data-i18n-skip-text><a class="lang__link" href="?lang=es" hreflang="es" lang="es" data-lang="es">ES</a><a class="lang__link" href="?lang=en" hreflang="en" lang="en" data-lang="en">EN</a><a class="lang__link" href="?lang=ru" hreflang="ru" lang="ru" data-lang="ru">RU</a><a class="lang__link" href="?lang=uk" hreflang="uk" lang="uk" data-lang="uk">UA</a></div>
+    <div class="lang lang--menu" role="group" aria-label="Site language" data-i18n-skip-text><a class="lang__link" href="?lang=es" hreflang="es" lang="es" data-lang="es">ES</a><a class="lang__link" href="?lang=en" hreflang="en" lang="en" data-lang="en">EN</a><a class="lang__link" href="?lang=ru" hreflang="ru" lang="ru" data-lang="ru">RU</a><a class="lang__link" href="?lang=uk" hreflang="uk" lang="uk" data-lang="uk">UA</a></div>
     <a class="btn" href="#contact">
-      <span class="btn__label">Получить КП</span>
+      <span class="btn__label">Get a proposal</span>
       <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
     </a>
   </div>
@@ -968,11 +970,11 @@ strong { font-weight: 600; color: var(--clr-white); }
     <canvas class="hero__waves" id="hero-waves" aria-hidden="true"></canvas>
     <div class="container hero__inner">
       <h1 class="display hero__title">
-        <span class="hero__line"><span>Создаём</span></span>
-        <span class="hero__line"><span>спрос</span></span>
+        <span class="hero__line"><span>We build</span></span>
+        <span class="hero__line"><span>demand</span></span>
       </h1>
-      <a class="hero__reel" href="#cases" aria-label="Смотреть кейсы">
-        <img src="assets/img/hero.jpg" alt="AI-визуализация резиденции на побережье" width="1200" height="675">
+      <a class="hero__reel" href="#cases" aria-label="View case studies">
+        <img src="assets/img/hero.jpg" alt="AI visualisation of a coastal residence" width="1200" height="675">
         <span class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
         <span class="absolute inset-0 bg-pine/40 mix-blend-multiply"></span>
       </a>
@@ -985,14 +987,14 @@ strong { font-weight: 600; color: var(--clr-white); }
             <img src="assets/img/case-dubai.jpg" alt="" width="120" height="120">
           </div>
           <p>
-            <span class="trust__top">€273M+ выручки клиентов</span>
-            <span class="trust__text">28 рынков · с 2022 года</span>
+            <span class="trust__top">€273M+ in client revenue</span>
+            <span class="trust__text">28 markets · since 2022</span>
           </p>
         </div>
         <div class="hero__copy">
-          <p>Упаковываем и продвигаем бизнес и объекты недвижимости: бренд, контент, AI-продакшн и реклама — в одной команде, с единой точкой ответственности.</p>
+          <p>We package and promote businesses and real estate: brand, content, AI production and advertising — one team, one point of accountability.</p>
           <a class="btn" href="#contact">
-            <span class="btn__label"><span class="sm:hidden">Получить КП</span><span class="hidden sm:inline">Получить коммерческое предложение</span></span>
+            <span class="btn__label"><span class="sm:hidden">Get a proposal</span><span class="hidden sm:inline">Get a commercial proposal</span></span>
             <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
           </a>
         </div>
@@ -1004,88 +1006,88 @@ strong { font-weight: 600; color: var(--clr-white); }
   <section class="section" id="services">
     <div class="container">
       <div class="services__top">
-        <h2 class="display h1" data-blur>Услуги</h2>
-        <p class="services__intro reveal">Пять уровней — как в строительстве: от фундамента до ключей. Подключаемся на любом уровне или ведём проект целиком.</p>
+        <h2 class="display h1" data-blur>Services</h2>
+        <p class="services__intro reveal">Five levels, just like in construction: from the foundation to the keys. Bring us in at any level, or let us run the whole project.</p>
       </div>
       <ul class="reveal">
         <li class="svc">
           <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-1" data-accordion>
             <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
-            <span class="svc__title"><span class="svc__name">Фундамент</span><span class="svc__sub">стратегия, бренд, упаковка</span></span>
+            <span class="svc__title"><span class="svc__name">Foundation</span><span class="svc__sub">strategy, brand, packaging</span></span>
             <span class="svc__num">01</span><span class="svc__ticks" aria-hidden="true"></span>
           </button>
           <div class="svc__panel" id="svc-1" hidden>
             <ul class="svc__grid">
-              <li class="svc__item"><h4>Маркетинговый аудит</h4><p>Анализ текущих каналов, конкурентов, точек роста.</p></li>
-              <li class="svc__item"><h4>Стратегия и консалтинг</h4><p>Разработка стратегии продвижения на период от 3 до 12 месяцев.</p></li>
-              <li class="svc__item"><h4>Логотип</h4><p>Разработка знака и логотипа компании или бренда.</p></li>
-              <li class="svc__item"><h4>Брендбук и айдентика</h4><p>Логотип, цвета, шрифты, гайдлайны для всех носителей.</p></li>
-              <li class="svc__item"><h4>Упаковка КП и презентаций</h4><p>Дизайн и структура презентации или коммерческого предложения для клиентов.</p></li>
-              <li class="svc__item"><h4>PR-сопровождение</h4><p>Публикации в медиа, работа с журналистами, инфоповоды.</p></li>
+              <li class="svc__item"><h4>Marketing audit</h4><p>Analysis of current channels, competitors and growth opportunities.</p></li>
+              <li class="svc__item"><h4>Strategy & consulting</h4><p>A promotion strategy for a period of 3 to 12 months.</p></li>
+              <li class="svc__item"><h4>Logo</h4><p>Design of a company or brand mark and logo.</p></li>
+              <li class="svc__item"><h4>Brand book & identity</h4><p>Logo, colours, typefaces and guidelines for every medium.</p></li>
+              <li class="svc__item"><h4>Sales decks & proposals</h4><p>Design and structure of presentations or commercial proposals for your clients.</p></li>
+              <li class="svc__item"><h4>PR</h4><p>Media coverage, journalist relations, newsworthy stories.</p></li>
             </ul>
           </div>
         </li>
         <li class="svc">
           <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-2" data-accordion>
             <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
-            <span class="svc__title"><span class="svc__name">Каркас</span><span class="svc__sub">сайт, CRM, аналитика, автоматизация</span></span>
+            <span class="svc__title"><span class="svc__name">Framework</span><span class="svc__sub">website, CRM, analytics, automation</span></span>
             <span class="svc__num">02</span><span class="svc__ticks" aria-hidden="true"></span>
           </button>
           <div class="svc__panel" id="svc-2" hidden>
             <ul class="svc__grid">
-              <li class="svc__item"><h4>Сайты</h4><p>Лендинг под оффер или кампанию, корпоративный сайт, интернет-магазин с каталогом, оплатой и интеграциями.</p></li>
-              <li class="svc__item"><h4>CRM</h4><p>Внедрение CRM, настройка воронок и полей под бизнес.</p></li>
-              <li class="svc__item"><h4>Аналитика и дашборды</h4><p>Сквозная аналитика, цели, события, пиксели. Визуальные отчёты по рекламе, сайту и продажам.</p></li>
-              <li class="svc__item"><h4>Email-маркетинг</h4><p>Цепочки писем, сегментация базы, интеграция с сайтом. Регулярные рассылки и A/B-тесты.</p></li>
-              <li class="svc__item"><h4>SEO</h4><p>Технический и контентный аудит с планом работ, ежемесячная работа над органическим трафиком и позициями.</p></li>
+              <li class="svc__item"><h4>Websites</h4><p>Landing pages for an offer or campaign, corporate websites, online stores with catalogue, payments and integrations.</p></li>
+              <li class="svc__item"><h4>CRM</h4><p>CRM implementation, with pipelines and fields set up for your business.</p></li>
+              <li class="svc__item"><h4>Analytics & dashboards</h4><p>End-to-end analytics, goals, events and pixels. Visual reports on advertising, website and sales.</p></li>
+              <li class="svc__item"><h4>Email marketing</h4><p>Email sequences, list segmentation, website integration. Regular campaigns and A/B tests.</p></li>
+              <li class="svc__item"><h4>SEO</h4><p>Technical and content audit with an action plan; monthly work on organic traffic and rankings.</p></li>
             </ul>
           </div>
         </li>
         <li class="svc">
           <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-3" data-accordion>
             <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
-            <span class="svc__title"><span class="svc__name">Фасад</span><span class="svc__sub">контент, AI-видео, визуализация, соцсети</span></span>
+            <span class="svc__title"><span class="svc__name">Facade</span><span class="svc__sub">content, AI video, visualisation, social media</span></span>
             <span class="svc__num">03</span><span class="svc__ticks" aria-hidden="true"></span>
           </button>
           <div class="svc__panel" id="svc-3" hidden>
             <ul class="svc__grid">
-              <li class="svc__item"><h4>AI-видео и визуалы</h4><p>Пакет сгенерированных нейросетью изображений и коротких видео.</p></li>
-              <li class="svc__item"><h4>SMM под ключ</h4><p>Стратегия, контент, дизайн, таргет, community-менеджмент, отчётность. Или базовое ведение одной соцсети.</p></li>
-              <li class="svc__item"><h4>Видеопродакшн</h4><p>От короткого ролика на 30–60 секунд до имиджевого фильма: сценарий, съёмка, монтаж, музыка.</p></li>
-              <li class="svc__item"><h4>Фото и аэросъёмка</h4><p>Фотосессия для сайта, соцсетей и рекламы. Съёмка с дрона, сертифицированный оператор.</p></li>
-              <li class="svc__item"><h4>Контент-маркетинг и блог</h4><p>SEO-статьи под ключевые запросы, ведение блога с редакционным планом — 4–8 статей в месяц.</p></li>
-              <li class="svc__item"><h4>Копирайтинг и сценарии</h4><p>Тексты для сайта, рекламы и презентаций. Сценарий и раскадровка для ролика.</p></li>
-              <li class="svc__item"><h4>Мультипликация видео</h4><p>Уникализация роликов под алгоритмы соцсетей и автопостинг в Reels: 2–3 публикации в день из одной съёмки.</p></li>
+              <li class="svc__item"><h4>AI video & visuals</h4><p>A package of AI-generated images and short videos.</p></li>
+              <li class="svc__item"><h4>Full-service social media</h4><p>Strategy, content, design, targeting, community management, reporting. Or basic management of a single platform.</p></li>
+              <li class="svc__item"><h4>Video production</h4><p>From a 30–60 second clip to a brand film: script, shoot, edit, music.</p></li>
+              <li class="svc__item"><h4>Photo & drone shoots</h4><p>Photo shoots for your website, social media and ads. Drone footage by a certified operator.</p></li>
+              <li class="svc__item"><h4>Content marketing & blog</h4><p>SEO articles for target keywords and a blog run on an editorial plan — 4–8 articles a month.</p></li>
+              <li class="svc__item"><h4>Copywriting & scripts</h4><p>Copy for websites, ads and presentations. Scripts and storyboards for video.</p></li>
+              <li class="svc__item"><h4>Video multiplication</h4><p>Clips adapted to social media algorithms and auto-posted to Reels: 2–3 posts a day from a single shoot.</p></li>
             </ul>
           </div>
         </li>
         <li class="svc">
           <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-4" data-accordion>
             <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
-            <span class="svc__title"><span class="svc__name">Лифт</span><span class="svc__sub">реклама в Meta, Google, TikTok и LinkedIn</span></span>
+            <span class="svc__title"><span class="svc__name">Lift</span><span class="svc__sub">advertising on Meta, Google, TikTok and LinkedIn</span></span>
             <span class="svc__num">04</span><span class="svc__ticks" aria-hidden="true"></span>
           </button>
           <div class="svc__panel" id="svc-4" hidden>
             <ul class="svc__grid">
-              <li class="svc__item"><h4>Meta Ads</h4><p>Ежемесячная оптимизация кампаний, тестирование креативов, отчётность.</p></li>
-              <li class="svc__item"><h4>Google Ads</h4><p>Управление ставками, ключевыми словами и фидом, отчётность.</p></li>
-              <li class="svc__item"><h4>TikTok Ads</h4><p>Настройка и ведение рекламных кампаний в TikTok Ads.</p></li>
-              <li class="svc__item"><h4>LinkedIn Ads</h4><p>Реклама для B2B-аудитории и инвесторов, премиум-сегмент.</p></li>
-              <li class="svc__item"><h4>Programmatic / Display</h4><p>Программатик-закупка охватной рекламы через DSP.</p></li>
+              <li class="svc__item"><h4>Meta Ads</h4><p>Monthly campaign optimisation, creative testing, reporting.</p></li>
+              <li class="svc__item"><h4>Google Ads</h4><p>Bid, keyword and feed management, reporting.</p></li>
+              <li class="svc__item"><h4>TikTok Ads</h4><p>Setup and management of TikTok Ads campaigns.</p></li>
+              <li class="svc__item"><h4>LinkedIn Ads</h4><p>Advertising for B2B audiences and investors in the premium segment.</p></li>
+              <li class="svc__item"><h4>Programmatic / Display</h4><p>Programmatic buying of reach advertising via DSPs.</p></li>
             </ul>
           </div>
         </li>
         <li class="svc">
           <button class="svc__btn" type="button" aria-expanded="false" aria-controls="svc-5" data-accordion>
             <svg class="icon svc__arrow" aria-hidden="true"><use href="#i-arrow-dr"/></svg>
-            <span class="svc__title"><span class="svc__name">Ключи</span><span class="svc__sub">воронки, скрипты, продажи</span></span>
+            <span class="svc__title"><span class="svc__name">Keys</span><span class="svc__sub">funnels, scripts, sales</span></span>
             <span class="svc__num">05</span><span class="svc__ticks" aria-hidden="true"></span>
           </button>
           <div class="svc__panel" id="svc-5" hidden>
             <ul class="svc__grid">
-              <li class="svc__item"><h4>Воронки продаж</h4><p>Проектируем путь клиента от первого касания до сделки.</p></li>
-              <li class="svc__item"><h4>Скрипты</h4><p>Сценарии первого контакта и регламент обработки лидов для отдела продаж.</p></li>
-              <li class="svc__item"><h4>Система продаж</h4><p>Связываем воронку, скрипты и CRM в одну систему — комплексным подходом.</p></li>
+              <li class="svc__item"><h4>Sales funnels</h4><p>We map the customer journey from first touch to closed deal.</p></li>
+              <li class="svc__item"><h4>Scripts</h4><p>First-contact scripts and lead-handling rules for your sales team.</p></li>
+              <li class="svc__item"><h4>Sales system</h4><p>We connect funnel, scripts and CRM into one system.</p></li>
             </ul>
           </div>
         </li>
@@ -1097,21 +1099,21 @@ strong { font-weight: 600; color: var(--clr-white); }
   <section class="section" id="developers">
     <div class="container dev__grid">
       <div class="dev__intro reveal">
-        <span class="eyebrow">Отдельное направление</span>
-        <h2 class="display h2" data-blur>Для<br>девелоперов</h2>
-        <p>Маркетинг для застройщиков, девелоперов и строительных компаний. Решаем типичные задачи ниши — от продаж «с котлована» до покупателей за границей.</p>
+        <span class="eyebrow">A dedicated practice</span>
+        <h2 class="display h2" data-blur>For<br>developers</h2>
+        <p>Marketing for developers, builders and construction companies. We solve the typical challenges of the niche — from off-plan sales to buyers abroad.</p>
         <a class="btn btn--sm" href="#cases">
-          <span class="btn__label">Смотреть кейсы</span>
+          <span class="btn__label">View case studies</span>
           <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
         </a>
       </div>
       <ul class="dev__list reveal reveal--d1">
-        <li class="dev__item"><p class="dev__pain">Нечего показывать до сдачи объекта</p><div><h3 class="dev__name">AI-видео и 3D Property Tour</h3><p class="dev__text">Показываем объект до сдачи: AI-видео и виртуальный тур с планировкой для сайта и порталов. Продажи стартуют «с котлована».</p></div></li>
-        <li class="dev__item"><p class="dev__pain">Классический продакшн дорогой и не масштабируется</p><div><h3 class="dev__name">Real Estate Photo + Video</h3><p class="dev__text">Профессиональная съёмка объекта для порталов и рекламы — и AI-видео там, где съёмка обходится слишком дорого.</p></div></li>
-        <li class="dev__item"><p class="dev__pain">Покупатель за границей, языковой барьер</p><div><h3 class="dev__name">Локализация</h3><p class="dev__text">Перевод и адаптация текстов и подачи под целевой рынок — для покупателей из других стран.</p></div></li>
-        <li class="dev__item"><p class="dev__pain">Нужен постоянный поток контента для соцсетей</p><div><h3 class="dev__name">UGC-контент и мультипликация видео</h3><p class="dev__text">Живой контент от лица клиента и уникализация роликов под алгоритмы соцсетей.</p></div></li>
-        <li class="dev__item"><p class="dev__pain">Лиды теряются, нет единой системы учёта</p><div><h3 class="dev__name">CRM и автоматизация лидов</h3><p class="dev__text">Единая система учёта, чтобы заявки не терялись между рекламой и отделом продаж.</p></div></li>
-        <li class="dev__item"><p class="dev__pain">Недоверие к новому или небольшому застройщику</p><div><h3 class="dev__name">Брендинг для доверия</h3><p class="dev__text">Упаковка застройщика, которая снимает недоверие покупателя.</p></div></li>
+        <li class="dev__item"><p class="dev__pain">Nothing to show before completion</p><div><h3 class="dev__name">AI video & 3D Property Tour</h3><p class="dev__text">We show the property before completion: AI video and a virtual tour with floor plans for your website and listing portals. Sales start off-plan.</p></div></li>
+        <li class="dev__item"><p class="dev__pain">Traditional production is expensive and doesn’t scale</p><div><h3 class="dev__name">Real Estate Photo + Video</h3><p class="dev__text">Professional photo and video of the property for portals and ads — and AI video where a shoot costs too much.</p></div></li>
+        <li class="dev__item"><p class="dev__pain">Buyers abroad, language barrier</p><div><h3 class="dev__name">Localisation</h3><p class="dev__text">Translation and adaptation of copy and messaging for the target market — for buyers from other countries.</p></div></li>
+        <li class="dev__item"><p class="dev__pain">Need a constant flow of social content</p><div><h3 class="dev__name">UGC content & video multiplication</h3><p class="dev__text">Authentic content from the buyer’s perspective and clips adapted to social media algorithms.</p></div></li>
+        <li class="dev__item"><p class="dev__pain">Leads get lost, no single tracking system</p><div><h3 class="dev__name">CRM & lead automation</h3><p class="dev__text">One tracking system so enquiries don’t get lost between advertising and the sales team.</p></div></li>
+        <li class="dev__item"><p class="dev__pain">Distrust of a new or small developer</p><div><h3 class="dev__name">Trust-building branding</h3><p class="dev__text">Brand positioning for the developer that removes buyer distrust.</p></div></li>
       </ul>
     </div>
   </section>
@@ -1120,115 +1122,115 @@ strong { font-weight: 600; color: var(--clr-white); }
   <section class="section" id="cases">
     <div class="container">
       <h2 class="display cases__title" data-blur>
-        <span>Кейсы</span>
+        <span>Case studies</span>
         <span class="title-thumb" aria-hidden="true"><img src="assets/img/hero.jpg" alt="" width="300" height="190" loading="lazy"></span>
-        <span>в цифрах</span>
+        <span>in numbers</span>
       </h2>
 
       <div class="cases__grid">
         <article class="case reveal">
           <div class="case__media">
-            <img src="assets/img/case-rak.jpg" alt="Резиденции на побережье Ras Al Khaimah" width="900" height="1200" loading="lazy">
+            <img src="assets/img/case-rak.jpg" alt="Coastal residences in Ras Al Khaimah" width="900" height="1200" loading="lazy">
             <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent"></span>
             <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
-            <span class="case__chip">Полный digital setup</span>
+            <span class="case__chip">Full digital setup</span>
             <span class="case__index" aria-hidden="true">01</span>
             <div class="case__caption">
               <h3 class="case__name">Ras Al Khaimah</h3>
-              <p class="case__ctx">76 юнитов · 6 месяцев</p>
+              <p class="case__ctx">76 units · 6 months</p>
             </div>
           </div>
-          <ul class="case__stats"><li class="case__stat"><b>540</b><span>лидов</span></li><li class="case__stat"><b>33</b><span>сделки</span></li><li class="case__stat"><b>€17,2 млн</b><span>объём продаж</span></li></ul>
+          <ul class="case__stats"><li class="case__stat"><b>540</b><span>leads</span></li><li class="case__stat"><b>33</b><span data-i18n="deals (2–4)">deals</span></li><li class="case__stat"><b>€17.2M</b><span>sales volume</span></li></ul>
         </article>
         <article class="case reveal reveal--d1">
           <div class="case__media">
-            <img src="assets/img/case-dubai.jpg" alt="Жилая башня в Дубае" width="900" height="1200" loading="lazy">
+            <img src="assets/img/case-dubai.jpg" alt="Residential tower in Dubai" width="900" height="1200" loading="lazy">
             <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent"></span>
             <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
-            <span class="case__chip">Запуск с нуля</span>
+            <span class="case__chip">Launch from scratch</span>
             <span class="case__index" aria-hidden="true">02</span>
             <div class="case__caption">
               <h3 class="case__name">Dubai</h3>
-              <p class="case__ctx">Off-plan · 48 юнитов · 6 месяцев</p>
+              <p class="case__ctx">Off-plan · 48 units · 6 months</p>
             </div>
           </div>
-          <ul class="case__stats"><li class="case__stat"><b>620</b><span>лидов</span></li><li class="case__stat"><b>€95</b><span>стоимость лида</span></li><li class="case__stat"><b>21</b><span>сделка</span></li></ul>
+          <ul class="case__stats"><li class="case__stat"><b>620</b><span>leads</span></li><li class="case__stat"><b>€95</b><span>cost per lead</span></li><li class="case__stat"><b>21</b><span data-i18n="deals (1)">deals</span></li></ul>
         </article>
         <article class="case reveal reveal--d2">
           <div class="case__media">
-            <img src="assets/img/case-marbella.jpg" alt="Премиальная вилла в Марбелье" width="900" height="1200" loading="lazy">
+            <img src="assets/img/case-marbella.jpg" alt="Premium villa in Marbella" width="900" height="1200" loading="lazy">
             <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent"></span>
             <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
-            <span class="case__chip">Luxury-недвижимость</span>
+            <span class="case__chip">Luxury real estate</span>
             <span class="case__index" aria-hidden="true">03</span>
             <div class="case__caption">
               <h3 class="case__name">Costa del Sol</h3>
-              <p class="case__ctx">9 вилл · 5 месяцев</p>
+              <p class="case__ctx">9 villas · 5 months</p>
             </div>
           </div>
-          <ul class="case__stats"><li class="case__stat"><b>55%</b><span>квал. лидов</span></li><li class="case__stat"><b>5</b><span>сделок</span></li><li class="case__stat"><b>€16 млн</b><span>объём продаж</span></li></ul>
+          <ul class="case__stats"><li class="case__stat"><b>55%</b><span>qualified leads</span></li><li class="case__stat"><b>5</b><span>deals</span></li><li class="case__stat"><b>€16M</b><span>sales volume</span></li></ul>
         </article>
         <article class="case reveal">
           <div class="case__media">
-            <img src="assets/img/case-bali.jpg" alt="Вилла на Бали" width="900" height="1200" loading="lazy">
+            <img src="assets/img/case-bali.jpg" alt="Villa in Bali" width="900" height="1200" loading="lazy">
             <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent"></span>
             <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
-            <span class="case__chip">Перестройка маркетинга</span>
+            <span class="case__chip">Marketing rebuild</span>
             <span class="case__index" aria-hidden="true">04</span>
             <div class="case__caption">
               <h3 class="case__name">Bali</h3>
-              <p class="case__ctx">32 виллы · 4 месяца</p>
+              <p class="case__ctx">32 villas · 4 months</p>
             </div>
           </div>
-          <ul class="case__stats"><li class="case__stat"><b>−60%</b><span>CPL: €120 → €48</span></li><li class="case__stat"><b>×3,5</b><span>конверсия: 4% → 14%</span></li><li class="case__stat"><b>12</b><span>сделок</span></li></ul>
+          <ul class="case__stats"><li class="case__stat"><b>−60%</b><span>CPL: €120 → €48</span></li><li class="case__stat"><b>×3,5</b><span>conversion: 4% → 14%</span></li><li class="case__stat"><b>12</b><span>deals</span></li></ul>
         </article>
         <article class="case reveal reveal--d1">
           <div class="case__media">
-            <img src="assets/img/case-phuket.jpg" alt="Кондоминиум на Пхукете" width="900" height="1200" loading="lazy">
+            <img src="assets/img/case-phuket.jpg" alt="Condominium in Phuket" width="900" height="1200" loading="lazy">
             <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent"></span>
             <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
-            <span class="case__chip">Масштабирование</span>
+            <span class="case__chip">Scaling</span>
             <span class="case__index" aria-hidden="true">05</span>
             <div class="case__caption">
               <h3 class="case__name">Phuket</h3>
-              <p class="case__ctx">90 юнитов · 6 месяцев</p>
+              <p class="case__ctx">90 units · 6 months</p>
             </div>
           </div>
-          <ul class="case__stats"><li class="case__stat"><b>+58%</b><span>лидов</span></li><li class="case__stat"><b>€55</b><span>CPL удержан</span></li><li class="case__stat"><b>+26</b><span>сделок</span></li></ul>
+          <ul class="case__stats"><li class="case__stat"><b>+58%</b><span>leads</span></li><li class="case__stat"><b>€55</b><span>CPL held</span></li><li class="case__stat"><b>+26</b><span>deals</span></li></ul>
         </article>
         <article class="case reveal reveal--d2">
           <div class="case__media">
-            <img src="assets/img/case-cyprus.jpg" alt="Апартаменты на набережной Лимассола" width="900" height="1200" loading="lazy">
+            <img src="assets/img/case-cyprus.jpg" alt="Seafront apartments in Limassol" width="900" height="1200" loading="lazy">
             <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent"></span>
             <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
-            <span class="case__chip">Международные продажи</span>
+            <span class="case__chip">International sales</span>
             <span class="case__index" aria-hidden="true">06</span>
             <div class="case__caption">
               <h3 class="case__name">Limassol</h3>
-              <p class="case__ctx">55 юнитов · 6 месяцев</p>
+              <p class="case__ctx">55 units · 6 months</p>
             </div>
           </div>
-          <ul class="case__stats"><li class="case__stat"><b>410</b><span>лидов</span></li><li class="case__stat"><b>3</b><span>рынка</span></li><li class="case__stat"><b>19</b><span>сделок</span></li></ul>
+          <ul class="case__stats"><li class="case__stat"><b>410</b><span>leads</span></li><li class="case__stat"><b>3</b><span>markets</span></li><li class="case__stat"><b>19</b><span>deals</span></li></ul>
         </article>
         <article class="case reveal">
           <div class="case__media">
-            <img src="assets/img/case-montenegro.jpg" alt="Жилой комплекс над Которским заливом" width="900" height="1200" loading="lazy">
+            <img src="assets/img/case-montenegro.jpg" alt="Residential complex above the Bay of Kotor" width="900" height="1200" loading="lazy">
             <span class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent"></span>
             <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
-            <span class="case__chip">Большой объём inventory</span>
+            <span class="case__chip">Large inventory</span>
             <span class="case__index" aria-hidden="true">07</span>
             <div class="case__caption">
               <h3 class="case__name">Tivat · Kotor</h3>
-              <p class="case__ctx">140 юнитов · 6 месяцев</p>
+              <p class="case__ctx">140 units · 6 months</p>
             </div>
           </div>
-          <ul class="case__stats"><li class="case__stat"><b>980</b><span>лидов</span></li><li class="case__stat"><b>€38</b><span>стоимость лида</span></li><li class="case__stat"><b>52</b><span>юнита продано</span></li></ul>
+          <ul class="case__stats"><li class="case__stat"><b>980</b><span>leads</span></li><li class="case__stat"><b>€38</b><span>cost per lead</span></li><li class="case__stat"><b>52</b><span>units sold</span></li></ul>
         </article>
         <div class="cases__tile reveal reveal--d1">
           <p class="cases__count">(07)</p>
           <div class="cases__note">
-            <p class="cases__note-label">Иллюстративный пример</p>
-            <p class="cases__note-text">Клиенты работают под NDA, поэтому цифры в кейсах — иллюстративный пример на основе типового проекта.</p>
+            <p class="cases__note-label">Illustrative example</p>
+            <p class="cases__note-text">Our clients work under NDA, so the figures in these case studies are an illustrative example based on a typical project.</p>
           </div>
         </div>
         </div>
@@ -1239,33 +1241,33 @@ strong { font-weight: 600; color: var(--clr-white); }
   <!-- ============ 4. CTA ============ -->
   <section class="bigcta">
     <div class="container reveal">
-      <h2 class="display bigcta__title" data-blur>Давайте запустим<br><span class="title-thumb" aria-hidden="true"><img src="assets/img/case-marbella.jpg" alt="" width="300" height="190" loading="lazy"></span>ваш проект</h2>
+      <h2 class="display bigcta__title" data-blur>Let’s launch<br><span class="title-thumb" aria-hidden="true"><img src="assets/img/case-marbella.jpg" alt="" width="300" height="190" loading="lazy"></span>your project</h2>
       <a class="btn btn--lg" href="#contact">
-        <span class="btn__label">Получить КП</span>
+        <span class="btn__label">Get a proposal</span>
         <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
       </a>
     </div>
   </section>
 
   <!-- ============ Showcase: scroll expand ============ -->
-  <section class="scroll-expand" id="showcase" aria-label="AI-продакшн">
+  <section class="scroll-expand" id="showcase" aria-label="AI production">
     <div class="scroll-expand__track">
       <div class="scroll-expand__stage">
         <div class="scroll-expand__frame">
-          <img class="scroll-expand__media" src="assets/img/expand.jpg" alt="AI-визуализация жилого комплекса на побережье" width="1376" height="768" loading="lazy" draggable="false">
+          <img class="scroll-expand__media" src="assets/img/expand.jpg" alt="AI visualisation of a coastal residential complex" width="1376" height="768" loading="lazy" draggable="false">
           <div class="scroll-expand__scrim"></div>
           <div class="scroll-expand__overlay">
-            <span class="eyebrow">AI-продакшн под ключ</span>
-            <h2 class="display">Показываем объект до того, как он построен</h2>
-            <p>AI-видео, визуализация и 3D-туры вместо дорогой съёмки. Продажи стартуют ещё на этапе котлована — и на любом из 28 рынков.</p>
+            <span class="eyebrow">Turnkey AI production</span>
+            <h2 class="display">We show the property before it’s built</h2>
+            <p>AI video, visualisation and 3D tours instead of expensive shoots. Sales start at the foundation stage — in any of 28 markets.</p>
             <a class="btn" href="#contact">
-              <span class="btn__label">Обсудить проект</span>
+              <span class="btn__label">Discuss your project</span>
               <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
             </a>
           </div>
         </div>
-        <p class="display scroll-expand__title" aria-hidden="true">Смотрите шире</p>
-        <p class="scroll-expand__hint" aria-hidden="true">Листайте вниз</p>
+        <p class="display scroll-expand__title" aria-hidden="true">See the bigger picture</p>
+        <p class="scroll-expand__hint" aria-hidden="true">Scroll down</p>
       </div>
     </div>
   </section>
@@ -1275,28 +1277,28 @@ strong { font-weight: 600; color: var(--clr-white); }
     <div class="container">
       <div class="about__grid">
         <div class="about__media reveal">
-          <img src="assets/img/about.jpg" alt="Архитектурный макет виллы в контровом свете" width="1200" height="1200" loading="lazy">
+          <img src="assets/img/about.jpg" alt="Architectural model of a villa in rim light" width="1200" height="1200" loading="lazy">
           <span class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
           <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
         </div>
         <div class="about__copy reveal reveal--d1">
-          <span class="eyebrow">Об агентстве</span>
-          <p class="lead">AI-продакшн под ключ:</p>
-          <p class="lead lead--muted">Визуализация объектов.</p>
-          <p class="lead lead--muted">AI-видео.</p>
-          <p class="lead lead--muted">Мультиязычный контент.</p>
-          <p class="lead lead--gap">Tuhono — агентство полного цикла: от бренда до продаж.</p>
+          <span class="eyebrow">About</span>
+          <p class="lead">Turnkey AI production:</p>
+          <p class="lead lead--muted">Property visualisation.</p>
+          <p class="lead lead--muted">AI video.</p>
+          <p class="lead lead--muted">Multilingual content.</p>
+          <p class="lead lead--gap">Tuhono is a full-cycle agency: from brand to sales.</p>
           <a class="btn btn--lg" href="#contact">
-            <span class="btn__label">Обсудить проект</span>
+            <span class="btn__label">Discuss your project</span>
             <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
           </a>
         </div>
       </div>
       <ul class="stats reveal">
-        <li><p class="stat__num" data-count="273" data-prefix="€" data-suffix="M+">€273M+</p><p class="stat__label">выручки клиентов</p></li>
-        <li><p class="stat__num" data-count="28">28</p><p class="stat__label">стран и рынков</p></li>
-        <li><p class="stat__num" data-count="2022" data-from="2000" data-plain>2022</p><p class="stat__label">год основания</p></li>
-        <li><p class="stat__num" data-count="4">4</p><p class="stat__label">языка коммуникации</p></li>
+        <li><p class="stat__num" data-count="273" data-prefix="€" data-suffix="M+">€273M+</p><p class="stat__label">in client revenue</p></li>
+        <li><p class="stat__num" data-count="28">28</p><p class="stat__label">countries & markets</p></li>
+        <li><p class="stat__num" data-count="2022" data-from="2000" data-plain>2022</p><p class="stat__label">year founded</p></li>
+        <li><p class="stat__num" data-count="4">4</p><p class="stat__label">working languages</p></li>
       </ul>
     </div>
   </section>
@@ -1305,42 +1307,42 @@ strong { font-weight: 600; color: var(--clr-white); }
   <section class="section" id="approach">
     <div class="container approach__grid">
       <div class="approach__intro reveal">
-        <h2 class="display h2" data-blur>Форматы<br>и подход</h2>
+        <h2 class="display h2" data-blur>Formats<br>& approach</h2>
         <div>
-          <p>Индивидуальный набор под каждого клиента — без фиксированного состава и фиксированной цены. Для точечных задач есть отдельный формат: <strong>performance на результат</strong>.</p>
+          <p>A bespoke set of services for every client — no fixed package and no fixed price. For specific tasks there is a separate format: <strong>performance on results</strong>.</p>
           <a class="btn btn--sm" href="#services">
-            <span class="btn__label">Все услуги</span>
+            <span class="btn__label">All services</span>
             <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
           </a>
         </div>
       </div>
       <div class="stack reveal reveal--d1">
         <div>
-          <h3 class="stack__head">AI-продакшн <svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></h3>
+          <h3 class="stack__head">AI production <svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></h3>
           <ul class="stack__list">
-            <li><span class="stack__dot"></span>Визуализация объектов</li>
-            <li><span class="stack__dot"></span>AI-видео</li>
+            <li><span class="stack__dot"></span>Property visualisation</li>
+            <li><span class="stack__dot"></span>AI video</li>
             <li><span class="stack__dot"></span>3D Property Tour</li>
-            <li><span class="stack__dot"></span>Мультипликация контента</li>
+            <li><span class="stack__dot"></span>Content multiplication</li>
           </ul>
         </div>
         <div>
-          <h3 class="stack__head">Международный запуск <svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></h3>
+          <h3 class="stack__head">International launch <svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></h3>
           <ul class="stack__list">
-            <li><span class="stack__dot"></span>28 рынков</li>
-            <li><span class="stack__dot"></span>Мультиязычность</li>
-            <li><span class="stack__dot"></span>Локализация подачи</li>
-            <li><span class="stack__dot"></span>UGC-контент</li>
+            <li><span class="stack__dot"></span>28 markets</li>
+            <li><span class="stack__dot"></span>Multilingual support</li>
+            <li><span class="stack__dot"></span>Localised messaging</li>
+            <li><span class="stack__dot"></span>UGC content</li>
           </ul>
         </div>
         <div>
           <h3 class="stack__head">Full-service <svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></h3>
           <ul class="stack__list">
-            <li><span class="stack__dot"></span>Бренд и упаковка</li>
-            <li><span class="stack__dot"></span>Сайт и CRM</li>
-            <li><span class="stack__dot"></span>Реклама и контент</li>
-            <li><span class="stack__dot"></span>Воронки и скрипты</li>
-            <li><span class="stack__dot"></span>Единая точка ответственности</li>
+            <li><span class="stack__dot"></span>Brand & packaging</li>
+            <li><span class="stack__dot"></span>Website & CRM</li>
+            <li><span class="stack__dot"></span>Advertising & content</li>
+            <li><span class="stack__dot"></span>Funnels & scripts</li>
+            <li><span class="stack__dot"></span>One point of accountability</li>
           </ul>
         </div>
       </div>
@@ -1351,33 +1353,33 @@ strong { font-weight: 600; color: var(--clr-white); }
   <section class="section" id="process">
     <div class="container">
       <div class="process__head reveal">
-        <h2 class="display h2" data-blur>Как мы<br>работаем</h2>
-        <p>Четыре шага от первого сообщения до запуска. Без длинных брифов и лишних согласований.</p>
+        <h2 class="display h2" data-blur>How we<br>work</h2>
+        <p>Four steps from first message to launch. No lengthy briefs, no endless approvals.</p>
       </div>
       <ol class="steps reveal" id="steps">
         <li class="step is-active" tabindex="0">
           <span class="step__ruler" aria-hidden="true"></span>
           <span class="step__num">01</span>
-          <h3 class="step__name">Консультация</h3>
-          <p class="step__text">Разбираем задачу, рынок и то, что уже сделано. Созвон или переписка в WhatsApp.</p>
+          <h3 class="step__name">Consultation</h3>
+          <p class="step__text">We look at your goals, your market and what has already been done. A call or a WhatsApp chat.</p>
         </li>
         <li class="step" tabindex="0">
           <span class="step__ruler" aria-hidden="true"></span>
           <span class="step__num">02</span>
-          <h3 class="step__name">Коммерческое предложение</h3>
-          <p class="step__text">Собираем набор услуг под вашу задачу: состав работ, сроки, стоимость.</p>
+          <h3 class="step__name">Commercial proposal</h3>
+          <p class="step__text">We put together the services for your goal: scope, timeline, cost.</p>
         </li>
         <li class="step" tabindex="0">
           <span class="step__ruler" aria-hidden="true"></span>
           <span class="step__num">03</span>
-          <h3 class="step__name">Договор</h3>
-          <p class="step__text">Фиксируем объём, этапы и зоны ответственности с обеих сторон.</p>
+          <h3 class="step__name">Contract</h3>
+          <p class="step__text">We fix the scope, stages and responsibilities on both sides.</p>
         </li>
         <li class="step" tabindex="0">
           <span class="step__ruler" aria-hidden="true"></span>
           <span class="step__num">04</span>
-          <h3 class="step__name">Работа</h3>
-          <p class="step__text">Запускаем проект и отчитываемся по результату на каждом этапе.</p>
+          <h3 class="step__name">Work</h3>
+          <p class="step__text">We launch the project and report on results at every stage.</p>
         </li>
       </ol>
     </div>
@@ -1387,12 +1389,12 @@ strong { font-weight: 600; color: var(--clr-white); }
   <section class="strip">
     <div class="container">
       <p class="strip__row reveal">
-        <span>Упаковку бизнеса</span>
+        <span>Business packaging</span>
         <a class="btn btn--grey btn--lg" href="#contact">
-          <span class="btn__label">Получить КП</span>
+          <span class="btn__label">Get a proposal</span>
           <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
         </a>
-        <span>собираем под задачу.</span>
+        <span>built around your goal.</span>
       </p>
     </div>
   </section>
@@ -1400,31 +1402,31 @@ strong { font-weight: 600; color: var(--clr-white); }
   <!-- ============ 9. Clients ============ -->
   <section class="section" id="clients">
     <div class="container">
-      <h2 class="display h2 clients__head" data-blur>Нам доверяют<br>на 28 рынках</h2>
+      <h2 class="display h2 clients__head" data-blur>Trusted<br>in 28 markets</h2>
     </div>
-    <div class="marquee reveal" aria-label="География проектов: 28 стран">
+    <div class="marquee reveal" aria-label="Project locations: 28 countries">
       <ul class="marquee__track" data-marquee>
-        <li class="marquee__item">ОАЭ</li><li class="marquee__item">Индонезия</li><li class="marquee__item">Таиланд</li><li class="marquee__item">Кипр</li><li class="marquee__item">Испания</li><li class="marquee__item">Черногория</li><li class="marquee__item">Турция</li><li class="marquee__item">Албания</li><li class="marquee__item">Грузия</li><li class="marquee__item">Португалия</li><li class="marquee__item">Греция</li><li class="marquee__item">Вьетнам</li><li class="marquee__item">Мексика</li><li class="marquee__item">Доминикана</li>
+        <li class="marquee__item">UAE</li><li class="marquee__item">Indonesia</li><li class="marquee__item">Thailand</li><li class="marquee__item">Cyprus</li><li class="marquee__item">Spain</li><li class="marquee__item">Montenegro</li><li class="marquee__item">Turkey</li><li class="marquee__item">Albania</li><li class="marquee__item">Georgia</li><li class="marquee__item">Portugal</li><li class="marquee__item">Greece</li><li class="marquee__item">Vietnam</li><li class="marquee__item">Mexico</li><li class="marquee__item">Dominican Republic</li>
       </ul>
     </div>
     <div class="marquee marquee--rev reveal">
       <ul class="marquee__track" data-marquee>
-        <li class="marquee__item">Маврикий</li><li class="marquee__item">Танзания</li><li class="marquee__item">Египет</li><li class="marquee__item">Марокко</li><li class="marquee__item">Сербия</li><li class="marquee__item">Болгария</li><li class="marquee__item">Хорватия</li><li class="marquee__item">Италия</li><li class="marquee__item">Франция</li><li class="marquee__item">Австрия</li><li class="marquee__item">Швейцария</li><li class="marquee__item">Малайзия</li><li class="marquee__item">Филиппины</li><li class="marquee__item">Панама</li>
+        <li class="marquee__item">Mauritius</li><li class="marquee__item">Tanzania</li><li class="marquee__item">Egypt</li><li class="marquee__item">Morocco</li><li class="marquee__item">Serbia</li><li class="marquee__item">Bulgaria</li><li class="marquee__item">Croatia</li><li class="marquee__item">Italy</li><li class="marquee__item">France</li><li class="marquee__item">Austria</li><li class="marquee__item">Switzerland</li><li class="marquee__item">Malaysia</li><li class="marquee__item">Philippines</li><li class="marquee__item">Panama</li>
       </ul>
     </div>
     <div class="container">
       <div class="proof">
         <div class="proof__media reveal">
-          <img src="assets/img/clients.jpg" alt="Съёмочное оборудование на террасе виллы" width="1200" height="900" loading="lazy">
+          <img src="assets/img/clients.jpg" alt="Film equipment on a villa terrace" width="1200" height="900" loading="lazy">
           <span class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></span>
           <span class="absolute inset-0 bg-pine/20 mix-blend-multiply"></span>
         </div>
         <div class="reveal reveal--d1">
           <svg class="icon icon--fill proof__quote" aria-hidden="true"><use href="#i-quote"/></svg>
-          <p class="proof__text">Большинство проектов мы ведём под <strong>NDA</strong> — поэтому вместо громких имён здесь география и цифры. За ними стоят девелоперы, застройщики и бренды из 28 стран, которые доверили нам упаковку и продажи.</p>
-          <p class="proof__by"><b>Команда Tuhono</b><span>о клиентах агентства</span></p>
+          <p class="proof__text">Most of our projects are under <strong>NDA</strong> — so instead of big names you’ll find geography and figures here. Behind them are developers, builders and brands from 28 countries who trusted us with their positioning and sales.</p>
+          <p class="proof__by"><b>The Tuhono team</b><span>on our clients</span></p>
           <p class="stat__num" data-count="273" data-prefix="€" data-suffix="M+">€273M+</p>
-          <p class="stat__label">выручки клиентов</p>
+          <p class="stat__label">in client revenue</p>
         </div>
       </div>
     </div>
@@ -1435,38 +1437,38 @@ strong { font-weight: 600; color: var(--clr-white); }
     <div class="container faq__grid">
       <div class="faq__card reveal">
         <span class="faq__logo"><svg aria-hidden="true"><use href="#logo-mark"/></svg></span>
-        <p class="lead">Забронировать ознакомительную консультацию</p>
-        <a class="btn btn--sm" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Здравствуйте! Хочу записаться на консультацию.">
-          <span class="btn__label">Написать в WhatsApp</span>
+        <p class="lead">Book an introductory consultation</p>
+        <a class="btn btn--sm" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Hello! I’d like to book a consultation.">
+          <span class="btn__label">Message us on WhatsApp</span>
           <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
         </a>
       </div>
       <div class="reveal reveal--d1">
-        <h2 class="display h2 faq__title" data-blur>Частые вопросы<br>и ответы</h2>
+        <h2 class="display h2 faq__title" data-blur>Frequently asked<br>questions</h2>
         <ul>
           <li class="qa">
-            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-1" data-accordion><span>Сколько стоит работа с агентством?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
-            <div class="qa__panel" id="qa-1" hidden>Фиксированных пакетов и прайса нет: набор услуг собирается под задачу. После консультации вы получаете коммерческое предложение с составом работ, сроками и стоимостью.</div>
+            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-1" data-accordion><span>How much does working with the agency cost?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
+            <div class="qa__panel" id="qa-1" hidden>There are no fixed packages or price lists: the services are put together around your goal. After the consultation you receive a commercial proposal with scope, timeline and cost.</div>
           </li>
           <li class="qa">
-            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-2" data-accordion><span>Что входит в «полную упаковку бизнеса»?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
-            <div class="qa__panel" id="qa-2" hidden>Гибкий набор из доступных направлений: брендинг, сайт, контент, реклама и автоматизация. Состав формируется индивидуально — вы платите только за то, что нужно вашему проекту.</div>
+            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-2" data-accordion><span>What does “full business packaging” include?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
+            <div class="qa__panel" id="qa-2" hidden>A flexible mix of what we offer: branding, website, content, advertising and automation. It’s tailored to you — you pay only for what your project needs.</div>
           </li>
           <li class="qa">
-            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-3" data-accordion><span>Можно ли подключить вас до старта продаж?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
-            <div class="qa__panel" id="qa-3" hidden>Да, и это лучший момент. Мы выстраиваем позиционирование, сайт, CRM и рекламу ещё до запуска, а AI-видео и 3D-туры позволяют показывать объект до сдачи.</div>
+            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-3" data-accordion><span>Can we bring you in before sales start?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
+            <div class="qa__panel" id="qa-3" hidden>Yes — that’s the best moment. We build the positioning, website, CRM and advertising before launch, and AI video and 3D tours let us show the property before completion.</div>
           </li>
           <li class="qa">
-            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-4" data-accordion><span>На каких рынках и языках вы работаете?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
-            <div class="qa__panel" id="qa-4" hidden>География проектов — 28 стран: от ОАЭ, Испании и Кипра до Индонезии, Таиланда и Мексики. Контент локализуем под целевой рынок: адаптируем не только язык, но и подачу.</div>
+            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-4" data-accordion><span>Which markets and languages do you work in?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
+            <div class="qa__panel" id="qa-4" hidden>Our projects span 28 countries: from the UAE, Spain and Cyprus to Indonesia, Thailand and Mexico. We localise content for each target market — adapting not just the language, but the messaging.</div>
           </li>
           <li class="qa">
-            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-5" data-accordion><span>Вы работаете только с недвижимостью?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
-            <div class="qa__panel" id="qa-5" hidden>Нет. Недвижимость и девелопмент — наша отдельная ниша с собственным набором услуг, но брендинг, контент, реклама и digital-инфраструктура доступны бизнесу из любой сферы.</div>
+            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-5" data-accordion><span>Do you only work with real estate?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
+            <div class="qa__panel" id="qa-5" hidden>No. Real estate and development is a dedicated practice with its own set of services, but branding, content, advertising and digital infrastructure are available to businesses in any industry.</div>
           </li>
           <li class="qa">
-            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-6" data-accordion><span>С чего начать?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
-            <div class="qa__panel" id="qa-6" hidden>Напишите нам в WhatsApp или оставьте заявку в форме ниже. Дальше — консультация, коммерческое предложение, договор и старт работ.</div>
+            <button class="qa__btn" type="button" aria-expanded="false" aria-controls="qa-6" data-accordion><span>Where do we start?</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-dr"/></svg></button>
+            <div class="qa__panel" id="qa-6" hidden>Message us on WhatsApp or leave a request in the form below. Then: consultation, commercial proposal, contract and kick-off.</div>
           </li>
         </ul>
       </div>
@@ -1477,30 +1479,30 @@ strong { font-weight: 600; color: var(--clr-white); }
   <section class="contact" id="contact">
     <div class="container">
       <div class="form-panel reveal">
-        <h2 class="form-panel__title">Получите коммерческое предложение — просто напишите нам</h2>
+        <h2 class="form-panel__title">Get a commercial proposal — just write to us</h2>
         <form class="form" id="lead-form">
           <div class="field">
-            <label for="f-name">(Имя)*</label>
-            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Ваше имя" required>
+            <label for="f-name">(Name)*</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
           </div>
           <div class="field">
-            <label for="f-phone">(Телефон)*</label>
+            <label for="f-phone">(Phone)*</label>
             <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+00 000 000 00 00" required>
           </div>
           <div class="field">
-            <label for="f-email">(Почта)</label>
+            <label for="f-email">(Email)</label>
             <input id="f-email" name="email" type="email" autocomplete="email" placeholder="name@mail.com">
           </div>
           <div class="field">
-            <label for="f-message">(Ваше сообщение)</label>
-            <textarea id="f-message" name="message" rows="2" placeholder="Немного о вашем проекте..."></textarea>
+            <label for="f-message">(Your message)</label>
+            <textarea id="f-message" name="message" rows="2" placeholder="A little about your project..."></textarea>
           </div>
           <div class="form__foot">
             <button class="btn btn--dark btn--lg" type="submit">
-              <span class="btn__label">Получить КП</span>
+              <span class="btn__label">Get a proposal</span>
               <span class="btn__icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
             </button>
-            <p class="form__hint">Заявка откроется в WhatsApp готовым сообщением — останется нажать «Отправить».</p>
+            <p class="form__hint">Your request opens in WhatsApp as a ready-made message — just tap “Send”.</p>
           </div>
           <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
         </form>
@@ -1513,60 +1515,62 @@ strong { font-weight: 600; color: var(--clr-white); }
 <footer class="footer" id="contacts">
   <div class="container">
     <div class="footer__seo reveal">
-      <h2 class="display" data-blur>Tuhono — маркетинг, контент и брендинг для роста продаж</h2>
-      <p>С 2022 года мы упаковываем и продвигаем бизнес на 28 рынках: строим бренды, создаём контент — живой и AI, запускаем рекламу и собираем digital-инфраструктуру, которая доводит клиента до сделки.</p>
+      <h2 class="display" data-blur>Tuhono — marketing, content and branding that grow sales</h2>
+      <p>Since 2022 we’ve been packaging and promoting businesses in 28 markets: building brands, creating content — live and AI, running advertising and setting up the digital infrastructure that takes a customer all the way to the deal.</p>
     </div>
     <div class="footer-grid">
       <div>
-        <h3 class="footer__heading">Навигация</h3>
+        <h3 class="footer__heading">Navigation</h3>
         <ul class="footer__list">
-          <li><a href="#services">Услуги</a></li>
-          <li><a href="#cases">Кейсы</a></li>
-          <li><a href="#about">Об агентстве</a></li>
-          <li><a href="#approach">Форматы и подход</a></li>
-          <li><a href="#process">Процесс</a></li>
-          <li><a href="#clients">Клиенты</a></li>
-          <li><a href="#faq">Вопросы и ответы</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#cases">Case studies</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#approach">Formats & approach</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#clients">Clients</a></li>
+          <li><a href="#faq">Questions & answers</a></li>
         </ul>
       </div>
       <div>
-        <h3 class="footer__heading">Услуги</h3>
+        <h3 class="footer__heading">Services</h3>
         <ul class="footer__list">
-          <li><a href="#services">Фундамент</a></li>
-          <li><a href="#services">Каркас</a></li>
-          <li><a href="#services">Фасад</a></li>
-          <li><a href="#services">Лифт</a></li>
-          <li><a href="#services">Ключи</a></li>
-          <li><a href="#developers">Для девелоперов</a></li>
+          <li><a href="#services">Foundation</a></li>
+          <li><a href="#services">Framework</a></li>
+          <li><a href="#services">Facade</a></li>
+          <li><a href="#services">Lift</a></li>
+          <li><a href="#services">Keys</a></li>
+          <li><a href="#developers">For developers</a></li>
         </ul>
       </div>
       <div>
-        <p class="footer__ask">Интересует сотрудничество?</p>
-        <a class="footer__contact" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Здравствуйте! Интересует сотрудничество с Tuhono.">Написать в WhatsApp</a>
-        <a class="more-link footer__cta" href="#contact">Получить КП <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <p class="footer__ask">Interested in working together?</p>
+        <a class="footer__contact" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Hello! I’m interested in working with Tuhono.">Message us on WhatsApp</a>
+        <a class="more-link footer__cta" href="#contact">Get a proposal <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
     <div class="footer__bottom">
-      <p>© <span id="year">2026</span> <strong>Tuhono</strong> · Маркетинговое агентство</p>
-      <div class="lang" role="group" aria-label="Язык сайта" data-i18n-skip-text><a class="lang__link" href="?lang=es" hreflang="es" lang="es" data-lang="es">ES</a><a class="lang__link" href="?lang=en" hreflang="en" lang="en" data-lang="en">EN</a><a class="lang__link" href="?lang=ru" hreflang="ru" lang="ru" data-lang="ru">RU</a><a class="lang__link" href="?lang=uk" hreflang="uk" lang="uk" data-lang="uk">UA</a></div>
+      <p>© <span id="year">2026</span> <strong>Tuhono</strong> · Marketing agency</p>
+      <div class="lang" role="group" aria-label="Site language" data-i18n-skip-text><a class="lang__link" href="?lang=es" hreflang="es" lang="es" data-lang="es">ES</a><a class="lang__link" href="?lang=en" hreflang="en" lang="en" data-lang="en">EN</a><a class="lang__link" href="?lang=ru" hreflang="ru" lang="ru" data-lang="ru">RU</a><a class="lang__link" href="?lang=uk" hreflang="uk" lang="uk" data-lang="uk">UA</a></div>
       <div class="socials">
         <a class="social" href="#" id="instagram-link" target="_blank" rel="noopener" aria-label="Instagram" hidden><svg class="icon icon--fill" aria-hidden="true"><use href="#i-instagram"/></svg></a>
-        <a class="social" href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp" data-wa="Здравствуйте!"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+        <a class="social" href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp" data-wa="Hello!"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
       </div>
     </div>
   </div>
 </footer>
 
 <div class="fab">
-  <a class="fab__btn fab__btn--ghost" href="#contact" aria-label="Перейти к форме заявки"><span class="fab__dots" aria-hidden="true"><span></span><span></span><span></span></span></a>
-  <a class="fab__btn fab__btn--main" href="https://wa.me/" target="_blank" rel="noopener" aria-label="Написать в WhatsApp" data-wa="Здравствуйте! Хочу получить коммерческое предложение."><svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+  <a class="fab__btn fab__btn--ghost" href="#contact" aria-label="Go to the request form"><span class="fab__dots" aria-hidden="true"><span></span><span></span><span></span></span></a>
+  <a class="fab__btn fab__btn--main" href="https://wa.me/" target="_blank" rel="noopener" aria-label="Message us on WhatsApp" data-wa="Hello! I’d like to receive a commercial proposal."><svg class="icon icon--fill" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
 </div>
 
 <script>
 (async () => {
   // ---------- i18n ----------
-  // Russian is the source. Other languages live in i18n/<lang>.json as { "<Russian text>": "<translation>" };
-  // an empty or missing entry falls back to Russian. Rich strings keep their <br>/<strong> tags.
+  // English is the source written in the HTML. Other languages live in i18n/<lang>.json as
+  // { "<English text>": "<translation>" }; a missing entry falls back to English. Rich strings keep
+  // their <br>/<strong> tags. Where one English word needs different forms (e.g. Russian plurals),
+  // the element carries data-i18n="<key>" and that key is looked up instead of its text.
   const lang = document.documentElement.lang;
   let dict = {};
   const missing = new Set();
@@ -1574,25 +1578,30 @@ strong { font-weight: 600; color: var(--clr-white); }
   const hasLetters = (str) => /\p{L}/u.test(str);
   const lookup = (raw) => {
     const key = norm(raw);
-    if (lang === 'ru' || !hasLetters(key)) return null;
+    if (lang === 'en' || !hasLetters(key)) return null;
     if (dict[key]) return dict[key];
     missing.add(key);
     return null;
   };
   const t = (raw) => lookup(raw) ?? raw;
 
-  if (lang !== 'ru') {
+  if (lang !== 'en') {
     try {
       const res = await fetch(`i18n/${lang}.json`, { cache: 'no-cache' });
       if (res.ok) dict = await res.json();
-    } catch (e) { /* no dictionary: stay on Russian */ }
+    } catch (e) { /* no dictionary: stay on English */ }
 
     const INLINE = new Set(['STRONG', 'B', 'BR', 'EM']);
     const visit = (el) => {
       if (el.matches('script, style, svg, [data-i18n-skip-text]')) return;
+      if (el.dataset.i18n) {
+        if (dict[el.dataset.i18n]) el.innerHTML = dict[el.dataset.i18n];
+        else missing.add(el.dataset.i18n);
+        return;
+      }
       const kids = [...el.children];
       if (kids.every((c) => INLINE.has(c.tagName)) && hasLetters(el.textContent)) {
-        const v = lookup(el.innerHTML);
+        const v = lookup(el.innerHTML.replace(/&amp;/g, '&'));  // the browser serialises a bare & as &amp;
         if (v) el.innerHTML = v;
         return;
       }
@@ -1615,14 +1624,14 @@ strong { font-weight: 600; color: var(--clr-white); }
     desc.content = t(desc.content);
   }
   const UI = {
-    menuOpen: t('Открыть меню'),
-    menuClose: t('Закрыть меню'),
-    waGreeting: t('Здравствуйте! Хочу получить коммерческое предложение.'),
-    waName: t('Имя'),
-    waPhone: t('Телефон'),
-    waEmail: t('Почта'),
-    waAbout: t('О проекте'),
-    formSent: t('Открываем WhatsApp — отправьте сообщение, и мы ответим с предложением.'),
+    menuOpen: t('Open menu'),
+    menuClose: t('Close menu'),
+    waGreeting: t('Hello! I’d like to receive a commercial proposal.'),
+    waName: t('Name'),
+    waPhone: t('Phone'),
+    waEmail: t('Email'),
+    waAbout: t('About the project'),
+    formSent: t('Opening WhatsApp — send the message and we’ll reply with a proposal.'),
   };
   document.querySelectorAll('[data-lang]').forEach((a) => {
     if (a.dataset.lang === lang) a.setAttribute('aria-current', 'true');
@@ -1746,7 +1755,7 @@ strong { font-weight: 600; color: var(--clr-white); }
     const DURATION = 1800;
     const easeOut = (t) => 1 - Math.pow(1 - t, 4);
     const format = (el, value) => {
-      const body = el.hasAttribute('data-plain') ? String(value) : value.toLocaleString('ru-RU').replace(/\u00a0|\u202f/g, ' ');
+      const body = el.hasAttribute('data-plain') ? String(value) : value.toLocaleString('en-US').replace(/\u00a0|\u202f/g, ' ');
       return (el.dataset.prefix || '') + body + (el.dataset.suffix || '');
     };
     const run = (el) => {
